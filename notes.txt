@@ -1,1 +1,58 @@
-Installation:
+1-Installation:
+- disclaimer: mac users you should be familiar with working in the teminal, git/version control, servers/ports, ect. add more as the come up 
+- Download docker https://www.docker.com/products/docker
+- check docker version commands
+- docker info
+- hello world container
+- explain the warning and where the image came from
+- explain what a dockerflie, image, and container is and the differences
+- show the docker images on your machine
+- show all the containers on your machine, talk about how hello world is a short lived container
+- spin up a buunch of hello world containers, show that they went through their lifecycle by showing the containers again 
+- talk about how names are randomly assigned but well see how to assign names later
+- show that htere is still inly one image
+- show how to remove images locally?
+
+2-Bundle_Your_App
+- build an image using the helloServer+random number without first starting it
+- explain the layering some more
+- spin up one with a name tag take, see it running in the teminal, visit it in browser, note of its random number
+- explain how to stop it and restart it (access it with its name tag)
+- spin up another one and show that the random number is different
+- talk about lifecycle and statelessnes
+- dont remove it, we'll be using it a bit later
+
+- explain how to destroy the containers, show that they are destoyed in teminal\
+- build an image with an already going server
+- restart it and show that it will be the same random number each time
+- explain how all pointers are preserves in the image 
+
+- spin up a bunch of hello servers, all on different ports
+- visit all these ports and show that they are all different random numbers
+- show this effect on "docker info"
+- take them all down
+- point out that that was a bit of a pain, Docker has tools to make managing lots of containers like we just did a piece of cake
+
+3-Containerized Development with Volumes
+- what is a volume
+- why is this useful
+- bundle it into an image once youre happy with it
+- push it to dockerhub (all that setup jazz), talk about how it has version control for images
+- remove the image from your computer
+- pull it down from dockerhub and run it
+
+4-Make multiple containers work together
+- will I need to expand on volumes
+- do you use volumes to share date between containers or nah?
+- 
+- 
+- 
+
+5-Docker Compose for multicontainer apps
+- 
+- 
+- 
+- 
+- 
+
+6-docker_swarm_for_scaling
