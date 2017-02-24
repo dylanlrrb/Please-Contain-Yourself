@@ -1,0 +1,6 @@
+6-docker_swarm_for_scaling
+- Do what that guy do with the hello container
+- have them download your image that spins up a server of something unique each time
+- have them swarm it and them visit the page and refreash several times to demonstrate the automatic load balancing
+- 
+- 

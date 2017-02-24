@@ -1,0 +1,7 @@
+3-Containerized Development with Volumes
+- what is a volume
+- why is this useful
+- bundle it into an image once youre happy with it
+- push it to dockerhub (all that setup jazz), talk about how it has version control for images
+- remove the image from your computer
+- pull it down from dockerhub and run it

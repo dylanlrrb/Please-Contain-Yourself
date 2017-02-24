@@ -1,0 +1,6 @@
+4-Make multiple containers work together
+- will I need to expand on volumes
+- do you use volumes to share date between containers or nah?
+- 
+- 
+- 

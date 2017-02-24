@@ -1,0 +1,21 @@
+2-Bundle_Your_App
+- BUILD an image using the helloServer+random number without first starting it
+- explain the layering and the setup of the dockerfile some more
+- spin up one with a name tag tag, see it running in the teminal, visit it in browser, take note of its random number
+- explain how to stop it and restart it (access it with its name tag) AND map to a port
+- spin up another one and show that the random number is different
+- talk about lifecycle and statelessnes
+- dont remove it, we'll be using it a bit later
+
+- explain how to destroy the containers, show that they are destoyed in teminal?
+(unless you already want the previous one running to build an image from it)
+- BUILD an image with an already going server
+- restart it and show that it will be the same random number each time
+- explain how all pointers are preserves in the image 
+- then maybe talk about destroying containers and show it on docker info
+
+- spin up a bunch of (pure) hello servers, all mapped to different ports
+- visit all these ports and show that they are all different random numbers
+- show this effect on "docker info"
+- take them all down
+- point out that that was a bit of a pain, Docker has tools to make managing lots of containers like we just did a piece of cake
