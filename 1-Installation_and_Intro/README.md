@@ -27,6 +27,7 @@ as long as its NOT:
 ```sh
 -bash: Docker: command not found
 ```
+if it's that then something went wrong with the download or installation. Oops.
 - [ ] 
 
 
