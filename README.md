@@ -32,12 +32,12 @@ Hopefully I've inticed you enough to spend some time learning this really cool t
 Start at the first module. Unless you've already completed it. In that case ignore me, whatever.
 
 - [Module 1](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/1-Installation_and_Intro) Installation and Introduction
-~~- [Module 2](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/2-Bundle_Your_App_Into_An_Image) Bundle Your App into an Image~~
-~~- [Module 3](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/3-Containerized_Development_With_Volumes) Containerized Development With Volumes~~
-~~- [Module 4](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/4-Make_Multiple_Containers_Work_Together) Make Multiple Containers Work Together~~
-~~- [Module 5](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/5-Docker_Compose_For_Multi-Container_Apps) Docker-Compose For Multi-Container Apps~~
-~~- [Module 6](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/6-Docker_Swarm_For_Scaling) Docker Swarm For Scaling~~
-~~- [Module 7](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/7-Using_Docker_To_Depoly_On_AWS) Using Docker to Deploy on AWS~~
+- ~~[Module 2](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/2-Bundle_Your_App_Into_An_Image) Bundle Your App into an Image~~
+- ~~[Module 3](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/3-Containerized_Development_With_Volumes) Containerized Development With Volumes~~
+- ~~[Module 4](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/4-Make_Multiple_Containers_Work_Together) Make Multiple Containers Work Together~~
+- ~~[Module 5](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/5-Docker_Compose_For_Multi-Container_Apps) Docker-Compose For Multi-Container Apps~~
+- ~~[Module 6](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/6-Docker_Swarm_For_Scaling) Docker Swarm For Scaling~~
+- ~~[Module 7](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/7-Using_Docker_To_Depoly_On_AWS) Using Docker to Deploy on AWS~~
 
  **Modules with a ~~line through~~ are still in production and not ready yet; check back soon or hit the 'Watch' button on this repo to be notified when the modules become available!
 
