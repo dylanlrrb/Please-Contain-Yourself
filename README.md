@@ -13,7 +13,6 @@ Well, I made this repo as a resource for developers ~~just like me~~ just like Y
 It is designed to take you from just knowing "Docker" as a buzzword to utilizing Docker as a really useful tool in development, deployment, and scaling.
 
 ---
-
 >Disclaimer. Sort of.
 
 >To go through this tutorial you should be comfortable with topics that include, but are not limited to: working in the terminal, git/ version control, servers and ports, horizontal scaling.
