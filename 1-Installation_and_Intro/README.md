@@ -11,9 +11,14 @@ Text that looks `like this --for --example` are commands that you should type in
 
 **Bold text: Gotchas that are gonna getcha if you don't heed this advice**
 
-## With that out of the way, lets get started 
+## With that out of the way, lets get started!
 
-psdfnjvpsi
+
+First things first, lets install Docker:
+
+- [ ] _ go to [ dfsb](sfgb) and
+- [ ] 
+
 
 
 
