@@ -18,6 +18,8 @@
 
 - spin up a nginx webserver "docker run -d -p 80:80 --name webserver nginx", will explain what the other flags do later (but have a picture anyways)
 (with out the -d flag it shows logging but you cant escape without ctrl+C, once you exit tho, you can restart it and it behaves normally)
+-d === run in a detached state; which means just run the container in the background without entering into it
+- try it out without -d
 - show that ps shows running ones with details
 - go to local host
 - docker stop webserver, not in ps any more but can find it in ps -a
@@ -29,6 +31,10 @@ docker rmi <image-name>
 - THIS WILL FAIL because there are still containers that reference the immage even though they are stopped
 - remove all the hello world containers that have reached the end of thier lifecycle and stopped by docker rm <container-name> <container-name> <container-name>
 - try to remove the hello world image again. check thats its gone with docker images
--that being said, if you dont want to clean up after yourself you can just go docker rmi -f <image-name> but you should really clean up after yourself, no one else is going to keep your computer clean
+-that being said, if you dont want to clean up after yourself you can just go docker rmi -f <image-name> but you should really clean up after yourself, no one else is going to keep your computer clean.
+- you can run an image with the --rm flag like so, docker run -d -p 80:80 --rm --name goodbye nginx
+- see that its running with docker ps
+- stop it
+- look for it with docker ps -a, Its nowhere to be   
 - finally, remove the nginx image
 DONE
