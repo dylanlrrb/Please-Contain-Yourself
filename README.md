@@ -19,7 +19,7 @@ It is designed to take you from just knowing "Docker" as a buzzword to utilizing
 
 >The time commitment for this tutorial from start to finish  is about 3 hours. Feel free to tackle it in chunks. I do not, however, suggest jumping around the tutorial, the modules build off each other and you're gonna have a bad time if you jump around. 
 
->This tutorial is given from the perspective of a Mac user. We will be working in the terminal A LOT so there might be some quirky little differences in the terminal commands and installation. It might take a little more effort on a Window user's part to find functional equivalents to the steps laid out.
+>This tutorial is given from the perspective of a Mac user. We will be working in the terminal A LOT so there might be some quirky little differences in the terminal commands and installation between Mac and Windows. It might take a little more effort on a Window user's part to find functional equivalents to the steps laid out.
 
 ---
 
