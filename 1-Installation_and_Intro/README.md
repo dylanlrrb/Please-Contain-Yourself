@@ -6,6 +6,7 @@ Text that looks `like this --for --example` are commands that you should type in
 
 ---
 >Asides: Side notes to ponder while staring off into the distance.
+
 ---
 
 **Bold text: Gotchas that are gonna getcha if you don't heed this advice**
