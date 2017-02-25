@@ -1,5 +1,6 @@
 2-Bundle_Your_App
 - BUILD an image using the helloServer+random number without first starting it
+- dont forget the nmp install step
 - explain the layering and the setup of the dockerfile some more
 - spin up one with a name tag tag, see it running in the teminal, visit it in browser, take note of its random number
 - explain how to stop it and restart it (access it with its name tag) AND map to a port
