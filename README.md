@@ -23,6 +23,11 @@ It is designed to take you from just knowing "Docker" as a buzzword to utilizing
 
 ---
 
+### WHAT IS DOCKER?
+Sure the logo is adorable, but what's all this noise about containerization? 
+
+Hopefully I've inticed you enough to spend some time learning this really cool tool... if so, the first steps on your journey to Docker mastery are outlined below ->
+
 ### Tutorial Roadmap
 Start at the first module. Unless you've already completed it. In that case ignore me, whatever.
 
