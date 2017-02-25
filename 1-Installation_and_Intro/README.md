@@ -16,7 +16,7 @@ Text that looks `like this --for --example` are commands that you should type in
 
 First things first, lets install Docker:
 
-- [ ] _ go to [ dfsb](sfgb) and
+- [ ] go to [ dfsb](sfgb) and
 - [ ] 
 
 
