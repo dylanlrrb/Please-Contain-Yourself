@@ -2,8 +2,6 @@
 
 time commitment
 
-what is docker, why should you care, what its used for
+disclaimer
 
 sprint structure
-
-disclaimer

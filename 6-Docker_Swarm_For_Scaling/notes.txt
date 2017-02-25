@@ -1,6 +1,9 @@
 6-docker_swarm_for_scaling
-- Do what that guy do with the hello container
+- Do what that guy do with the hello container -include that video as a resource if they want to go indepth with using nginx for load balancing
+- also include that really cool video with worker nodes and the voting app. I want to know how to build a repo that can just be deployed and scaled that easily!!!
+
+- Do what that guy do with the hello container 
 - have them download your image that spins up a server of something unique each time
-- have them swarm it and them visit the page and refreash several times to demonstrate the automatic load balancing
+- have them swarm it and them visit the page and refreash several times to demonstrate the automatic load balancing. or use curl like he did if refreshing doesnt work
 - 
 - 

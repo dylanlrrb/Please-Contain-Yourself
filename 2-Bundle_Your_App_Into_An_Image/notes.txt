@@ -1,4 +1,6 @@
 2-Bundle_Your_App
+- if you havent already cloned this repo, youre going to want to do that now. make sure you are cd'd into module 2's directory ??(in a separate terminal tab that youre running your docker commands in)??
+- if you have node installed you can check out how this simple little server is supposed to work, but you dont have to. you can just use your imagination 
 - BUILD an image using the helloServer+random number without first starting it
 - dont forget the nmp install step
 - explain the layering and the setup of the dockerfile some more

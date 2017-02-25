@@ -1,5 +1,5 @@
 1-Installation:
-- disclaimer: mac users you should be familiar with working in the teminal, git/version control, servers/ports, ect. add more as the come up 
+- what is docker, why should you care, what its used for
 - Download docker https://www.docker.com/products/docker
  - click on the whale and complete installation
 - check docker version commands
