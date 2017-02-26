@@ -35,7 +35,7 @@ if it looks like that then something went wrong with the download or installatio
 - [ ] Nice! Let's run your first Docker command! in the terminal type `docker info`
 
 You should see something like this: 
-![dockerinfo](https://github.com/dylanlrrb/P-C-Y-Assets/blob/master/1/dockerinfo.png.png?raw=true)
+![dockerinfo](https://github.com/dylanlrrb/P-C-Y-Assets/blob/master/1/dockerinfo.png?raw=true)
 
 "This command displays system wide information regarding the Docker installation. Information displayed includes the kernel version, number of containers and images, and memory allocated to running containers. The number of images shown is the number of unique images. The same image tagged under different names is counted only once." --Docker Docs
 
