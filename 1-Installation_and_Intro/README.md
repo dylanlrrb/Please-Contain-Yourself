@@ -98,7 +98,7 @@ Like I mentioned before, in the command 'docker run hello-world'; 'hello-world' 
 - [ ] The second effect is that it created a container from that image. Run `docker ps -a` to see all of the containers on your machine containers. you should see something similar to this:
 ![dockerpsa1](https://github.com/dylanlrrb/P-C-Y-Assets/blob/master/1/dockerpsa1.png?raw=true)
 
-There's your first container! isn' it handsome?
+There's your first container! isn' it handsome? There are several bits of information displayed with the `ps` command such as the image it was created from, how long ago it was spun up, and the container's status
 
 - [ ] Let's get a little tricky. Try spinning up 3 more containers from the hello-world image cached on your machine. If you did everything correctly, you should have seen the 'Hello from Docker!' message each time you successfully spun up a container.  
 
@@ -107,22 +107,31 @@ There's your first container! isn' it handsome?
 >
 >Try running `docker ps` without the ' -a' flag. It would appear that there are no containers running on your machine.
 ![dockerempty](https://github.com/dylanlrrb/P-C-Y-Assets/blob/master/1/dockerempty.png?raw=true)
-Thats because technically there are no containers running on your machine. All the hello-world containers on your machine are short lived and are designed to stop immediatly after they are done doing thier job (logging that message to the console). Thats why the `docker info` report listed all of the containers on our machine as stopped.
+Thats because technically there are no containers running on your machine. All the hello-world containers on your machine are short lived and are designed to stop running immediatly after they are done doing thier job (logging that message to the console). Thats why the `docker info` report listed all of the containers on our machine as stopped.
 >
->The ` -a` flag shows all the containers, both running and stopped. Run `docker ps -a` and you will see:
+>The ` -a` flag shows all the containers on your machine, both running and stopped. Run `docker ps -a` and you will see:
 ![dockerfull](https://github.com/dylanlrrb/P-C-Y-Assets/blob/master/1/dockerfull.png?raw=true)
 
 >But don't you worry, we'll be spinning up a longer lasting container in the next module. hang tight.
 
 ---
 
-show they are not viewable with ps, need -a. you need the -a flag to show containers that are stopped, hello-world is a short lived contaier that immediatly stops after it finishes it s job. thats why docker info shows the only container we have is also stopped. we will be spinning up a container that is longer lived in a little bit
+Take note that, unless a name is given to the container explicitlly, each container is given a random name that identifies it. 
+![dockernames](https://github.com/dylanlrrb/P-C-Y-Assets/blob/master/1/dockernames.png?raw=true)
 
-also notice that names are randomly assigned 
+- [ ] Spin up one more hello-world container and give it a name by using the ` --name` flag like so:
 
-give one a name with --name punk_unicorns, show it with ps -a
+`docker run --name punk_rock_unicorns hello-world`  
 
-finally show that dispite the fact thatwe have created a bunch of containers based off the image, there is still only one image stored on our machine.(docker info & docker images) the original 'perfect sandwich' is still safe and preserved in the refridgerator. It's just waiting to spawn new sandwiches that we're allowed to eat.
+Run `docker ps -a` again and you'll see a total of 5 containers, the most recent of which has the charmingly quirky name of 'punk_rock_unicorns'
+![dockernames2](https://github.com/dylanlrrb/P-C-Y-Assets/blob/master/1/dockernames2.png?raw=true)
+
+---
+>As a final note before we wrap up this module; dispite the fact that we have created a bunch of containers based off the 'hello-world' image, there is still only one image stored on our machine. Run `docker info` and `docker images` again if you dont believe me. 
+>
+>The original 'perfect sandwich' is still safe and preserved in the refridgerator. It's just waiting to spawn new sandwiches that we're allowed to eat.
+
+---
 
 Nice work creating your first containers! When your're ready move onto [Module2](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/2-Long_Lived_Containers)
 
