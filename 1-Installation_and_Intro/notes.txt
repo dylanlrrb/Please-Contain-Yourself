@@ -16,6 +16,7 @@ show the docker images on your machine
 - show that there is still only one image
 
 - spin up a nginx webserver "docker run -d -p 80:80 --name webserver nginx", will explain what the other flags do later (but have a picture anyways)
+- you can use this nginx server without actually having nginx installed on your computer! this is what I mean when I say that containers do not rely on outside dependencies to run; everything is bundled into your image and running it will aways create the same independent container, all while reamining very lightweight
 (with out the -d flag it shows logging but you cant escape without ctrl+C, once you exit tho, you can restart it and it behaves normally)
 -d === run in a detached state; which means just run the container in the background without entering into it
 - try it out without -d
