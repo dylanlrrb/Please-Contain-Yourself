@@ -1,6 +1,6 @@
 # Module 3 - Containerized Development With Volumes
 
-#### A note about some symantic formanting in this tutorial:
+#### A note about the symantec formanting in this tutorial:
 
 Text that looks `like this --for --example` are commands that you should type into your terminal. Or else.
 

@@ -1,6 +1,6 @@
 # Module 5 - Docker-Compose For Multi-Container Apps
 
-#### A note about some symantic formanting in this tutorial:
+#### A note about the symantec formanting in this tutorial:
 
 Text that looks `like this --for --example` are commands that you should type into your terminal. Or else.
 

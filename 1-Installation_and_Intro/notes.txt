@@ -1,7 +1,6 @@
 1-Installation:
-- what is docker, why should you care, what its used for
 - Download docker https://www.docker.com/products/docker
- - click on the whale and complete installation
+- click on the whale and complete installation
 - check docker version commands
 - docker info
 - hello world container
