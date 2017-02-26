@@ -3,7 +3,7 @@
 - if you have node installed you can check out how this simple little server is supposed to work, but you dont have to. you can just use your imagination 
 - BUILD an image using the helloServer+random number without first starting it
 - dont forget the nmp install step
-- explain the layering and the setup of the dockerfile some more
+- explain the layering and the setup of the dockerfile some more (sandwich analogy, side by side comparison of a dockerfile to a sandwich recipie using a vegan sandwich that you add meat to and a docker file that you add your source code to. but you could also build your sandwich from scratch -link to the tutorial where you build a node image from scratch, but why would you want to do that when there are so many delicious, well-engineered, premade template sandwiches to choose from that you can just build on top of)
 - spin up one with a name tag tag, see it running in the teminal, visit it in browser, take note of its random number
 - explain how to stop it and restart it (access it with its name tag) AND map to a port
 - spin up another one and show that the random number is different
