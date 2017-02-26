@@ -1,4 +1,4 @@
-# Module 2 - Bundle Your App into an Image
+# Module 3 - Bundle Your App into an Image
 
 #### A note about the symantec formanting in this tutorial:
 

@@ -1,4 +1,4 @@
-# Module 3 - Containerized Development With Volumes
+# Module 4 - Containerized Development With Volumes
 
 #### A note about the symantec formanting in this tutorial:
 

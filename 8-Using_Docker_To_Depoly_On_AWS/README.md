@@ -1,4 +1,4 @@
-# Module 7 - Using Docker to Deploy on AWS
+# Module 8 - Using Docker to Deploy on AWS
 
 #### A note about the symantec formanting in this tutorial:
 

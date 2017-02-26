@@ -1,4 +1,4 @@
-# Module 5 - Docker-Compose For Multi-Container Apps
+# Module 6 - Docker-Compose For Multi-Container Apps
 
 #### A note about the symantec formanting in this tutorial:
 

@@ -1,4 +1,4 @@
-# Module 4 - Make Multiple Containers Work Together
+# Module 5 - Make Multiple Containers Work Together
 
 #### A note about the symantec formanting in this tutorial:
 
