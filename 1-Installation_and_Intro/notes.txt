@@ -2,9 +2,9 @@
 Download docker https://www.docker.com/products/docker
 click on the whale and complete installation
 check docker version commands
-- docker info
-- hello world container
-- explain the warning, explain to wait and where the image came from
+docker info
+hello world container
+explain the warning, explain to wait and where the image came from
 - let them know that if they dont see the succesful pulldown message that something went wrong and to try again
 - explain what a dockerflie, image, and container is and the differences (use sandwich analogy, Dockerfile is a recipie, image is a sandwich made from the recipie that you dont dare eat becaure its so perfect, so preserve in the refidgerator forever- if you ever want that sandwich, you put it in your sandwich cloning machine so you can spin up and eat as many of that sandwich as you want based on and without messing with your perfect mother sandwich in the refirdgerator.)
 - docker info again
