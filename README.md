@@ -24,7 +24,7 @@ It is designed to take you from just knowing "Docker" as a buzzword to utilizing
 ---
 
 ### WHAT IS DOCKER?
-Sure the logo is adorable, but what's all this noise about containerization?
+Sure the logo is adorable, but what's all this noise about containers?
 
 Let's get some context by comparing Docker to something that you might be familiar with- Virtual Machines. Virtual Machines are just an emulation of another computer on a computer. Say you have a Windows computer and you wanted to run a program that is only available on Mac; one way you could get around this is by virtually running a Mac on your Windows machine. This works because the Virtual machine wraps the piece of software you want to run in a complete filesystem that contains everything needed to run: code, runtime, system tools, system libraries, etc.
  
