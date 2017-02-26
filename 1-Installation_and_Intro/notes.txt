@@ -1,7 +1,7 @@
 1-Installation:
-- Download docker https://www.docker.com/products/docker
-- click on the whale and complete installation
-- check docker version commands
+Download docker https://www.docker.com/products/docker
+click on the whale and complete installation
+check docker version commands
 - docker info
 - hello world container
 - explain the warning, explain to wait and where the image came from
