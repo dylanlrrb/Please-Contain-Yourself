@@ -35,6 +35,7 @@ if it looks like that then something went wrong with the download or installatio
 - [ ] Nice! Let's run your first Docker command! in the terminal type `docker info`
 
 You should see something like this: 
+
 ![dockerinfo](https://github.com/dylanlrrb/P-C-Y-Assets/blob/master/1/dockerinfo.png?raw=true)
 
 "This command displays system wide information regarding the Docker installation. Information displayed includes the kernel version, number of containers and images, and memory allocated to running containers. The number of images shown is the number of unique images. The same image tagged under different names is counted only once." -- Docker Docs
@@ -62,6 +63,7 @@ Status: Downloaded newer image for hello-world:latest
 ---
 
 - [ ] Check to make sure that your hello-world container logged this to the console: 
+
 ![dockerhello](https://github.com/dylanlrrb/P-C-Y-Assets/blob/master/1/dockerhello.png?raw=true)
 
 - [ ] Congradulations!! If you've made it this far you have just created your first Docker container! Don't believe me? Check out `docker info` again, you should this at the top of the report:
@@ -92,10 +94,12 @@ Images: 1
 
 Like I mentioned before, in the command 'docker run hello-world'; 'hello-world' is the name of an image that you spun up a new container with. It is that container which actually ran and logged that message to the console.
 
-- [ ] There were two effects running 'docker run hello-world'; the first is that it downloaded the 'hello-world' image from Dockerhub onto your machine. Run `docker images` to view the images that are cached on your machine. You should see: 
+- [ ] There were two effects running 'docker run hello-world'; the first is that it downloaded the 'hello-world' image from Dockerhub onto your machine. Run `docker images` to view the images that are cached on your machine. You should see:
+
 ![dockerimages](https://github.com/dylanlrrb/P-C-Y-Assets/blob/master/1/dockerimages.png?raw=true)
 
 - [ ] The second effect is that it created a container from that image. Run `docker ps -a` to see all of the containers on your machine containers. you should see something similar to this:
+
 ![dockerpsa1](https://github.com/dylanlrrb/P-C-Y-Assets/blob/master/1/dockerpsa1.png?raw=true)
 
 There's your first container! isn' it handsome? There are several bits of information displayed with the `ps` command such as the image it was created from, how long ago it was spun up, and the container's status
@@ -106,10 +110,12 @@ There's your first container! isn' it handsome? There are several bits of inform
 >I want to take a moment to explain the difference between using `docker ps` with and without the ` -a` flag.
 >
 >Try running `docker ps` without the ' -a' flag. It would appear that there are no containers running on your machine.
+
 ![dockerempty](https://github.com/dylanlrrb/P-C-Y-Assets/blob/master/1/dockerempty.png?raw=true)
 Thats because technically there are no containers running on your machine. All the hello-world containers on your machine are short lived and are designed to stop running immediatly after they are done doing thier job (logging that message to the console). Thats why the `docker info` report listed all of the containers on our machine as stopped.
 >
 >The ` -a` flag shows all the containers on your machine, both running and stopped. Run `docker ps -a` and you will see:
+
 ![dockerfull](https://github.com/dylanlrrb/P-C-Y-Assets/blob/master/1/dockerfull.png?raw=true)
 
 >But don't you worry, we'll be spinning up a longer lasting container in the next module. hang tight.
@@ -117,6 +123,7 @@ Thats because technically there are no containers running on your machine. All t
 ---
 
 Take note that, unless a name is given to the container explicitlly, each container is given a random name that identifies it. 
+
 ![dockernames](https://github.com/dylanlrrb/P-C-Y-Assets/blob/master/1/dockernames.png?raw=true)
 
 - [ ] Spin up one more hello-world container and give it a name by using the ` --name` flag like so:
@@ -124,6 +131,7 @@ Take note that, unless a name is given to the container explicitlly, each contai
 `docker run --name punk_rock_unicorns hello-world`  
 
 Run `docker ps -a` again and you'll see a total of 5 containers, the most recent of which has the charmingly quirky name of 'punk_rock_unicorns'
+
 ![dockernames2](https://github.com/dylanlrrb/P-C-Y-Assets/blob/master/1/dockernames2.png?raw=true)
 
 ---
