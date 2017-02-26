@@ -34,6 +34,8 @@ Docker begs the question, why not just share the same kitchen? Containers includ
 
 ![docker](https://github.com/dylanlrrb/P-C-Y-Assets/blob/master/0/sharing.png?raw=true)
 
+[This is a nice video](https://www.youtube.com/watch?v=RyxXe5mbzlU) that talks about this idea in a little more depth.
+
 Because containers share a lot to their resources, the end up being very 'lightweight' so-to-speak; you can spin up a bunch of containers and it's not taxing or resource intensive at all, either memory or processing wise.
 
 Another great feature about containers is that they wrap up everything needed to run; it does not depend on anything outside of itself specifically. For example, the version of node you have running on your machine that you haven't updated in awhile or maybe your operating system. So if it works on your computer, it will work on your friend's computer, it will work on the cloud, it will work everywhere. The days of saying "Well it worked on my computer, I don't know why it's breaking on yours" are over!
