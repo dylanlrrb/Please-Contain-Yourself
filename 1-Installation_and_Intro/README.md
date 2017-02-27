@@ -97,7 +97,7 @@ Images: 1
 
 Like I mentioned before, in the command 'docker run hello-world'; 'hello-world' is the name of an image that you spun up a new container with. It is that container which actually ran and logged that message to the console.
 
-- [ ] There were two effects running 'docker run hello-world'; the first is that it downloaded the 'hello-world' image from Dockerhub onto your machine. Run `docker images` to view the images that are cached on your machine. You should see:
+- [ ] There were two effects of running 'docker run hello-world'; the first is that it downloaded the 'hello-world' image from Dockerhub onto your machine. Run `docker images` to view the images that are cached on your machine. You should see:
 
 ![dockerimages](https://github.com/dylanlrrb/P-C-Y-Assets/blob/master/1/dockerimages.png?raw=true)
 
@@ -144,7 +144,7 @@ Run `docker ps -a` again and you'll see a total of 5 containers, the most recent
 
 ---
 
-Nice work creating your first containers! When your're ready move onto [Module2](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/2-Long_Lived_Containers)
+Nice work creating your first containers! When your're ready move onto [Module2](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/2-Long_Lived_Containers) - Long Lived Containers
 
 
 
