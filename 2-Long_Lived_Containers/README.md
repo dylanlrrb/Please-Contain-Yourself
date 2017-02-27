@@ -128,7 +128,7 @@ Error response from daemon: You cannot remove a running container 6bae1bae658c15
 
 ---
 
-- [ ] The next thing to do is to clear out our nginx image. Yes... for whatever reason we need to clean out our perfect sandwich from the fridge. Maybe the refrigerator is just too full. Anyways, to delete an image from your machine run `docker rmi <image-name>` (<image-name> in this instance being 'nginx', of course)
+- [ ] The next thing to do is to clear out our nginx image. Yes... for whatever reason we need to clean out our perfect sandwich from the fridge. Maybe the refrigerator is just too full. Anyways, to delete an image from your machine run `docker rmi <image-name>` (`<image-name>` in this instance being 'nginx', of course)
 
 - [ ] Confirm that the 'nginx' image is gone by running `docker images`. It seems that only the 'hello-world' image remains...
 
