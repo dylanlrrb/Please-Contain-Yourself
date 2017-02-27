@@ -17,13 +17,26 @@ Text that looks `like this --for --example` are commands that you should type in
 
 ## With that out of the way, let's get started!
 
-**This tutorial is a bit shorter compared to the previous two, mainly because you are already well versed in navigating the Docker CLI. However, it covers a application of Docker and containers that is immensly useful and powerful**
 
 - [ ] If You have not already cloned this repo onto your computer, do so now. You will be making use of files in the repo during this module
 
 - [ ] `cd` into the repo and then `cd` into the directory '/3-Bundle_Your_App_Into_An_Image'
 
-- [ ] if you havent already guessed
+---
+>If you havent already guessed this repo comes with a little app that we're going to containerize with Docker. The app uses node.js and express to create a server that assigns itself a random number and then serves that random number to whoever asks for it.
+>
+>You don't have to, but if you want to see this app in action before you containerize it, you will have to have node and npm installed on your machine. From inside the '/3-Bundle_Your_App_Into_An_Image' directory, run `npm install` and then `npm start`.
+>
+>Visiting `localhost:3000` in your browser will serve the message:
+```sh
+Hello! This server's random number is: <randomNumber>
+```
+>
+>Notice that even if you keep refreshing the page, it will continue to serve the same random number. The number is assigned when the server is started up and persists as long as it is running. Restarting the app, hoverver, will cause it to reassign and serve a different random number. This feature of our app is important for demonstration purpuses.
+
+---
+
+- [ ] 
 
 
 
