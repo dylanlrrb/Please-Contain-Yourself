@@ -69,7 +69,9 @@ docker run -d -p 80:80 --name webserver nginx
 
 `nginx` : The name of the image to spin into a container
 
-`-p 80:80` : This command basically says ‘connect port 80 on the host to port 80 on the container’. We will get deeper into this later, but if you want a container to contact the outside world (as you would need a webserver to do) you have to set up your image with a port ready to broadcast and receive data. Then, when you want to make a container out of it, you have to simply connect the container's port to a port on the host so it can talk to the outside world on the container's behalf. This command pretty much lets your container plug and play.
+` --name webserver` : Gives the container a unique name to identify it
+
+`-p 80:80` : This command basically says ‘connect port 80 on the host to port 80 on the container’. We will get deeper into this later, but if you want a container to contact the outside world (as you would need a webserver to do) you have to set up your image with an exposed port ready to broadcast and receive data. Then, when you want to make a container out of it, you have to simply map the container's port to a port on the host so the host can talk to the outside world on the container's behalf (since the container is still 'virtual', after all). This command pretty much lets your container plug and play.
 
 `-d` : This command indicates that you want to run your container in a detached state; which means it just runs in the background. Keep reading for more information on this -> 
 
@@ -91,13 +93,11 @@ If it's not immediately obvious, notice that the terminal is not ready to accept
 
 ![dockerexit](https://github.com/dylanlrrb/P-C-Y-Assets/blob/master/2/dockerexit.png?raw=true)
 
-- [ ] This is good. The next important thing we need to be able to do with containers is start and stop them whenever we want. To stop our first webserver container which is still running, type `docker stop webserver`
+- [ ] Great! The next important thing we need to be able to do with containers is start and stop them whenever we want. To stop our first webserver container which is still running, type `docker stop webserver`
 
 You can confirm that it is no longer running in several ways. For example, visiting 'localhost:80' in your browser will give you an error, running `docker ps` will show no running containers on your machine, `docker ps -a` will show 'webserver' with a status of 'Exited', and `docker info` will report no running containers.
 
-- [ ] Since the container is still present on our machine (just stopped) we can restart it anytime with the command `docker start <container-name>`
-
-Go ahead and restart webserver2 by running `docker start webserver2`
+- [ ] Since the container is still present on our machine (just stopped) we can restart it anytime with the command `docker start <container-name>`. Go ahead and restart webserver2 by running `docker start webserver2`
 
 **We are currently referencing containers by their associated names, but you can also reference them by their provided ID's**
 
@@ -124,7 +124,7 @@ Error response from daemon: You cannot remove a running container 6bae1bae658c15
 >
 >`docker run -d -p 80:80 --rm --name goodbye nginx`
 >
->Use `docker ps -a' to confirm that it's running. Then stop the container with `docker stop goodbye`. Run `docker ps -a` again to confirm that it's gone for good! Amazing!
+>Use `docker ps -a` to confirm that it's running. Then stop the container with `docker stop goodbye`. Run `docker ps -a` again to confirm that it's gone for good! Amazing!
 
 ---
 
@@ -140,7 +140,7 @@ Error response from daemon: You cannot remove a running container 6bae1bae658c15
 Error response from daemon: conflict: unable to remove repository reference "hello-world" (must force) - container 5a3be0ccd65a is using its referenced image 48b5124b2768
 ```
 
-Looks like you're going to have to get rid of your 'hello-world' containers! They may be stopped, but they still exist. Which is problematic for our purposes. 
+Looks like you're going to have to get rid of your 'hello-world' containers! They may be stopped, but they still exist, which is problematic for our purposes. 
 
 ---
 >You could force this by using it ` -f` flag, but I don't think this is a great idea because the image will be gone but the containers will still be on your machine. This could cause problems if you try and restart a container which you forgot you deleted the requisite image to.
@@ -149,10 +149,10 @@ Looks like you're going to have to get rid of your 'hello-world' containers! The
 
 ---
 
-- [ ] You know the drill, `docker rm <container-name>` all of those stopped  'hello-world' containers. Bunch of lazy containers, just sitting around, taking up space, not doing nothin'
+- [ ] You know the drill, `docker rm <container-name>` all of those stopped  'hello-world' containers. Bunch of lazy containers - just sitting around, taking up space, not doing nothin'
 
 ---
->Pro-Tip: save time by running `docker rm` just once. Simply follow the command with all the container names you would like to remove like so:
+>Pro-Tip: save time by running `docker rm` just once. Simply follow the command with all the container names you would like to remove, like so:
 >
 >`docker rm <container-name> <container-name> <container-name> <container-name>`
 
