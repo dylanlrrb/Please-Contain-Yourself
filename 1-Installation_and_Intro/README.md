@@ -2,6 +2,8 @@
 
 #### A note about the symantec formatting in this tutorial:
 
+- [ ] Check boxes are steps that need to be completed.
+
 Text that looks `like this --for --example` are commands that you should type into your terminal. Or else.
 
 ---
@@ -30,7 +32,7 @@ as long as it's NOT:
 ```sh
 -bash: Docker: command not found
 ```
-if it looks like that then something went wrong with the download or installation. Oops.
+If it looks like that then something went wrong with the download or installation. Oops.
 
 - [ ] Nice! Let's run your first Docker command! in the terminal type `docker info`
 
