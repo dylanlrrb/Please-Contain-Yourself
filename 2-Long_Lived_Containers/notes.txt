@@ -1,0 +1,31 @@
+Module 2
+
+spin up a nginx webserver "docker run -d -p 80:80 --name webserver nginx", 
+show that ps shows running ones with details, 
+go to local host and check it out
+but its also on ps -a with a status of 'RUNNING'
+
+explain what the other flags do with an annotated? screeshot
+
+(without the -d flag it shows logging but you cant escape without ctrl+C, once you exit tho, you can restart it and it behaves normally)
+-d === run in a detached state; which means just run the container in the background without entering into it
+- try it out without -d
+
+you can use this nginx server without actually having nginx installed on your computer! this is what I mean when I say that containers do not rely on outside dependencies to run; everything is bundled into your image and running it will aways create the same independent container, all while reamining very lightweight
+
+docker stop webserver, not in ps any more but can find it in ps -a
+you can restart it by going docker start with either the name or the container id (same goes with stopping)
+- if you want to remove a stopped container, docker rm <container-name>
+- if you want to remove a running container without stopping it first use docker rm -f <>
+still have both images locally (show that with docker images), if you needed to remove them you would go:
+docker rmi <image-name>
+THIS WILL FAIL because there are still containers that reference the immage even though they are stopped
+remove all the hello world containers that have reached the end of thier lifecycle and stopped by docker rm <container-name> <container-name> <container-name>
+try to remove the hello world image again. check thats its gone with docker images
+that being said, if you dont want to clean up after yourself you can just go docker rmi -f <image-name> but you should really clean up after yourself, no one else is going to keep your computer clean.
+you can run an image with the --rm flag like so, docker run -d -p 80:80 --rm --name goodbye nginx
+see that its running with docker ps
+stop it
+look for it with docker ps -a, Its nowhere to be   
+finally, remove the nginx image
+DONE

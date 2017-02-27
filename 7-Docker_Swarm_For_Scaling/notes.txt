@@ -1,4 +1,4 @@
-6-docker_swarm_for_scaling
+7-docker_swarm_for_scaling
 - Do what that guy do with the hello container -include that video as a resource if they want to go indepth with using nginx for load balancing
 - also include that really cool video with worker nodes and the voting app. I want to know how to build a repo that can just be deployed and scaled that easily!!!
 

@@ -1,4 +1,4 @@
-3-Containerized Development with Volumes
+4-Containerized Development with Volumes
 - what is a volume
 - why is this useful
 - bundle it into an image once youre happy with it

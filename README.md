@@ -1,6 +1,8 @@
 # Please-Contain-Yourself.
 ---
 
+**If you have any suggestions for improvements to this guide, find mistakes, or even just notice a spelling/ grammar error, please feel free to submit a pull request!**
+
 ![dokerlogo](https://github.com/dylanlrrb/P-C-Y-Assets/blob/master/0/docker.png?raw=true)
 
 So. You've heard about this cool thing called Docker. 
@@ -29,7 +31,7 @@ Sure the logo is adorable, but what's all this noise about containers?
 
 Let's get some context by comparing Docker to something that you might be familiar with- Virtual Machines. Virtual Machines are just an emulation of another computer on a computer. Say you have a Windows computer and you wanted to run a program that is only available on Mac; one way you could get around this is by virtually running a Mac on your Windows machine. This works because the Virtual machine wraps the piece of software you want to run in a complete filesystem that contains everything needed to run: code, runtime, system tools, system libraries, etc.
  
-This 'wrapping everything up into one convenient package' concept called 'containerization' and  Docker containers do something similar with your software, albeit in a very different way. Let me try an analogy to explain. Say you and your sister both wanted to make a sandwich. You want a ham sandwich. She wants a peanut butter and jelly sandwich. Two drastically different sandwiches... but still sandwiches. Using a Virtual Machine to containerize your piece of software would be the equivalent of building an entirely new kitchen in order to accommodate the making of two different sandwiches. By this I mean Virtual Machines include the application, the necessary binaries and libraries, and an ENTIRE guest operating system -- all of which can amount to tens of GBs.
+This 'wrapping everything up into one convenient package' concept is called 'containerization' and  Docker containers do something similar with your software, albeit in a very different way. Let me try an analogy to explain. Say you and your sister both wanted to make a sandwich. You want a ham sandwich. She wants a peanut butter and jelly sandwich. Two drastically different sandwiches... but still sandwiches. Using a Virtual Machine to containerize your piece of software would be the equivalent of building an entirely new kitchen in order to accommodate the making of two different sandwiches. By this I mean Virtual Machines include the application, the necessary binaries and libraries, and an ENTIRE guest operating system -- all of which can amount to tens of GBs.
 
 Docker begs the question, why not just share the same kitchen? Containers include the application and all of its dependencies --but share the kernel with other containers, running as isolated processes in user space on the host operating system. Docker containers are not tied to any specific infrastructure: they run on any computer, on any infrastructure, and in any cloud. Check out the neat little picture below.
 
@@ -37,7 +39,7 @@ Docker begs the question, why not just share the same kitchen? Containers includ
 
 [This is a nice video](https://www.youtube.com/watch?v=RyxXe5mbzlU) that talks about this idea in a little more depth.
 
-Because containers share a lot to their resources, the end up being very 'lightweight' so-to-speak; you can spin up a bunch of containers and it's not taxing or resource intensive at all, either memory or processing wise.
+Because containers share a lot of their resources, the end up being very 'lightweight' so-to-speak; you can spin up a bunch of containers and it's not taxing or resource intensive at all, either memory or processing wise.
 
 Another great feature about containers is that they wrap up everything needed to run; none of its dependancies live outside of itself. For example, that version of node you have running on your machine that you haven't updated in awhile or maybe your operating system. The container doesn't care because it doesn't use those. So if it works on your computer, it will work on your friend's computer, it will work on the cloud, it will work everywhere. The days of saying "Well it worked on my computer, I don't know why it's breaking on yours" are over!
 
@@ -51,6 +53,7 @@ Start at the first module. Unless you've already completed it. In that case igno
 - ~~[Module 3](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/3-Bundle_Your_App_Into_An_Image) Bundle Your App into an Image~~
 - ~~[Module 4](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/4-Containerized_Development_With_Volumes) Containerized Development With Volumes~~
 - ~~[Module 5](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/5-Make_Multiple_Containers_Work_Together) Make Multiple Containers Work Together~~
+**Modules 6 and above contain more advanced content... if you've been wanting to bite into the really juicy parts of Docker**
 - ~~[Module 6](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/6-Docker_Compose_For_Multi-Container_Apps) Docker-Compose For Multi-Container Apps~~
 - ~~[Module 7](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/7-Docker_Swarm_For_Scaling) Docker Swarm For Scaling~~
 - ~~[Module 8](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/8-Using_Docker_To_Depoly_On_AWS) Using Docker to Deploy on AWS~~

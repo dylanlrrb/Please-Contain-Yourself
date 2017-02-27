@@ -13,6 +13,8 @@ Text that looks `like this --for --example` are commands that you should type in
 
 **Bold text: Gotchas that are gonna getcha if you don't heed this advice**
 
+**Click on an image if you need a larger view**
+
 ## With that out of the way, let's get started!
 
 
@@ -60,15 +62,15 @@ Digest: sha256:c5515758d4c5e1e838e9cd307f6c6a0d620b5e07e6f927b07d05f6d12a1ac8d7
 Status: Downloaded newer image for hello-world:latest
 ```
 ---
->Let me explain what's going on here - when you type the 'docker run' command, it expects the next parameter to be the name of an image that is cached (saved) locally on your machine (we'll get into what an image is in just a little bit). IF it can't find an image with that name on your machine it looks to Dockerhub for an image with that name and downloads it to your machine so that it can spin up a container from that image. (We'll also get into Dockerhub later, but the gist is that is is a registry where people upload images for everyone to use)
+>Let me explain what's going on here - when you type the 'docker run' command, it expects the next parameter to be the name of an image that is cached (saved) locally on your machine (we'll get into what an image is in just a little bit). IF it can't find an image with that name on your machine it looks to Dockerhub for an image with that name and downloads it to your machine so that it can spin up a container from that image. (We'll also get into Dockerhub later, but the gist is that it is a registry where people upload images for everyone to use)
 
 ---
 
-- [ ] Check to make sure that your hello-world container logged the following to the console: 
+- [ ] Check to make sure that your hello-world container logged the following: 
 
 ![dockerhello](https://github.com/dylanlrrb/P-C-Y-Assets/blob/master/1/dockerhello.png?raw=true)
 
-- [ ] Congratulations!! If you've made it this far you have just created your first Docker container! Don't believe me? Check out `docker info` again, you should this at the top of the report:
+- [ ] Congratulations!! If you've made it this far you have just created your first Docker container! Don't believe me? Check out `docker info` again, you should see this at the top of the report:
 ```sh
 Dylan ~ $ docker info
 Containers: 1
@@ -113,13 +115,13 @@ There's your first container! isn't' it handsome? There are several bits of info
 >I want to take a moment to explain the difference between using `docker ps` with and without the ` -a` flag.
 >
 >Try running `docker ps` without the ' -a' flag. It would appear that there are no containers running on your machine.
-
-![dockerempty](https://github.com/dylanlrrb/P-C-Y-Assets/blob/master/1/dockerempty.png?raw=true)
-That's because technically there are no containers running on your machine. All the hello-world containers on your machine are short lived and are designed to stop running immediately after they are done doing their job (logging a message to the console). That's why the `docker info` report listed all of the containers on our machine as ‘STOPPED’.
+>
+>![dockerempty](https://github.com/dylanlrrb/P-C-Y-Assets/blob/master/1/dockerempty.png?raw=true)
+>That's because technically there are no containers running on your machine. All the hello-world containers on your machine are short lived and are designed to stop running immediately after they are done doing their job (logging a message to the console). That's why the `docker info` report listed all of the containers on our machine as ‘STOPPED’.
 >
 >The ` -a` flag shows all the containers on your machine, both running and stopped. Run `docker ps -a` and you will see:
 
-![dockerfull](https://github.com/dylanlrrb/P-C-Y-Assets/blob/master/1/dockerfull.png?raw=true)
+>![dockerfull](https://github.com/dylanlrrb/P-C-Y-Assets/blob/master/1/dockerfull.png?raw=true)
 
 >But don't you worry, we'll be spinning up a longer lasting container in the next module. Hang tight.
 
@@ -146,14 +148,14 @@ Run `docker ps -a` again and you'll see a total of 5 containers, the most recent
 
 Nice work creating your first containers! When your're ready move onto [Module2](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/2-Long_Lived_Containers) - Long Lived Containers
 
+---
+####Things we've learned:
 
-
-
-
-
-
-
-
-
-
-
+- What images are
+- What containers are
+- `docker info`
+- `docker images`
+- `docker run <image-name>` 
+- `docker ps`
+- `docker ps -a`
+- The ` --name` flag
