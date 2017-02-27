@@ -1,5 +1,13 @@
 2-Bundle_Your_App
 - if you havent already cloned this repo, youre going to want to do that now. make sure you are cd'd into module 2's directory ??(in a separate terminal tab that youre running your docker commands in)??
+- first time you use the image that youre building your app on it will download and cache it, you can watch it download all the layers it it based off of.
+- curl -X POST localhost:3000
+- a ton of red when building image
+- 8total images
+-p tag on mkdir
+docker logs?
+- instructions will differ depending on the layer youre building it from? so read the docs?
+
 - if you have node installed you can check out how this simple little server is supposed to work, but you dont have to. you can just use your imagination 
 - BUILD an image using the helloServer+random number without first starting it
 - dont forget the nmp install step

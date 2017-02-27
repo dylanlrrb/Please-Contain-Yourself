@@ -128,7 +128,7 @@ Error response from daemon: You cannot remove a running container 6bae1bae658c15
 
 ---
 
-- [ ] The next thing to clean up is our nginx image. Yes... for whatever reason we need to clean out our perfect sandwich from the fridge. Maybe the refrigerator is just too full. Anyways, to delete an image from your machine run `docker rmi <image-name>` (<image-name> in this instance being 'nginx', of course)
+- [ ] The next thing to do is to clear out our nginx image. Yes... for whatever reason we need to clean out our perfect sandwich from the fridge. Maybe the refrigerator is just too full. Anyways, to delete an image from your machine run `docker rmi <image-name>` (<image-name> in this instance being 'nginx', of course)
 
 - [ ] Confirm that the 'nginx' image is gone by running `docker images`. It seems that only the 'hello-world' image remains...
 
@@ -164,7 +164,8 @@ Looks like you're going to have to get rid of your 'hello-world' containers! The
 
 That's it! Great job getting through this module! Now that you've got a solid understanding of the basics, we can move on to the more interesting and useful features that Docker has to offer! When you're ready - [Module 3](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/3-Bundle_Your_App_Into_An_Image) Bundle Your App Into An Image
 
-####Things we learned:
+---
+####Things we've learned:
 
 - What a long lived container is
 - How to check if a container is running
