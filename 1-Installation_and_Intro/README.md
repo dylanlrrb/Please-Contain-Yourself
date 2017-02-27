@@ -13,6 +13,8 @@ Text that looks `like this --for --example` are commands that you should type in
 
 **Bold text: Gotchas that are gonna getcha if you don't heed this advice**
 
+**Click on an image if you need a larger view**
+
 ## With that out of the way, let's get started!
 
 
@@ -146,14 +148,13 @@ Run `docker ps -a` again and you'll see a total of 5 containers, the most recent
 
 Nice work creating your first containers! When your're ready move onto [Module2](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/2-Long_Lived_Containers) - Long Lived Containers
 
+####Things we learned:
 
-
-
-
-
-
-
-
-
-
-
+- What images are
+- What containers are
+- `docker info`
+- `docker images`
+- `docker run <image-name>` 
+- `docker ps`
+- `docker ps -a`
+- The ` --name` flag
