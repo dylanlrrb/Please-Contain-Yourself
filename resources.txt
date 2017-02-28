@@ -1,0 +1,7 @@
+https://nodesource.com/blog/8-protips-to-start-killing-it-when-dockerizing-node-js/
+docker cheatsheet
+awesome docker 
+the nginx docker swarm guy video
+the docker swarm play with docker guy
+
+list all these on the readme after the course roadmap

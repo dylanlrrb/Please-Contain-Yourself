@@ -1,32 +1,25 @@
 3-Bundle_Your_App
-- if you havent already cloned this repo, youre going to want to do that now. make sure you are cd'd into module 2's directory ??(in a separate terminal tab that youre running your docker commands in)??
 
--link to dokerfile command docs
-- first time you use the image that youre building your app on it will download and cache it, you can watch it download all the layers it it based off of.
-- curl -X POST localhost:3000
-- a ton of red when building image
-- 8total images
+
 -p tag on mkdir
-docker logs?
+docker logs?(curl -X POST localhost:3000)
+
 - dockerignore
+- 8total images
+
 - instructions will differ depending on the layer youre building it from? so read the docs?
 
-- if you have node installed you can check out how this simple little server is supposed to work, but you dont have to. (run npm install first) you can just use your imagination 
+
+
 - BUILD an image using the helloServer+random number without first starting it
-- dont forget the nmp install step
-- explain the layering and the setup of the dockerfile some more (sandwich analogy, side by side comparison of a dockerfile to a sandwich recipie using a vegan sandwich that you add meat to and a docker file that you add your source code to. but you could also build your sandwich from scratch -link to the tutorial where you build a node image from scratch, but why would you want to do that when there are so many delicious, well-engineered, premade template sandwiches to choose from that you can just build on top of)
+
+
 - spin up one with a name tag tag, see it running in the teminal, visit it in browser, take note of its random number
 - explain how to stop it and restart it (access it with its name tag) AND map to a port
 - spin up another one and show that the random number is different
 - talk about lifecycle and statelessnes
 - dont remove it, we'll be using it a bit later
 
-- explain how to destroy the containers, show that they are destoyed in teminal?
-(unless you already want the previous one running to build an image from it)
-- BUILD an image with an already going server
-- restart it and show that it will be the same random number each time
-- explain how all pointers are preserves in the image 
-- then maybe talk about destroying containers and show it on docker info
 
 - spin up a bunch of (pure) hello servers, all mapped to different ports
 - visit all these ports and show that they are all different random numbers
@@ -34,7 +27,7 @@ docker logs?
 - take them all down
 - point out that that was a bit of a pain, Docker has tools to make managing lots of containers like we just did a piece of cake
 
-https://nodesource.com/blog/8-protips-to-start-killing-it-when-dockerizing-node-js/
+
 
 what a docker file actually is
 you can find all sorts of prebuilt images to build on at docker hub
@@ -43,8 +36,9 @@ you can find all sorts of prebuilt images to build on at docker hub
 
 
 How to bundle an app into a container image
+What a Dockerfile is
+Several  Dockerfile commands
 Containers are stateless
-How to bundle a running app into an image?
 docker pull    <image-name> : <version>
 docker history <image-name>
 docker build   <image-name>

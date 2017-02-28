@@ -58,6 +58,6 @@ Start at the first module. Unless you've already completed it. In that case igno
 
 - ~~[Module 6](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/6-Docker_Compose_For_Multi-Container_Apps) Docker-Compose For Multi-Container Apps~~
 - ~~[Module 7](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/7-Docker_Swarm_For_Scaling) Docker Swarm For Scaling~~
-- ~~[Module 8](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/8-Using_Docker_To_Depoly_On_AWS) Using Docker to Deploy on AWS~~
+- ~~[Module 8](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/8-Deploying_With_Docker) Deploying With Docker~~
 
  **Modules with a ~~line through~~ are still in production and not ready yet; check back soon or hit the 'Watch' button on this repo to be notified when the modules become available!
