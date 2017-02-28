@@ -1,14 +1,6 @@
 3-Bundle_Your_App
 
 
--p tag on mkdir
-docker logs?(curl -X POST localhost:3000)
-
-- dockerignore
-- 8total images
-
-- instructions will differ depending on the layer youre building it from? so read the docs?
-
 
 
 - BUILD an image using the helloServer+random number without first starting it
@@ -32,7 +24,7 @@ docker logs?(curl -X POST localhost:3000)
 what a docker file actually is
 you can find all sorts of prebuilt images to build on at docker hub
 
-**To set up your environment configuration correctly with a Dockerfile, you will need to follow the instructions provided with the base image you oyu are building on top of. The configuration of the layers below may require your Dockerfile to follow specific steps**
+**To set up your environment configuration correctly with a Dockerfile, you will need to follow the instructions provided with the base image you are building on top of. The configuration of the layers below may require your Dockerfile to follow specific steps**
 
 
 How to bundle an app into a container image

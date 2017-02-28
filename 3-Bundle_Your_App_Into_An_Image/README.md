@@ -23,7 +23,7 @@ Text that looks `like this --for --example` are commands that you should type in
 - [ ] `cd` into the repo and then `cd` into the directory '/3-Bundle_Your_App_Into_An_Image'
 
 ---
->If you havent already guessed this repo comes with a little app that we're going to containerize with Docker. The app uses node.js and express to create a server that assigns itself a random number and then serves that random number to whoever asks for it.
+>If you haven't already guessed this repo comes with a little app that we're going to containerize with Docker. The app uses node.js and express to create a server that assigns itself a random number and then serves that random number to whoever asks for it.
 >
 >*You don't have to,* but if you want to see this app in action before you containerize it, you will have to have node and npm installed on your machine. From inside the '/3-Bundle_Your_App_Into_An_Image' directory, run `npm install` and then `npm start`.
 >
@@ -32,23 +32,23 @@ Text that looks `like this --for --example` are commands that you should type in
 Hello! This server's random number is: <randomNumber>
 ```
 >
->Notice that even if you keep refreshing the page, it will continue to serve the same random number. The number is assigned when the server is started up and it persists as long as it is running. Restarting the app, hoverver, will cause it to reassign and serve a different random number. This feature of our app is important for demonstration purpuses.
+>Notice that even if you keep refreshing the page, it will continue to serve the same random number. The number is assigned when the server is started up and it persists as long as it is running. Restarting the app, however, will cause it to reassign and serve a different random number. This feature of our app is important for demonstration purposes.
 
 ---
 
-The concept of bundling an image with your app bundled into it is similar to the process of making a sandwich (yes, Im using this analogy again - I warned you). 
+The concept of bundling an image with your app bundled into it is similar to the process of making a sandwich (yes, I'm using this analogy again - I warned you). 
 
-If you want to build a sandwich you would use a recipie, right? Because a sadwich is built in several layers, A recipie might instruct you to lay the base layer of bread down, then a layer of mayonaise, then a layer of pickles, then a layer lettuce, and so on and so forth. This is eqivilant to how a docker image is built, only the recipie Docker uses is called a 'Dockerfile' and the layers are changes to the filesystem rather than condiments and toppings.
+If you want to build a sandwich you would use a recipe, right? Because a sandwich is built in several layers, A recipe might instruct you to lay the base layer of bread down, then a layer of mayonnaise, then a layer of pickles, then a layer lettuce, and so on and so forth. This is equivalent to how a docker image is built, only the recipe Docker uses is called a 'Dockerfile' and the layers are changes to the filesystem rather than condiments and toppings.
 
 "A Dockerfile is a text document that contains all the commands a user could call on the command line to assemble an image. Using docker build users can create an automated build that executes several command-line instructions in succession." -- Docker Docs
 
-So, if you were to build a bare bones image, your recipie (Dockerfile) would tell you to lay down the neccisary ingredients (system layers) so the sandwich would have the functionality that you need. For example, to build an image form scratch that could be spun into a container that runs node;  instead of building layers of Bread -> Mayo -> Pickles -> Onions -> Bananas, to create an image, the recipie would instruct you to build layers like:  Build from Ubuntu image -> Update Ubuntu -> Install Node -> Add Working Directory -> Copy app into Working Directory -> Install Dependencies
+So, if you were to build a bare bones image, your recipe (Dockerfile) would tell you to lay down the necessary ingredients (system layers) so the sandwich would have the functionality that you need. For example, to build an image from scratch that could be spun into a container that runs node;  instead of building layers of Bread -> Mayo -> Pickles -> Onions -> Bananas, to create an image, the recipe would instruct you to build layers like:  Build from Ubuntu image -> Update Ubuntu -> Install Node -> Add Working Directory -> Copy app into Working Directory -> Install Dependencies
 
 ---
 
-Let's get a little more familiar with layers. The images that we have used thus far were build from layers, but you didn't write the recipe (Dockerfile) for the sandwich (image), so you dont really know what the image is made of. But thats okay - this process abstracts away a lot of the complexity needed to build useful containers. You can, however get a feel for how many layers were abstracted away from you in a particular image when downloading one.
+Let's get a little more familiar with layers. The images that we have used thus far were built from layers, but you didn't write the recipe (Dockerfile) for the sandwich (image), so you don't really know what the image is made of. But that's okay - this process abstracts away a lot of the complexity needed to build useful containers. You can, however get a feel for how many layers were abstracted away from you in a particular image when downloading one.
 
-- [ ] Try this excersise: run the command `docker pull node:latest`
+- [ ] Try this exercise: run the command `docker pull node:latest`
 
 You will see that, in the process of pulling the node image down from Dockerhub, it lists out all the images that image is built from as it downloads
 
@@ -58,81 +58,171 @@ You will see that, in the process of pulling the node image down from Dockerhub,
 
 ![dockerhist](https://github.com/dylanlrrb/P-C-Y-Assets/blob/master/3/dockerhist.png?raw=true)
 
-I promise I'm almost done with the sandwich metaphores.
+I promise I'm almost done with the sandwich metaphors.
 
 **Images built from images build from images...**
 
-Sounds like a pattern we can use to our advantage. Say there is a really tasty VEGAN sandwich that you can pick up from the store. It has all these exotic ingredients that you dont know how to pronounce, but one thing you know for sure is that it would taste even better with a hearty layer of sliced turkey. Yum.
+Sounds like a pattern we can use to our advantage. Say there is a really tasty VEGAN sandwich that you can pick up from the store. It has all these exotic ingredients that you don't know how to pronounce, but one thing you know for sure is that it would taste even better with a hearty layer of sliced turkey. Yum.
 
 You COULD scour all your local health food stores to find all those exotic ingredients so you can build this sandwich from scratch. But why would you want to do that when you can just pick up that already assembled sandwich from the store and slap some turkey on it?
 
-That is how were going to approach bundling our app into an image. We're going to create a Dockerfile 'recipie' that uses a 'premade sandwich' image as the base ingredient and slap on our own custom ingredient (our app). Then we build from that Dockerfile and our containerized app is ready to go! This is much eaisier than building that fancy sandwich from scratch!
+That is how we're going to approach bundling our app into an image. We're going to create a Dockerfile 'recipe' that uses a 'premade sandwich' image as the base ingredient and slap on our own custom ingredient (our app). Then we build from that Dockerfile and our containerized app is ready to go! This is much easier than building that fancy sandwich from scratch!
 
-The base image our Dockerfile recipie will use to build our custom image is going to be the 'node:latest' image that we just pulled down from Dockerhub. Built into this image is everything we need to run a node app - sounds tasty, so let's add it to our Dockerfile. 
+The base image our Dockerfile recipe will use to build our custom image is going to be the 'node:latest' image that we just pulled down from Dockerhub. Built into this image is everything we need to run a node app - sounds tasty, so let's add it to our Dockerfile. 
 
 - [ ] Open up the Dockerfile Module 3's directory and under the comment '# What image do you want to start building on?' type `FROM node:latest`
 
-- [ ] Under the comment '# Make a folder in your image where your app's source code can live' type `RUN mkdir -p /src/app`
+- [ ] Under the comment '# Make a folder in your image where your app's source code can live'  type `RUN mkdir -p /src/app`
 
 >`mkdir` : Creates a directory
 >
->` -p` : make all the neccisary parent folders
+>` -p` : make all the necessary parent folders
 >
 >`/src/app` : The path of the directory you are creating
 
 - [ ] Under the comment '# Tell your container where your app's source code will live' type `WORKDIR /src/app`
 
-As the comment implies, this command tells your container which directory is the working directory
+>As the comment implies, this command tells your container which directory is the working directory
 
 - [ ] Under the comment '# What source code do you what to copy, and where to put it?' type `COPY . /src/app`
 
->`COPY` takes two arguments; 
+>`COPY` takes two arguments (It's a little hard to tell, but ` . ` and `/src/app` are separated by a space)
 >
->The first (the ` . `) says where to copy the app's source code from. In this case ` . ` is a relitive path that points to the directory the Dockerfile is currently in.
+>The first (the ` . `) says where to copy the app's source code from. In this case ` . ` is a relative path that points to the directory the Dockerfile is currently in.
 >
->`/src/app` is the second argument and in this case refers to the directory inside of the image that we just made a few commands ago, the working directory where we want the app's source code to live.
+>`/src/app` is the second argument and in this case refers to the directory inside of the image that we just made a few commands ago - the working directory where we want the app's source code to live.
 
-- [ ] 
+- [ ] Under the comment '# Does your app have any dependencies that should be installed?' type `RUN npm install`.
 
-will the --rm flag get rid of it when restarting?
+>This installs all the dependencies necessary to run our node application using the npm package manager (which was included as part of the base image, conveniently enough). You might have noticed the .dockerignore file in this repo; I won't get in depth into what it does in this guide - you can research it if you're curious. But a quick explanation of it's purpose is that it prevents any previously installed node modules in the directory from being copied into the image. This guarantees all dependencies come from the `RUN npm install` command rather than inadvertently copied from elsewhere. 
 
-build it and check it out, make sure you are cd'd into the correct directory, part of the build command is a relitive path to the dockerfile you want to build
+- [ ] under the comment '# What port will the container talk to the outside world with once created?' type `EXPOSE 3000`
 
-ASIDE: if you had not already cached the node:latest image, it would have pulled it from dockerhub during the image building phase
+>This command will expose the container's port 3000 which will need to be mapped to a port on the host when created by using the ` -p` option with the `docker run` command
 
-your image has been assembled just like your perfect sandwich now lets start creating containers from it
+- [ ] Under the comment '# How do you start your app?' type `CMD [ "npm", "start" ]`
 
-spin one up, see it in ps, then the browser, explain how the app is now in an image and why thats great
+> This command tells the image to run the command `npm start` from inside the container once it is created, which will start our application inside the newly spun-up container
 
-show that refreshing the page has no effect on the number 
+- [ ] Great! Those are all the steps we need to build an image with our app inside and ready to run once spun into a container. check to make sore your Dockerfile looks like so:
 
-restart the container and refresh it in the browser, note the number changed and talk about state
+```sh
+# What image do you want to start building on?
+FROM node:latest
 
-make a bunch of them, check in the browser and show they al have different numbers. 
+# Make a folder in your image where your app's source code can live
+RUN mkdir -p /src/app
 
-talk about why this is cool. not only can you name as many containers from our app's image that you want which is great for horizontally scaling, they are all unique and don't interact with each other, both identical and unique at the same time
+# Tell your container where your app's source code will live
+WORKDIR /src/app
 
-Final notes: images have different instructions for use in dockerfiles for example some already haave a working directory, chek out dokerhub to marvel at the plethera/ cornacopia of images to choose from. its best to look at the official releases, - look at the instruction in some ___ for example, we used the latest version why might this be a bad idea?
+# What source code do you what to copy, and where to put it?
+COPY . /src/app
 
-Takeaways:
-	How to bundle an app into a container image
-	What a Dockerfile is
-	Several  Dockerfile commands
-	docker pull    <image-name> : <version>
-	docker history <image-name>
-	docker build   <image-name>
-	` -t` flag
-	docker restart <container-name>
-	docker logs    <container-name>
+# Does your app have any dependencies that should be installed?
+RUN npm install
 
-Resources: 
--link to dokerfile command docs
--link to dockerhub
+# What port will the container talk to the outside world with once created?
+EXPOSE 3000
 
+# How do you start your app?
+CMD [ "npm", "start" ]
 
+```
 
+- [ ] Once everything checks out, it's time to finally build this thing. Run the command `docker build -t nodeserver .`
 
+**The ` . ` is a relative filepath that refers to the location of the Dockerfile you want to build, as such, MAKE SURE you are cd'd into the directory with said Dockerfile before running this command.**
 
+After a lot of logging to the terminal, you should see a message similar to this:
 
+```sh
+Successfully built 7e69d61fd488
+```
 
+- [ ] Congrats! You've built an image with our application inside it! Before we play with this image, let's break down that command we used to build the image:
 
+```sh
+docker build -t nodeserver .
+```
+
+`docker build` : This is a new one, but it takes in a Dockerfile and creates an image from the steps detailed therein
+
+` -t` : The 't' stands for tag. What name do you want to tag onto this image to identify it later? in this case we tagged it 'nodeserver'
+
+`nodeserver` : The name we tagged the image with
+
+` . ` : The relative path to the Dockerfile that we want to build into an image
+
+- [ ] You can see that our nodeserver image is chillin' safe and sound on our machine by running `docker images`
+
+![dockerimage](https://github.com/dylanlrrb/P-C-Y-Assets/blob/master/3/dockerimage.png?raw=true)
+
+---
+>If you had not already cached the node:latest image, it would have pulled it from dockerhub during the image building phase
+
+---
+
+- [ ] Your image has been assembled and saved on your machine just like your perfect sandwich stored in the fridge - now let's start creating containers from it. Run `docker run -d -p 1000:3000 --name slytherin_rulez --rm nodeserver`
+
+- [ ] Check that it is running with `docker ps` and then visit `localhost:1000` in your browser
+
+You'll see that our server is sending us a greeting along with a random number it was assigned when it was spun up. 
+
+- [ ] Containers are stateless; they retain information about themselves only as long as they are running. For example: try refreshing the page - it has no effect on the number. Now, back in the terminal, run `docker restart slytherin_rulez`
+
+- [ ] Go back to the browser and refresh the page. The number changed! What?? This goes back to the idea of stateless containers, restarting it caused everything within it to be lost.
+
+- [ ] And just for fun; make like, 3 more containers from our server image, each on a different port
+
+On port 2000:
+```sh
+docker run -d -p 2000:3000 --rm nodeserver
+```
+
+On port 3000:
+```sh
+docker run -d -p 3000:3000 --rm nodeserver
+```
+
+On port 4000:
+```sh
+docker run -d -p 4000:3000 --rm nodeserver
+```
+
+- [ ] Open them all up on different tabs in your browser! They're all unique and independent containers serving you information! NEAT! 
+
+**Not only can you spin up as many containers as you want from the single image we made with our app (which is crazy cool and great for horizontally scaling), but all the containers are unique and don't interact with each other; the containers are both identical and unique at the same time!**
+
+- [ ] Lastly, clean up after yourself. If you created all of the containers with the ` --rm` flag you just need to stop all the running containers with `docker stop <container-name>` and they will automatically delete themselves.
+
+---
+>Final Notes: Different images have different instructions when used in Dockerfiles and require different configuration steps. For example, some images already have a working directory that you need to copy your source code into.
+>
+>I strongly encourage you to check out [Dockerhub](https://hub.docker.com/) to marvel at the cornucopia of images to choose from. Its best to look at the official releases of any image, but find one and look at the instructions for configuring it’s environment with a Dockerfile. For example, the official [golang image](https://hub.docker.com/_/golang/) instructions; almost all the commands are  triggered automatically so the Dockerfile that you would have to write to bundle your app with this image would be a total of one line!
+>
+>Also, we used the ':latest' version of the node image; why might this be a bad idea? 
+
+---
+
+- [ ] That's it! great job powering through this module! To dive in even deeper, head on over to [Module 4](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/4-Containerized_Development_With_Volumes) - Containerized Development with Volumes
+
+---
+####Things we've learned:
+
+- How to bundle an app into a container image
+- What a Dockerfile is
+- Several  Dockerfile commands
+- Containers are stateless
+- docker pull    <image-name> : <version>
+- docker history <image-name>
+- docker build   <image-name>
+- ` -t` option
+- docker restart <container-name>
+
+---
+####Resources:
+
+- [Dockerfile reference](https://docs.docker.com/engine/reference/builder/)
+- [Dockerhub](https://hub.docker.com/)
+- [Official node image on Dockerhub](https://hub.docker.com/_/node/)

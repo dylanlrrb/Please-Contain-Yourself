@@ -8,10 +8,5 @@ app.get('/', (req, res) => {
   res.send("Hello! This server's random number is: " + randomNumber + "\n");
 });
 
-app.post('/', (req, res) => {
-  console.log('Yay, you posted something.\n');
-  res.send('POST Successful\n');
-});
-
 console.log('listening on port 3000...\n');
 app.listen(3000);
