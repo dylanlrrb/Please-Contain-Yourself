@@ -53,7 +53,9 @@ Start at the first module. Unless you've already completed it. In that case igno
 - [Module 3](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/3-Bundle_Your_App_Into_An_Image) Bundle Your App into an Image
 - ~~[Module 4](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/4-Containerized_Development_With_Volumes) Containerized Development With Volumes~~
 - ~~[Module 5](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/5-Make_Multiple_Containers_Work_Together) Make Multiple Containers Work Together~~
+
 **Modules 6 and above contain more advanced content... if you've been wanting to bite into the really juicy parts of Docker**
+
 - ~~[Module 6](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/6-Docker_Compose_For_Multi-Container_Apps) Docker-Compose For Multi-Container Apps~~
 - ~~[Module 7](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/7-Docker_Swarm_For_Scaling) Docker Swarm For Scaling~~
 - ~~[Module 8](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/8-Using_Docker_To_Depoly_On_AWS) Using Docker to Deploy on AWS~~

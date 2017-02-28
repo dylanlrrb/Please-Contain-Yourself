@@ -1,20 +1,20 @@
-#
-FROM node:boron
+# What image do you want to start building on?
+FROM node:latest
 
-#
-RUN mkdir -p /usr/src/app
+# Make a folder in your image where your app's source code can live
+RUN mkdir -p /src/app
 
-#
-WORKDIR /usr/src/app
+# Tell your container where your app's source code will live
+WORKDIR /src/app
 
-#
-COPY package.json /usr/src/app/
+# What source code do you what to copy, and where to put it?
+COPY . /src/app
+
+#???
+COPY package.json /src/app/
 
 #
 RUN npm install
-
-#
-COPY . /usr/src/app
 
 #
 EXPOSE 3000
