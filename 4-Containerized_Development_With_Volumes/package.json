@@ -1,0 +1,17 @@
+{
+  "name": "4-Containerized_Development_With_Volumes",
+  "version": "1.0.0",
+  "description": "#### A note about the symantec formatting in this tutorial:",
+  "main": "index.js",
+  "scripts": {
+    "start": "./node_modules/.bin/nodemon index"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.5.6",
+    "express": "^4.14.1",
+    "nodemon": "^1.11.0"
+  }
+}

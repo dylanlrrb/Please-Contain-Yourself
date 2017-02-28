@@ -37,7 +37,7 @@ Docker begs the question, why not just share the same kitchen? Containers includ
 
 ![docker](https://github.com/dylanlrrb/P-C-Y-Assets/blob/master/0/sharing.png?raw=true)
 
-[This is a nice video](https://www.youtube.com/watch?v=RyxXe5mbzlU) that talks about this idea in a little more depth.
+[Here's a nice video](https://www.youtube.com/watch?v=RyxXe5mbzlU) that talks about this idea in a little more depth.
 
 Because containers share a lot of their resources, the end up being very 'lightweight' so-to-speak; you can spin up a bunch of containers and it's not taxing or resource intensive at all, either memory or processing wise.
 

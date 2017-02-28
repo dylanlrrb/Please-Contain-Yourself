@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+  <head>
+
+  </head>
+  <body style="font-size:2em;font-family:Arial,Helvetica,sans-serif">
+    <div>
+    Hello! This page's color is: 
+    </div>
+    <div id="color">
+      <%= color %>
+    </div>
+  </body>
+  <script>
+  document.body.style.backgroundColor = document.getElementById('color').innerHTML.trim();
+  </script>
+</html>

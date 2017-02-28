@@ -2,11 +2,17 @@ var express = require('express');
 
 var app = express();
 
-var randomNumber = Math.floor(Math.random() * 1000000);
+app.set('view engine', 'ejs');
+
+app.use(express.static(__dirname + '/views'));
 
 app.get('/', (req, res) => {
-  res.send("Hello! This server's random number is: " + randomNumber + "\n");
+
+// Change the 'color' variable to a different color!
+  var color = 'steelblue';
+
+  res.render('index', {color: color});
 });
 
-console.log('listening on port 3000...\n');
-app.listen(3000);
+console.log('listening on port 8080...\n');
+app.listen(8080);

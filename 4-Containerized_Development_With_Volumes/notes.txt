@@ -1,7 +1,55 @@
 4-Containerized Development with Volumes
-- what is a volume
-- why is this useful
-- bundle it into an image once youre happy with it
-- push it to dockerhub (all that setup jazz), talk about how it has version control for images
-- remove the image from your computer
-- pull it down from dockerhub and run it
+
+
+- build a colorserver image with a consistent node image, (explain why its good to not use the latest as an ASIDE)
+- spin up a container and visit it in the browser
+- change the color in the source code
+- observe that the already running container does not change
+- introduce volumes (ther are two kinds), explain what they are and where they interact with the Dockerfile
+- try and spin up a psycic_container using a relitive path
+- explain the need of an absolute path and use pwd to find it (explain pwd)
+- spin up a psycic container 
+- change source code with new color (specify colors)
+- show that it changes with changes to the source code 
+- why this is AWESOME! (kinda explain why I called it a psycic_container)
+- ASIDE: this idea might conflict with an idea that was previously established that our containers preserve their state as long as they are running. in the previous module, the random number that was assigned our app only changed when we restarted the container. We do not have to restart our container in this case because our app (not the container) is configured to restart just our application when it detects changes in its source code. The tool used to do this is called nodemon and is very useful in development wether or not you use containers. It saves developers the hassle of manually restarting their application to see the change they just made. You can check out '''''the nodemon docs here '''''
+- spin up a second psycic container with the $(pwd) shortcut
+- show that they both respond to changes in the source code
+- change the color and refresh several times (add color link)
+- show how docker logs works to show the logs of detached containers
+- ASIDE/final note: This is only for development, once you are happy with the container that is spun up with your application's modified source code, you will need to build a new image that bundles the final version of your source code into said image.
+------>>>>    Say you finally settled on the color purple for the background. change it to purple in your scource code and run `docker build -t final_colorserver .` this image is now ready for production.
+
+
+
+
+https://www.w3schools.com/cssref/css_colors.asp
+
+
+
+
+
+
+docker run -d -p 8080:8080 -v /Users/Dylan/Desktop/Please-Contain-Yourself/4-Containerized_Development_With_Volumes/:/src/app --name psycic_container colorserver
+
+docker run -d -p 2000:8080 -v $(pwd):/src/app --name psycic_container2 colorserver
+
+- try it with a relitive path but look at the error message
+- use absolute path (find it with pwd, explain what pwd stands for)
+- use $(pwd) as a shortcut 
+
+- what command shows your absolute path that you can use for this command?
+- pwd
+- use $(pwd) to avoid typing the whole filepath, as long as you are cd'd into the directory with the source code when you run the command
+
+-you can introduce logs here
+
+---------
+- What volumes are and how to use them
+- ` -v` option
+- `pwd`
+- `$(pwd)`
+- `docker logs <container-name>`
+
+---------
+Some kind of volume resource

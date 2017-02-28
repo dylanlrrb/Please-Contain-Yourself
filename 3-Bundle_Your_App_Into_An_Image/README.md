@@ -205,7 +205,7 @@ docker run -d -p 4000:3000 --rm nodeserver
 
 ---
 
-- [ ] That's it! great job powering through this module! To dive in even deeper, head on over to [Module 4](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/4-Containerized_Development_With_Volumes) - Containerized Development with Volumes
+- [ ] That's it! great job powering through this module! To dive in even deeper, head on over to [Module 4](https://github.com/dylanlrrb/Please-Contain-Yourself/tree/master/4-Containerized_Development_With_Volumes) - Containerized Development with Volumes
 
 ---
 ####Things we've learned:
