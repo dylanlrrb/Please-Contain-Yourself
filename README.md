@@ -1,7 +1,7 @@
 # Please-Contain-Yourself.
 ---
 
-**If you have any suggestions for improvements to this guide, find mistakes, or even just notice a spelling/ grammar error, please feel free to submit a pull request!**
+**If you have any suggestions for improvements to this guide, find mistakes, or even just notice a spelling or grammar error, please feel free to submit a pull request!**
 
 ![dokerlogo](https://github.com/dylanlrrb/P-C-Y-Assets/blob/master/0/docker.png?raw=true)
 
@@ -33,7 +33,7 @@ Let's get some context by comparing Docker to something that you might be famili
  
 This 'wrapping everything up into one convenient package' concept is called 'containerization' and  Docker containers do something similar with your software, albeit in a very different way. Let me try an analogy to explain. Say you and your sister both wanted to make a sandwich. You want a ham sandwich. She wants a peanut butter and jelly sandwich. Two drastically different sandwiches... but still sandwiches. Using a Virtual Machine to containerize your piece of software would be the equivalent of building an entirely new kitchen in order to accommodate the making of two different sandwiches. By this I mean Virtual Machines include the application, the necessary binaries and libraries, and an ENTIRE guest operating system -- all of which can amount to tens of GBs.
 
-Docker begs the question, why not just share the same kitchen? Containers include the application and all of its dependencies --but share the kernel with other containers, running as isolated processes in user space on the host operating system. Docker containers are not tied to any specific infrastructure: they run on any computer, on any infrastructure, and in any cloud. Check out the neat little picture below.
+Docker begs the question, why not just share the same kitchen? Containers include the application and all of its dependencies --but share the kernel with other containers, running as isolated processes in user space on the host operating system. Docker containers are not tied to any specific infrastructure: they run on any computer, on any infrastructure, and in any cloud. Check out the neat little picture below that compares a VM (left) to what Docker does (right).
 
 ![docker](https://github.com/dylanlrrb/P-C-Y-Assets/blob/master/0/sharing.png?raw=true)
 
@@ -50,12 +50,14 @@ Start at the first module. Unless you've already completed it. In that case igno
 
 - [Module 1](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/1-Installation_and_Intro) Installation and Introduction
 - [Module 2](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/2-Long_Lived_Containers) Long Lived Containers
-- ~~[Module 3](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/3-Bundle_Your_App_Into_An_Image) Bundle Your App into an Image~~
+- [Module 3](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/3-Bundle_Your_App_Into_An_Image) Bundle Your App into an Image
 - ~~[Module 4](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/4-Containerized_Development_With_Volumes) Containerized Development With Volumes~~
 - ~~[Module 5](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/5-Make_Multiple_Containers_Work_Together) Make Multiple Containers Work Together~~
+
 **Modules 6 and above contain more advanced content... if you've been wanting to bite into the really juicy parts of Docker**
+
 - ~~[Module 6](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/6-Docker_Compose_For_Multi-Container_Apps) Docker-Compose For Multi-Container Apps~~
 - ~~[Module 7](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/7-Docker_Swarm_For_Scaling) Docker Swarm For Scaling~~
-- ~~[Module 8](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/8-Using_Docker_To_Depoly_On_AWS) Using Docker to Deploy on AWS~~
+- ~~[Module 8](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/8-Deploying_With_Docker) Deploying With Docker~~
 
  **Modules with a ~~line through~~ are still in production and not ready yet; check back soon or hit the 'Watch' button on this repo to be notified when the modules become available!

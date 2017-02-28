@@ -171,7 +171,7 @@ That's it! Great job getting through this module! Now that you've got a solid un
 - How to check if a container is running
 - How to start and stop a container
 - How to use the ` --rm` flag to create containers that delete themselves when stopped
-- The ` -p` flag
+- The ` -p` option
 - The ` -d` flag
 - `docker stop <container-name>` 
 - `docker start <container-name>`
