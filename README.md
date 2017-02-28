@@ -51,7 +51,7 @@ Start at the first module. Unless you've already completed it. In that case igno
 - [Module 1](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/1-Installation_and_Intro) Installation and Introduction
 - [Module 2](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/2-Long_Lived_Containers) Long Lived Containers
 - [Module 3](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/3-Bundle_Your_App_Into_An_Image) Bundle Your App into an Image
-- ~~[Module 4](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/4-Containerized_Development_With_Volumes) Containerized Development With Volumes~~
+- [Module 4](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/4-Containerized_Development_With_Volumes) Containerized Development With Volumes
 - ~~[Module 5](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/5-Make_Multiple_Containers_Work_Together) Make Multiple Containers Work Together~~
 
 **Modules 6 and above contain more advanced content... if you've been wanting to bite into the really juicy parts of Docker**
@@ -61,3 +61,12 @@ Start at the first module. Unless you've already completed it. In that case igno
 - ~~[Module 8](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/8-Deploying_With_Docker) Deploying With Docker~~
 
  **Modules with a ~~line through~~ are still in production and not ready yet; check back soon or hit the 'Watch' button on this repo to be notified when the modules become available!
+
+ ---
+####Resources:
+
+- [Docker Cheatsheet](https://github.com/wsargent/docker-cheat-sheet)
+- [Awesome-Docker](https://github.com/veggiemonk/awesome-docker)
+- [Dockerhub](https://hub.docker.com/)
+- [Docker Pro-tips](https://nodesource.com/blog/8-protips-to-start-killing-it-when-dockerizing-node-js/)
+- [Dockerfile reference](https://docs.docker.com/engine/reference/builder/)

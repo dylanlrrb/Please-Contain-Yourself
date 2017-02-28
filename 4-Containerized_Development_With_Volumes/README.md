@@ -1,6 +1,8 @@
 # Module 4 - Containerized Development With Volumes
 
-#### A note about the symantec formanting in this tutorial:
+#### A note about the symantec formatting in this tutorial:
+
+- [ ] Check boxes are steps that need to be completed.
 
 Text that looks `like this --for --example` are commands that you should type into your terminal. Or else.
 
@@ -11,7 +13,9 @@ Text that looks `like this --for --example` are commands that you should type in
 
 **Bold text: Gotchas that are gonna getcha if you don't heed this advice**
 
-## With that out of the way, lets get started!
+**Click on an image if you need a larger view**
+
+## With that out of the way, let's get started!
 
 
 **This tutorial is a bit shorter compared to the previous two, mainly because you are already well versed in navigating the Docker CLI. However, it covers a application of Docker and containers that is immensly useful and powerful**
