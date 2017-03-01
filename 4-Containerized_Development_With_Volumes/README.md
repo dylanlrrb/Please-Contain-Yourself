@@ -18,12 +18,12 @@ Text that looks `like this --for --example` are commands that you should type in
 ## With that out of the way, let's get started!
 
 
-- [ ] Using the `cd` command in your terminal, navigate to the '/4-Containerized_Development_With_Containers' directory
+- [ ] Using the `cd` command in your terminal - navigate to the '/4-Containerized_Development_With_Containers' directory
 
 ---
->Feel free to check out the app that we'll be developing in our containerized environment. Like in the previous Module, it is also a server. Rather than serving a random number, however, it will serve a webpage with the background color defined by the string on line 12 of 'index.js'
+>Feel free to check out the app that we'll be developing in our containerized environment. Similar to the previous Module, this application is also a server. Rather than serving a random number, however, it will serve a webpage with a background color defined by the string on line 12 of 'index.js'
 >
->Open up the Dockerfile and notice that two things have changed from the last Dockerfile we worked with
+>Open up the Dockerfile and notice that two things have changed from the last Dockerfile we worked with:
 >
 >First, the `EXPOSE 8080` command; containers built from this image will expose port 8080 rather than 3000 like last time
 >
@@ -31,9 +31,9 @@ Text that looks `like this --for --example` are commands that you should type in
 >
 >"This image is based on the popular Alpine Linux project, available in the alpine official image. Alpine Linux is much smaller than most distribution base images (~5MB), and thus leads to much slimmer images in general. This variant is highly recommended when final image size being as small as possible is desired." -- [Official node image on Dokerhub](https://hub.docker.com/_/node/)
 >
->I posed the question at the end of the last module, "Why might it be a bad idea to use the `:latest` version of an image?". The answer to that is because a big part of what makes containers great is their consistency - they run the same everywhere. If we build two images at different points in time and the `:latest` base image version is different between builds, this has the potential to introduce variance in containers that we would otherwise expect to be identical. 
+>I posed the question at the end of the last module, "Why might it be a bad idea to use the `:latest` version of an image?". The answer is that because a big part of what makes containers great is their consistency - they run the same everywhere. If we build two images at different points in time and the `:latest` base image version is different between builds, this has the potential to introduce variance in containers that we would otherwise expect to be identical. 
 >
->The `:7.6-alpine` version will always points to a node image that is built with node version 7.6; because knowing is better than not knowing.
+>The `:7.6-alpine` version will always refer to a node image that is built with node.js version 7.6 under the hood. Because knowing is better than not knowing.
 
 ---
 
@@ -49,9 +49,9 @@ Text that looks `like this --for --example` are commands that you should type in
 
 - [ ] Refresh the webpage in your browser. Just as you expect the webpage to present you with a calming pastel shade of green, your heart sinks as your eyes are assaulted with same cold, hard shade of steel blue.
 
-**This will never do; it would seem that if you want to use containers in your development, every time you make a change to the code you have to take the following steps: Change the code -> Build an image with your code -> Stop and remove the old container -> Remove the old image -> Spin up a container from the new image -> See if you like the change**
+**This will never do;** it would seem that if you want to use containers in your development, every time you make a change to the code you have to take the following steps: Change the code -> Build an image with your code -> Stop and remove the old container -> Remove the old image -> Spin up a container from the new image -> See if you like the change
 
-Obviously, if you had to do all this, no one would ever use Docker for Development.
+**Obviously, if you had to do all this, no one would ever use Docker for Development.**
 
 **Enter Volumes...**
 
@@ -62,7 +62,7 @@ Obviously, if you had to do all this, no one would ever use Docker for Developme
 
 ---
 
-- [ ] We can take our already-built colorserver image and use the ` -v` option to mount a volume. The ` -v` option expects two arguments after it; first, the path to the directory you want the spun-up container to look at, and second, the path to the directory in the container where you want those file changes to be reflected (separated by a colon)
+- [ ] We can take our already-built colorserver image and use the ` -v` option to mount a volume. The ` -v` option expects two arguments after it. First, the path to the directory you want the spun-up container to reference, and second, the path to the directory indide the container where you want those file changes to be reflected (separated by a colon)
 
 - [ ] Reading that, you might think that running the command `docker run -d -p 1000:8080 -v ./:/src/app colorserver` would work, right? It seemed to work okay for the `COPY` command inside the Dockerfile! But you get the following message: 
 
@@ -83,17 +83,17 @@ See 'docker run --help'.
 
 How about yours??
 
-- [ ] With that tidbit of information in hand we can mount a volume successfully. Spin up a detached container based on the 'colorserver' image, that is named 'psycic_container', that is mapped to port 1000 on the host, with a volume mounted in the directory with the application's source code.
+- [ ] With that tidbit of information in hand we can mount a volume successfully. Spin up a detached container based on the 'colorserver' image, which is named 'psycic_container', which is mapped to port 1000 on the host, which has a volume mounted in the directory with the application's source code.
 
-That's a monster of a command, mine will look like this:
+That's a monster of a command. Mine will look like this:
 
 ```sh
 docker run -d -p 1000:8080 -v /Users/Dylan/Desktop/Please-Contain-Yourself/4-Containerized_Development_With_Volumes/:/src/app --name psycic_container colorserver
 ```
 
-**Again, yours will look different depending on the path you got from `pwd`***
+**Again, yours will look different depending on the path you got from `pwd`**
 
-- [ ] In your browser, go to `localhost:1000` in a new tab. You should notice something odd... the page is the color 'SpringGreen'!
+- [ ] In your browser, go to `localhost:1000` in a new tab. You should notice something amazing... the page is the color 'SpringGreen'! **The container you just spun up reflects a change made in the app's source code that was not present when the image was built!**
 
 - [ ] Test to make sure that updating the application's source code updates the code running in the container by changing the color variable in 'index.js' to the string 'red'
 
@@ -104,22 +104,22 @@ docker run -d -p 1000:8080 -v /Users/Dylan/Desktop/Please-Contain-Yourself/4-Con
 - [ ] Do this however many times you fancy. check out this [web color](https://www.w3schools.com/cssref/css_colors.asp) resource and go wild.
 
 ---
-> This idea that containers change might conflict with an idea that was previously established that our containers preserve their state as long as they are running. In the previous module, the random number that was assigned our app only changed when we restarted the container. We do not have to restart our container in this case because our application is configured to restart just our server (not the container) when it detects changes in its source code. The tool used to do this is called 'nodemon' and is very useful in development whether or not you use containers. It saves developers the hassle of manually restarting their application to see the changes they just made. You can check out [the nodemon docs here](https://www.npmjs.com/package/nodemon).
+> This idea that containers change conflicts with a previously established idea - that our containers preserve their state as long as they are running. In the previous module, the random number that was assigned our app only changed when we restarted the container. We do not have to restart our container in this case because our application is configured to restart our server (rather than the container) when it detects changes in its source code. The tool used to do this is called 'nodemon' and is very useful in development whether or not you use containers. It saves developers the hassle of manually restarting their application to see the changes they just made. You can check out [the nodemon docs here](https://www.npmjs.com/package/nodemon) for nore information.
 
 ---
 
-**Now, I have to admit, typing up that massive filepath when defining where to mount the volume was a PAIN.** Luckily, there is an easier way! You can use `$(pwd)` in the argument list to ` -v` when running a container and `$(pwd)` will evaluate to the current working directory! No more typing that monster `docker run` command!
+**Now, I have to admit, typing out that massive filepath when defining where to mount the volume was a PAIN.** Luckily, there is an easier way! You can use `$(pwd)` in the argument list to ` -v` when running a container and `$(pwd)` will evaluate to the current working directory! No more typing that monster `docker run` command!
 
--[ ] Let's practice. I want you to use `$(pwd)` to spin up a detached container based on the 'colorserver' image, that is named 'psycic_container2', that is mapped to port 2000 on the host, with a volume mounted in the directory with the application's source code.
+-[ ] Let's practice. I want you to use `$(pwd)` to spin up a detached container based on the 'colorserver' image, which is named 'psycic_container2', which is mapped to port 2000 on the host, which has a volume mounted in the directory with the application's source code.
 
 Such a command should look like:
 
 ```sh
 docker run -d -p 2000:8080 -v $(pwd):/src/app --name psycic_container2 colorserver
 ```
-I like the length of that a lot better!
+I like the looks of that a lot better!
 
-- [ ] In a new tab in your browser, go to `localhost:2000`, miraculously the page will be red, just like server running on 'localhost:1000`. 
+- [ ] In a new tab in your browser, go to `localhost:2000`, miraculously the page will be red (or whatever your most recent change was), just like the server running on 'localhost:1000`. 
 
 - [ ] This makes sense because they are both using application code from volumes mounted in the same directory. Change the color variable in 'index.js' one final time. 
 
@@ -128,9 +128,11 @@ I like the length of that a lot better!
 - [ ] Take a final peek at the container run without a volume on `localhost:8080`. It should still be steel blue.
 
 ---
->The ability to set up a development environment this easily is immensely useful and powerful. Not only is it fast and easy, but you don't have to install or configure a single dependency on your machine to get started. This means you can immediately get started working on a codebase that might use python, or apache, or postgreSQL even if you are not familiar with these tools, and might take hours or days setting them up on your machine. 
+>**The ability to set up a development environment this easily is immensely useful and powerful.** Not only is it fast and easy, but you don't have to install or configure a single dependency on your machine to get started. This means you can immediately get started working on a codebase that might use python, or apache, or postgreSQL even if you are not familiar with these tools, and might take hours or days setting them up on your machine otherwise. 
 >
->Imagine the time and hassle you could save the next person to work on your codebase if you just include a DOckerfile with the project! All that person needs to do is build an image from that Dockerfile - then that image can be spun into a container with a development environment identical to the one you used, no surprises!
+>Imagine the time and hassle you could save the next person to work on your code base if you just include a Dockerfile with the project! All that person needs to do is build an image from that Dockerfile - then that image can be spun into a container with a development environment identical to the one you used, no surprises! 
+
+Just spin up a container with a volume mounted with the source code and get working on the code base immediately!
 
 ---
 
@@ -139,23 +141,24 @@ I like the length of that a lot better!
 
 One additional docker command that I want to touch on in this Module is `docker logs`. When containers are detached and running in the background, if it logs something inside the container, you can't see it. `docker logs <container-name>` reveals everything that has been logged inside the container so far.
 
-- [ ] Try it out, run `docker logs psycic_container`. you will see the message:
+- [ ] Try it out, run `docker logs psycic_container`. you will see the following message logged for every time the app's source code was changed and the server restarted:
 
 ```sh
 [nodemon] restarting due to changes...
 [nodemon] starting `node index index.js`
 listening on port 8080...
 ```
--logged for every time the app's source code was changed and the server restarted. NEAT!
+
+NEAT!
 
 ---
->Final notes before wrapping up: this process is only suitable for development, once you are happy with the container that is spun up with your application's modified source code, you will need to build a new image that bundles the final version of your source code into said image. For example, say you finally settled on the color purple for the background. You need to change it to 'purple' in your source code and run `docker build -t final_colorserver .` or something of the like. THAT image is now ready for production.
+>Final notes before wrapping up: this process is only suitable for development, once you are happy with the container that is spun up with your application's modified source code, you will need to build a new image that bundles the final version of your source code into said image. For example, let's say you finally settled on the color purple for the background. You need to change it to 'purple' in your source code and run `docker build -t final_colorserver .` or something of the like. THAT image is now ready for production.
 
 ---
 
 - [ ] An with that, Module 4 is complete. Don't forget to clean up your running containers, you crazy kids!
 
-- [ ] When you're ready... the next module awaitsssss... [Module 5](https://github.com/dylanlrrb/Please-Contain-Yourself/tree/master/5-Make_Multiple_Containers_Work_Together) - Make Multiple Containers Work Together
+- [ ] When you're ready, the next module awaitsssss... [Module 5](https://github.com/dylanlrrb/Please-Contain-Yourself/tree/master/5-Make_Multiple_Containers_Work_Together) - Make Multiple Containers Work Together
 
 
 
