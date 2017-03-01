@@ -159,4 +159,4 @@ Nice work creating your first containers! When your're ready move onto [Module2]
 - `docker run <image-name>` 
 - `docker ps`
 - `docker ps -a`
-- The ` --name` flag
+- The ` --name` option
