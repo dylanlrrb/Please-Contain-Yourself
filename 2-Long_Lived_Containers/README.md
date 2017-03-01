@@ -170,9 +170,9 @@ That's it! Great job getting through this module! Now that you've got a solid un
 - What a long lived container is
 - How to check if a container is running
 - How to start and stop a container
-- How to use the ` --rm` flag to create containers that delete themselves when stopped
+- How to use the ` --rm` option to create containers that delete themselves when stopped
 - The ` -p` option
-- The ` -d` flag
+- The ` -d` option
 - `docker stop <container-name>` 
 - `docker start <container-name>`
 - `docker rm <container-name>`
