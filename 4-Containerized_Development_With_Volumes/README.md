@@ -18,8 +18,6 @@ Text that looks `like this --for --example` are commands that you should type in
 ## With that out of the way, let's get started!
 
 
-**This tutorial is a bit shorter compared to the previous two, mainly because you are already well versed in navigating the Docker CLI. However, it covers a application of Docker and containers that is immensly useful and powerful**
-
 - [ ] Using the `cd` command in your terminal, navigate to the '/4-Containerized_Development_With_Containers' directory
 
 ---
@@ -69,21 +67,104 @@ Obviously, if you had to do all this, no one would ever use Docker for Developme
 - [ ] Reading that, you might think that running the command `docker run -d -p 1000:8080 -v ./:/src/app colorserver` would work, right? It seemed to work okay for the `COPY` command inside the Dockerfile! But you get the following message: 
 
 ```sh
-
+$ docker run -d -p 1000:8080 -v ./:/src/app colorserver
+docker: Error response from daemon: create ./: "./" includes invalid characters for a local volume name, only "[a-zA-Z0-9][a-zA-Z0-9_.-]" are allowed. If you intented to pass a host directory, use absolute path.
+See 'docker run --help'.
 ```
 **As the error mssage implies, the first argument of the ` -v` option needs to be an absolute path to the directory in question**
 
-- [ ] 
-mine looks like this
-yours will look diferent
+- [ ] How do you find the absolute path? Well do I have good news for you! As long as you are cd'd into the directory that you want the absolute path to (in this case the directory with tha app's source code), just run the command `pwd`
+
+`pwd` stands for 'print working directory' and it does just that. Mine looks like:
+
+```sh
+/Users/Dylan/Desktop/Please-Contain-Yourself/4-Containerized_Development_With_Volumes/
+```
+
+How about yours??
+
+- [ ] With that tidbit of inforamtion in hand we can mount a volume succesfully. Spin up a detached container based on the 'colorserver' image, that is named 'psycic_container', that is mapped to port 1000 on the host, with a volume mounted in the directory with the application's source code.
+
+Thats a monster of a command, mine will look like this:
+
+```sh
+docker run -d -p 1000:8080 -v /Users/Dylan/Desktop/Please-Contain-Yourself/4-Containerized_Development_With_Volumes/:/src/app --name psycic_container colorserver
+```
+
+**Again, yours will look diferent depending on the path you got from `pwd`***
+
+- [ ] In your browser, go to `localhost:1000` in a new tab. You should notice something odd... the page is the color 'SpringGreen'!
+
+- [ ] Test to make sure that updating the application's source code updates the code running in the container by changing the color variable in 'index.js' to the string 'red'
+
+- [ ] Make sure you save the file and then Refresh the `localhost:1000` page. 
+
+- [ ] The page is now RED! GET PUMPED!!
+
+- [ ] Do this however many times you fancy. check out this [web color](https://www.w3schools.com/cssref/css_colors.asp) resource and go wild.
+
+---
+> This idea that containers change might conflict with an idea that was previously established that our containers preserve their state as long as they are running. In the previous module, the random number that was assigned our app only changed when we restarted the container. We do not have to restart our container in this case because our application is configured to restart just our server (not the container) when it detects changes in its source code. The tool used to do this is called 'nodemon' and is very useful in development wether or not you use containers. It saves developers the hassle of manually restarting their application to see the changes they just made. You can check out [the nodemon docs here](https://www.npmjs.com/package/nodemon).
+
+---
+
+**Now, I have to admit, typing up that massive filepath when defining were to mount the volume was a PAIN.** Luckilly, there is an easier way! You can use `$(pwd)` in the argument list to ` -v` when running a container and `$(pwd)` will evaluate to the current working directory! No more typing that monster `docker run` command!
+
+-[ ] Let's practice. I want you to use `$(pwd)` to spin up a detached container based on the 'colorserver' image, that is named 'psycic_container2', that is mapped to port 2000 on the host, with a volume mounted in the directory with the application's source code.
+
+Such a command should look like:
+
+```sh
+docker run -d -p 2000:8080 -v $(pwd):/src/app --name psycic_container2 colorserver
+```
+I like the length of that a lot better!
+
+- [ ] In a new tab in your browser, go to `localhost:2000`, miraculusly the page will be red, just like server running on 'localhost:1000`. 
+
+- [ ] This makes sense because they are both using application code from volumes mounted in the same directory. Change the color variable in 'index.js' one final time. 
+
+- [ ] Save the file. Check out the page served by 'psycic_container' and 'psycic_container2'. They should both reflect the new color.
+
+- [ ] Take a final peek at the container run without a volume on `localhost:8080`. It should still be steel blue.
+
+---
+>The ability to set up a development environment this easily is immensly useful and powerful. Not only is it fast and easy, but you don't have to install or configure a single dependency on your machine to get started. This means you can immediatly get started working on a codebase that might use python, or apache, or postgreSQL even if you are not familiar with these tools, and might take hours or days setting them up on your machine. 
+>
+>Imagine the time and hassle you could save the next person to work on your codebase if you just include a DOckerfile with the project! All that person needs to do is build an image from that Dockerfile - then that image can be spun into a container with a development environment identical to the one you used, no suprises!
+
+---
 
 
 
 
+One additional docker command that I want to touch on in this Module is `docker logs`. When containers are detached and running in the background, if it logs something inside the container, you can't see it. `docker logs <container-name>` reveals everything that has been logged inside the container so far.
+
+- [ ] Try it out, run `docker logs psycic_container`. you will see the message:
+
+```sh
+[nodemon] restarting due to changes...
+[nodemon] starting `node index index.js`
+listening on port 8080...
+```
+-logged for every time the app's source code was change and the server restarted. NEAT!
+
+---
+>Finalnotes befor wrapping up: this process is only sutible for development, once you are happy with the container that is spun up with your application's modified source code, you will need to build a new image that bundles the final version of your source code into said image. For example, say you finally settled on the color purple for the background. cYou need to change it to 'purple' in your scource code and run `docker build -t final_colorserver .` or something of the like. THAT image is now ready for production.
+
+---
+
+- [ ] An with that, Module 4 is complete. Don't forget to clean up your running containers, you crazy kids!
+
+- [ ] When you're ready... the next module awaitsssss... -> [Module 5](https://github.com/dylanlrrb/Please-Contain-Yourself/tree/master/5-Make_Multiple_Containers_Work_Together) - Make Multiple Containers Work Together
 
 
 
+---
+####Things we've learned:
 
-
-
-
+- What volumes are
+- How to mount a volume when running a container
+- ` -v` option
+- `pwd`
+- `$(pwd)`
+- `docker logs <container-name>`

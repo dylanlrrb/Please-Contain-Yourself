@@ -14,7 +14,7 @@
 - show that it changes with changes to the source code 
 - why this is AWESOMe!
 
-- ASIDE: this idea might conflict with an idea that was previously established that our containers preserve their state as long as they are running. in the previous module, the random number that was assigned our app only changed when we restarted the container. We do not have to restart our container in this case because our app (not the container) is configured to restart just our application when it detects changes in its source code. The tool used to do this is called nodemon and is very useful in development wether or not you use containers. It saves developers the hassle of manually restarting their application to see the change they just made. You can check out '''''the nodemon docs here '''''
+- ASIDE: This idea might conflict with an idea that was previously established that our containers preserve their state as long as they are running. in the previous module, the random number that was assigned our app only changed when we restarted the container. We do not have to restart our container in this case because our app (not the container) is configured to restart just our application when it detects changes in its source code. The tool used to do this is called nodemon and is very useful in development wether or not you use containers. It saves developers the hassle of manually restarting their application to see the change they just made. You can check out '''''the nodemon docs here '''''
 - spin up a second psycic container with the $(pwd) shortcut
 - show that they both respond to changes in the source code
 - change the color and refresh several times (add color link)
@@ -32,7 +32,7 @@ Let me reiterate why this is awesome. You can have a container that is set up to
 
 
 
-docker run -d -p 8080:8080 -v /Users/Dylan/Desktop/Please-Contain-Yourself/4-Containerized_Development_With_Volumes/:/src/app --name psycic_container colorserver
+docker run -d -p 1000:8080 -v /Users/Dylan/Desktop/Please-Contain-Yourself/4-Containerized_Development_With_Volumes/:/src/app --name psycic_container colorserver
 
 docker run -d -p 2000:8080 -v $(pwd):/src/app --name psycic_container2 colorserver
 
