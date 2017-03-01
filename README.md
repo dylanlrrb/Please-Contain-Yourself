@@ -37,7 +37,7 @@ Docker begs the question, why not just share the same kitchen? Containers includ
 
 ![docker](https://github.com/dylanlrrb/P-C-Y-Assets/blob/master/0/sharing.png?raw=true)
 
-[This is a nice video](https://www.youtube.com/watch?v=RyxXe5mbzlU) that talks about this idea in a little more depth.
+[Here's a nice video](https://www.youtube.com/watch?v=RyxXe5mbzlU) that talks about this idea in a little more depth.
 
 Because containers share a lot of their resources, the end up being very 'lightweight' so-to-speak; you can spin up a bunch of containers and it's not taxing or resource intensive at all, either memory or processing wise.
 
@@ -48,16 +48,25 @@ Hopefully I've enticed you to spend some time learning this really cool tool... 
 ### Tutorial Roadmap
 Start at the first module. Unless you've already completed it. In that case ignore me, whatever.
 
-- [Module 1](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/1-Installation_and_Intro) Installation and Introduction
-- [Module 2](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/2-Long_Lived_Containers) Long Lived Containers
-- [Module 3](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/3-Bundle_Your_App_Into_An_Image) Bundle Your App into an Image
-- ~~[Module 4](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/4-Containerized_Development_With_Volumes) Containerized Development With Volumes~~
-- ~~[Module 5](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/5-Make_Multiple_Containers_Work_Together) Make Multiple Containers Work Together~~
+- [Module 1](https://github.com/dylanlrrb/Please-Contain-Yourself/tree/master/1-Installation_and_Intro) Installation and Introduction
+- [Module 2](https://github.com/dylanlrrb/Please-Contain-Yourself/tree/master/2-Long_Lived_Containers) Long Lived Containers
+- [Module 3](https://github.com/dylanlrrb/Please-Contain-Yourself/tree/master/3-Bundle_Your_App_Into_An_Image) Bundle Your App into an Image
+- [Module 4](https://github.com/dylanlrrb/Please-Contain-Yourself/tree/master/4-Containerized_Development_With_Volumes) Containerized Development With Volumes
+- ~~[Module 5](https://github.com/dylanlrrb/Please-Contain-Yourself/tree/master/5-Make_Multiple_Containers_Work_Together) Make Multiple Containers Work Together~~
 
 **Modules 6 and above contain more advanced content... if you've been wanting to bite into the really juicy parts of Docker**
 
-- ~~[Module 6](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/6-Docker_Compose_For_Multi-Container_Apps) Docker-Compose For Multi-Container Apps~~
-- ~~[Module 7](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/7-Docker_Swarm_For_Scaling) Docker Swarm For Scaling~~
-- ~~[Module 8](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/8-Deploying_With_Docker) Deploying With Docker~~
+- ~~[Module 6](https://github.com/dylanlrrb/Please-Contain-Yourself/tree/master/6-Docker_Compose_For_Multi-Container_Apps) Docker-Compose For Multi-Container Apps~~
+- ~~[Module 7](https://github.com/dylanlrrb/Please-Contain-Yourself/tree/master/7-Docker_Swarm_For_Scaling) Docker Swarm For Scaling~~
+- ~~[Module 8](https://github.com/dylanlrrb/Please-Contain-Yourself/tree/master/8-Deploying_With_Docker) Deploying With Docker~~
 
  **Modules with a ~~line through~~ are still in production and not ready yet; check back soon or hit the 'Watch' button on this repo to be notified when the modules become available!
+
+ ---
+####Resources:
+
+- [Docker Cheatsheet](https://github.com/wsargent/docker-cheat-sheet)
+- [Awesome-Docker](https://github.com/veggiemonk/awesome-docker)
+- [Dockerhub](https://hub.docker.com/)
+- [Docker Pro-tips](https://nodesource.com/blog/8-protips-to-start-killing-it-when-dockerizing-node-js/)
+- [Dockerfile reference](https://docs.docker.com/engine/reference/builder/)

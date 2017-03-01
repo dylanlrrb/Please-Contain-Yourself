@@ -146,7 +146,7 @@ Run `docker ps -a` again and you'll see a total of 5 containers, the most recent
 
 ---
 
-Nice work creating your first containers! When your're ready move onto [Module2](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/master/2-Long_Lived_Containers) - Long Lived Containers
+Nice work creating your first containers! When your're ready move onto [Module2](https://github.com/dylanlrrb/Please-Contain-Yourself/tree/master/2-Long_Lived_Containers) - Long Lived Containers
 
 ---
 ####Things we've learned:
