@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:7.6-alpine
 
 RUN mkdir -p /src/app
 
