@@ -1,6 +1,6 @@
 6-Docker Compose for multicontainer apps
 - 
-- 
+- I frickin' love every logo for the Docker services. They're so cute and nautical themed I wanna flip.
 - 
 - 
 - 

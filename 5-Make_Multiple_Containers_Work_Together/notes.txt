@@ -3,5 +3,16 @@
 - may need to talk about the fact that --link is depreciated
 - do you use volumes to share date between containers or nah?
 - 
-- 
-- 
+- looks like containers will be able to communicate if connected to the same network
+- do they just need to be listening to ports? on which? the container of the host?
+- make sure it does work when on the same network but that it doesnt when they are on different networks
+- containers connected to two networks can link networks
+
+- a asking server that saves responses to a database and asks if you want to submit another response
+- a mongodb? database that saves the responses (how to work in the command line of inside the container)
+- a telling server that asks for, formats, and serves a view of the form responses
+
+
+
+
+ONE KIND OF IMAGE PER CONTAINER (not a bunch shoved into one, that would make a big unwieldy image/container), FORCES US TO THINK IN MICROSERVICES, BREAKS UP MONOLITHIC APPLICATIONS

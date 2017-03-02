@@ -6,4 +6,6 @@
 - have them download your image that spins up a server of something unique each time
 - have them swarm it and them visit the page and refreash several times to demonstrate the automatic load balancing. or use curl like he did if refreshing doesnt work
 - 
-- 
+- cluster, swarm, swarm-cluster?
+
+- use the voting app?
