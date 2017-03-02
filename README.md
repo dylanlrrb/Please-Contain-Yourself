@@ -54,7 +54,7 @@ Start at the first module. Unless you've already completed it. In that case igno
 - [Module 4](https://github.com/dylanlrrb/Please-Contain-Yourself/tree/master/4-Containerized_Development_With_Volumes) Containerized Development With Volumes
 - [Module 5](https://github.com/dylanlrrb/Please-Contain-Yourself/tree/master/5-Make_Multiple_Containers_Work_Together) Make Multiple Containers Work Together
 
-**Modules 6 and above contain more advanced content... if you've been wanting to bite into the really juicy parts of Docker**
+**Modules 6 and above contain more advanced content. Dive in with these Modules if you've been wanting to sink your teeth into the really juicy parts of Docker!**
 
 - ~~[Module 6](https://github.com/dylanlrrb/Please-Contain-Yourself/tree/master/6-Docker_Compose_For_Multi-Container_Apps) Docker-Compose For Multi-Container Apps~~
 - ~~[Module 7](https://github.com/dylanlrrb/Please-Contain-Yourself/tree/master/7-Deploying_With_Docker) Deploying With Docker~~
