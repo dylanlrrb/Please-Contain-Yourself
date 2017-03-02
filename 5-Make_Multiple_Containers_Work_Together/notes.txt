@@ -1,5 +1,6 @@
 5-Make multiple containers work together
 - will I need to expand on volumes
+- may need to talk about the fact that --link is depreciated
 - do you use volumes to share date between containers or nah?
 - 
 - 

@@ -1,4 +1,4 @@
-# Module 8 - Deploying With Docker
+# Module 7 - Deploying With Docker
 
 #### A note about the symantec formanting in this tutorial:
 
