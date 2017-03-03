@@ -13,6 +13,6 @@
 - a telling server that asks for, formats, and serves a view of the form responses
 
 
-
+-Should I talk about using volumes to persist data outside the container here?
 
 ONE KIND OF IMAGE PER CONTAINER (not a bunch shoved into one, that would make a big unwieldy image/container), FORCES US TO THINK IN MICROSERVICES, BREAKS UP MONOLITHIC APPLICATIONS
