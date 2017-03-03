@@ -22,7 +22,8 @@ app.post('/', (req, res) => {
   console.log(req.body);
   // send body data to database
   var newEntry = new entry();
-  newEntry.name = req.body.firstname;
+  newEntry.name = req.body.name;
+  newEntry.color = req.body.color;
 
   newEntry.save(function(err) {
     if (err) {
