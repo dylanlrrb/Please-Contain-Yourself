@@ -2,5 +2,5 @@
 - 
 - I frickin' love every logo for the Docker services. They're so cute and nautical themed I wanna flip.
 - 
-- 
+- I also want to cover composing a dev environment
 - 

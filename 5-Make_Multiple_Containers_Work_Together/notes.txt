@@ -40,5 +40,23 @@ show how to create a new network and (depending if they could talk before or not
 	spin them up: what is the default network? use docker inspect?
 
 
+---------
+
+	I NEED TO SEE IF THE CONTAINERS I HAVE MADE SO FAR ARE ACCESSABLE TO THE OUTSIDE WORLD IF USING LOCALHOST.
+
+	Are the default networks not accessable to the outside world?
+
+	if not, I need to mention this as a final note in this module-- and address it during the deployment module
+
+
+I should probably use this module to talk about persisting data with volumes might have found the answer in that SO article
+
+how do i work in the terminal of a container, the mongo one to show tables for example
+
+is there a way to conditionally connect to localhost?, like try a container first?
+
+whats my container's ip address?
+
+-----------
 
 ONE KIND OF IMAGE PER CONTAINER (not a bunch shoved into one, that would make a big unwieldy image/container), FORCES US TO THINK IN MICROSERVICES, BREAKS UP MONOLITHIC APPLICATIONS

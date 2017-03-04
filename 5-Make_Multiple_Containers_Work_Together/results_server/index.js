@@ -4,7 +4,7 @@ var entry = require('./db_handlers/entry.js');
 
 var app = express();
 
-mongoose.connect('mongodb://localhost:27017/docker_test');
+mongoose.connect('mongodb://mongo:27017/docker_test');
 
 
 app.set('view engine', 'ejs');
