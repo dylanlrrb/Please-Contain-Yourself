@@ -57,6 +57,8 @@ is there a way to conditionally connect to localhost?, like try a container firs
 
 whats my container's ip address?
 
+will it connect like it did on the default network?
+
 -----------
 
 ONE KIND OF IMAGE PER CONTAINER (not a bunch shoved into one, that would make a big unwieldy image/container), FORCES US TO THINK IN MICROSERVICES, BREAKS UP MONOLITHIC APPLICATIONS
