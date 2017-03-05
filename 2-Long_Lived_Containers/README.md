@@ -20,15 +20,15 @@ Text that looks `like this --for --example` are commands that you should type in
 
 **Beware: this module picks up where Module 1 left off**
 
-- [ ] Let's jump right in by spinning up a brand new container from a brand new image! Run: 
+- [ ] Let's jump right in by spinning up a brand new container from a brand new image! Run:
 ```sh
 docker run -d -p 80:80 --name webserver nginx
 ```
-**As was the case the first time you ran the hello-world image; it looks for the 'nginx' image cached locally and when it cannot find it, Docker downloads it from Dockerhub... which will take just a bit of time** 
+**As was the case the first time you ran the hello-world image; it looks for the 'nginx' image cached locally and when it cannot find it, Docker downloads it from Dockerhub... which will take just a bit of time**
 
-- [ ] We'll break down that command we just used piece by piece in a bit, but for now run `docker ps` and note that this container shows up in the report despite the fact that we did not add the ` -a` flag. 
+- [ ] We'll break down that command we just used piece by piece in a bit, but for now run `docker ps` and note that this container shows up in the report despite the fact that we did not add the ` -a` flag.
 
-- [ ] This is because 'docker ps' displays only the containers currently running on your machine and the nginx container we just spun up is still running! Go ahead and check this out by opening up a web browser and navigating to `localhost:80` 
+- [ ] This is because 'docker ps' displays only the containers currently running on your machine and the nginx container we just spun up is still running! Go ahead and check this out by opening up a web browser and navigating to `localhost:80`
 
 ![dockernginx](https://github.com/dylanlrrb/P-C-Y-Assets/blob/master/2/dockernginx.png?raw=true)
 
@@ -55,7 +55,7 @@ The nginx container we just spun up (named 'webserver') is listed here along wit
 >You can also see that you now have two images on your machine. As before you can look at your cached images with `docker images`
 >
 
---- 
+---
 
 Let's break down that command that we used to spin up the nginx container:
 
@@ -69,11 +69,11 @@ docker run -d -p 80:80 --name webserver nginx
 
 ` --name webserver` : Gives the container a unique name to identify it
 
-`-p 80:80` : This command basically says ‘connect port 80 on the host to port 80 on the container’. We will get deeper into this later, but if you want a container to contact the outside world (as you would need a webserver to do) you have to set up your image with an exposed port ready to broadcast and receive data. 
+`-p 80:80` : This command basically says ‘connect port 80 on the host to port 80 on the container’. We will get deeper into this later, but if you want a container to contact the outside world (as you would need a webserver to do) you have to set up your image with an exposed port ready to broadcast and receive data.
 
 Then, when you want to make a container out of it, you simply map the container's port to a port on the host so the host can talk to the outside world on the container's behalf (since the container is still 'virtual', after all). This command pretty much lets your container plug and play.
 
-`-d` : This command indicates that you want to run your container in a detached state; which means it just runs in the background. Keep reading for more information on this -> 
+`-d` : This command indicates that you want to run your container in a detached state; which means it just runs in the background. Keep reading for more information on this ->
 
 - [ ] Try spinning up another webserver on the host's port 100 without the ` -d` flag to see what happens:
 
@@ -88,7 +88,7 @@ If it's not immediately obvious, notice that the terminal is not ready to accept
 - [ ] Visit `localhost:100` in your browser and then return to your terminal. You will see that it logged information about your visit from inside the container:
 
 ![dockervisit](https://github.com/dylanlrrb/P-C-Y-Assets/blob/master/2/dockervisit.png?raw=true)
- 
+
 - [ ] To exit press 'ctrl+C'. This stops the container. Visiting 'localhost:100' will give you an error. Run `docker ps -a` and you will see that 'webserver2' has the status of 'Exited':
 
 ![dockerexit](https://github.com/dylanlrrb/P-C-Y-Assets/blob/master/2/dockerexit.png?raw=true)
@@ -115,10 +115,10 @@ Error response from daemon: You cannot remove a running container 6bae1bae658c15
 
 **You need to keep this in mind when deleting containers - a container has to be stopped to remove it**
 
-- [ ] As the error message implies, there is a shortcut around this. Run `docker rm -f webserver`. The ` -f` will 'force' it to stop and then remove it. Try it out and then run `docker ps -a` to confirm that it's gone
+- [ ] As the error message implies, there is a shortcut around this. Run `docker rm -f webserver2`. The ` -f` will 'force' it to stop and then remove it. Try it out and then run `docker ps -a` to confirm that it's gone
 
 ---
->One handy little trick that can save some time is to just create containers that delete themselves when stopped. This is great for short lived containers as well as long lived containers that you only need temporarily. 
+>One handy little trick that can save some time is to just create containers that delete themselves when stopped. This is great for short lived containers as well as long lived containers that you only need temporarily.
 >
 >You can do this by adding a ` --rm` flag to the `docker run` command. Try this out yourself; create an auto removing nginx container with:
 >
@@ -140,7 +140,7 @@ Error response from daemon: You cannot remove a running container 6bae1bae658c15
 Error response from daemon: conflict: unable to remove repository reference "hello-world" (must force) - container 5a3be0ccd65a is using its referenced image 48b5124b2768
 ```
 
-Looks like you're going to have to get rid of your 'hello-world' containers! The 'hello-world' containers may be stopped, but they still exist, which is preventing the removal of the image they are based on. 
+Looks like you're going to have to get rid of your 'hello-world' containers! The 'hello-world' containers may be stopped, but they still exist, which is preventing the removal of the image they are based on.
 
 ---
 >You could force this by using it ` -f` flag, but I don't think this is a great idea because the image will be gone but the containers will still be on your machine. This could cause problems if you try and restart a container which you forgot you deleted the requisite image to.
@@ -173,7 +173,7 @@ That's it! Great job getting through this module! Now that you've got a solid un
 - How to use the ` --rm` option to create containers that delete themselves when stopped
 - The ` -p` option
 - The ` -d` option
-- `docker stop <container-name>` 
+- `docker stop <container-name>`
 - `docker start <container-name>`
 - `docker rm <container-name>`
 - `docker rm -f <container-name>`
