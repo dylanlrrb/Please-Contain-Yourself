@@ -48,6 +48,8 @@ show how to create a new network and (depending if they could talk before or not
 
 	if not, I need to mention this as a final note in this module-- and address it during the deployment module
 
+makesure they are continuing to use docker logs to check the status of container, maybe when they first run it and it tries to connect to local host rather than the mongo container - name it something a little crazy so they know mongo is not a keyword but rather the container name
+
 
 I should probably use this module to talk about persisting data with volumes might have found the answer in that SO article
 
@@ -58,6 +60,8 @@ is there a way to conditionally connect to localhost?, like try a container firs
 whats my container's ip address?
 
 will it connect like it did on the default network?
+
+is it ALWAYS SPECIFICALLY the container name? like cani i change it and it works with the new one?
 
 -----------
 
