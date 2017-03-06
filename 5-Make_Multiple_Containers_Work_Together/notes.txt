@@ -63,6 +63,8 @@ will it connect like it did on the default network?
 
 is it ALWAYS SPECIFICALLY the container name? like cani i change it and it works with the new one?
 
+need to show that containers on different networks cannot communicate
+
 -----------
 
 ONE KIND OF IMAGE PER CONTAINER (not a bunch shoved into one, that would make a big unwieldy image/container), FORCES US TO THINK IN MICROSERVICES, BREAKS UP MONOLITHIC APPLICATIONS
