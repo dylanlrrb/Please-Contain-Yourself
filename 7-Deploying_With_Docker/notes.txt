@@ -1,0 +1,8 @@
+FIRST: Show the neccisary steps to make a container accessable via local tunnel with the right networks.
+
+then thats a good segway into making it accessable on another persons computer
+
+
+should i go into env variables? probably.
+need to talk about persisting stateful data on the hos and how to do that
+deploy onto aws, google cloud service, and digital ocean. Maybe also just a bare VPS?
