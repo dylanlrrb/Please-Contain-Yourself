@@ -110,7 +110,7 @@ docker run -d -p 1000:8080 -v /Users/Dylan/Desktop/Please-Contain-Yourself/4-Con
 
 **Now, I have to admit, typing out that massive filepath when defining where to mount the volume was a PAIN.** Luckily, there is an easier way! You can use `$(pwd)` in the argument list to ` -v` when running a container and `$(pwd)` will evaluate to the current working directory! No more typing that monster `docker run` command!
 
--[ ] Let's practice. I want you to use `$(pwd)` to spin up a detached container based on the 'colorserver' image, which is named 'psycic_container2', which is mapped to port 2000 on the host, which has a volume mounted in the directory with the application's source code.
+- [ ] Let's practice. I want you to use `$(pwd)` to spin up a detached container based on the 'colorserver' image, which is named 'psycic_container2', which is mapped to port 2000 on the host, which has a volume mounted in the directory with the application's source code.
 
 Such a command should look like:
 
