@@ -52,7 +52,7 @@ Start at the first module. Unless you've already completed it. In that case igno
 - [Module 2](https://github.com/dylanlrrb/Please-Contain-Yourself/tree/master/2-Long_Lived_Containers) Long Lived Containers
 - [Module 3](https://github.com/dylanlrrb/Please-Contain-Yourself/tree/master/3-Bundle_Your_App_Into_An_Image) Bundle Your App into an Image
 - [Module 4](https://github.com/dylanlrrb/Please-Contain-Yourself/tree/master/4-Containerized_Development_With_Volumes) Containerized Development With Volumes
-- [Module 5](https://github.com/dylanlrrb/Please-Contain-Yourself/tree/master/5-Make_Multiple_Containers_Work_Together) Make Multiple Containers Work Together
+- ~~[Module 5](https://github.com/dylanlrrb/Please-Contain-Yourself/tree/master/5-Make_Multiple_Containers_Work_Together) Make Multiple Containers Work Together~~
 
 **Modules 6 and above contain more advanced content. Dive in with these Modules if you've been wanting to sink your teeth into the really juicy parts of Docker!**
 
@@ -71,3 +71,4 @@ Start at the first module. Unless you've already completed it. In that case igno
 - [Dockerhub](https://hub.docker.com/)
 - [Docker Pro-tips](https://nodesource.com/blog/8-protips-to-start-killing-it-when-dockerizing-node-js/)
 - [Dockerfile reference](https://docs.docker.com/engine/reference/builder/)
+- [Cleaning Ice Cream off your Keyboard](https://www.howtogeek.com/forum/topic/clean-laptop-keyboard)
