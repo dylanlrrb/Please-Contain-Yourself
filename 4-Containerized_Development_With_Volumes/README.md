@@ -41,7 +41,7 @@ Text that looks `like this --for --example` are commands that you should type in
 
 **Docker will pull the 'node:7.6-alpine' image down from Dockerhub in order to complete the build. Notice how much faster the pull went compared to 'node:latest'. This is due to the 'alpine' version being so slim**
 
-- [ ] Spin up a new container based on the 'colorserver' image you just built, mapping it to port 8080 on the host. Run `docker -d -p 8080:8080 colorserver`
+- [ ] Spin up a new container based on the 'colorserver' image you just built, mapping it to port 8080 on the host. Run `docker run -d -p 8080:8080 colorserver`
 
 - [ ] Open up your browser and visit `locahost:8080`. Notice that the color of the web page is 'SteelBlue'.
 
@@ -64,7 +64,7 @@ Text that looks `like this --for --example` are commands that you should type in
 
 - [ ] We can take our already-built colorserver image and use the ` -v` option to mount a volume. The ` -v` option expects two arguments after it. First, the path to the directory you want the spun-up container to reference, and second, the path to the directory indide the container where you want those file changes to be reflected (separated by a colon)
 
-- [ ] Reading that, you might think that running the command `docker run -d -p 1000:8080 -v ./:/src/app colorserver` would work, right? It seemed to work okay for the `COPY` command inside the Dockerfile! But you get the following message: 
+- [ ] Reading that, you might think that running the command `docker run -d -p 1000:8080 -v ./:/src/app colorserver` would work, right? A relitive filepath seemed to work okay for the `COPY` command inside the Dockerfile! And when using the `docker build` command! But you get the following message: 
 
 ```sh
 $ docker run -d -p 1000:8080 -v ./:/src/app colorserver
@@ -83,12 +83,12 @@ See 'docker run --help'.
 
 How about yours??
 
-- [ ] With that tidbit of information in hand we can mount a volume successfully. Spin up a detached container based on the 'colorserver' image, which is named 'psycic_container', which is mapped to port 1000 on the host, which has a volume mounted in the directory with the application's source code.
+- [ ] With that tidbit of information in hand we can mount a volume successfully. Spin up a detached container based on the 'colorserver' image, which is named 'psychic_container', which is mapped to port 1000 on the host, which has a volume mounted in the directory with the application's source code.
 
 That's a monster of a command. Mine will look like this:
 
 ```sh
-docker run -d -p 1000:8080 -v /Users/Dylan/Desktop/Please-Contain-Yourself/4-Containerized_Development_With_Volumes/:/src/app --name psycic_container colorserver
+docker run -d -p 1000:8080 -v /Users/Dylan/Desktop/Please-Contain-Yourself/4-Containerized_Development_With_Volumes/:/src/app --name psychic_container colorserver
 ```
 
 **Again, yours will look different depending on the path you got from `pwd`**
@@ -110,12 +110,12 @@ docker run -d -p 1000:8080 -v /Users/Dylan/Desktop/Please-Contain-Yourself/4-Con
 
 **Now, I have to admit, typing out that massive filepath when defining where to mount the volume was a PAIN.** Luckily, there is an easier way! You can use `$(pwd)` in the argument list to ` -v` when running a container and `$(pwd)` will evaluate to the current working directory! No more typing that monster `docker run` command!
 
--[ ] Let's practice. I want you to use `$(pwd)` to spin up a detached container based on the 'colorserver' image, which is named 'psycic_container2', which is mapped to port 2000 on the host, which has a volume mounted in the directory with the application's source code.
+- [ ] Let's practice. I want you to use `$(pwd)` to spin up a detached container based on the 'colorserver' image, which is named 'psycic_container2', which is mapped to port 2000 on the host, which has a volume mounted in the directory with the application's source code.
 
 Such a command should look like:
 
 ```sh
-docker run -d -p 2000:8080 -v $(pwd):/src/app --name psycic_container2 colorserver
+docker run -d -p 2000:8080 -v $(pwd):/src/app --name psychic_container2 colorserver
 ```
 I like the looks of that a lot better!
 
@@ -123,7 +123,7 @@ I like the looks of that a lot better!
 
 - [ ] This makes sense because they are both using application code from volumes mounted in the same directory. Change the color variable in 'index.js' one final time. 
 
-- [ ] Save the file. Check out the page served by 'psycic_container' and 'psycic_container2'. They should both reflect the new color.
+- [ ] Save the file. Check out the page served by 'psychic_container' and 'psychic_container2'. They should both reflect the new color.
 
 - [ ] Take a final peek at the container run without a volume on `localhost:8080`. It should still be steel blue.
 
@@ -141,7 +141,7 @@ Just spin up a container with a volume mounted with the source code and get work
 
 One additional docker command that I want to touch on in this Module is `docker logs`. When containers are detached and running in the background, if it logs something inside the container, you can't see it. `docker logs <container-name>` reveals everything that has been logged inside the container so far.
 
-- [ ] Try it out, run `docker logs psycic_container`. you will see the following message logged for every time the app's source code was changed and the server restarted:
+- [ ] Try it out, run `docker logs psychic_container`. you will see the following message logged for every time the app's source code was changed and the server restarted:
 
 ```sh
 [nodemon] restarting due to changes...
