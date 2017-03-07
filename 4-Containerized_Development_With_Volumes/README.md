@@ -41,7 +41,7 @@ Text that looks `like this --for --example` are commands that you should type in
 
 **Docker will pull the 'node:7.6-alpine' image down from Dockerhub in order to complete the build. Notice how much faster the pull went compared to 'node:latest'. This is due to the 'alpine' version being so slim**
 
-- [ ] Spin up a new container based on the 'colorserver' image you just built, mapping it to port 8080 on the host. Run `docker -d -p 8080:8080 colorserver`
+- [ ] Spin up a new container based on the 'colorserver' image you just built, mapping it to port 8080 on the host. Run `docker run -d -p 8080:8080 colorserver`
 
 - [ ] Open up your browser and visit `locahost:8080`. Notice that the color of the web page is 'SteelBlue'.
 
