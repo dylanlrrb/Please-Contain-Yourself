@@ -172,4 +172,11 @@ NEAT!
 - `$(pwd)`
 - `docker logs <container-name>`
 
+notes:
+the Docker file has changed ->
+the file structure needs to accomodate a volume that accepts changes to the source code while ignoring changes to the dependencies
+because the dependencies are a permenntly plastered to the side of the container, if you want to add more dependencies to your containerized development environment, you have two options:
+1- you need to build a new image (then container) of your app
+2- you need to copy the whole directory (that the dockerfile lives) into the container with out skipping the node_modules. That way a mounted contatiner will detect changes to the dependencies. but because they were not added to the directory via the run npm install command iin the docker file, you need: to actully have the dependencies installed on your machine for the volume to reference (which sort of defeats the purpouse of containerizeing your development just a little bit)
 
+also research adding volumes via the dockerfile
