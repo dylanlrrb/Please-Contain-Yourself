@@ -141,7 +141,9 @@ Looks like the survey_container server crashed because it couldn't connect to th
 
 - Our mongo container is not mapped to any port on 'localhost', so that ain't gonna work.
 
-- 
+- The mongo container has port 27017 exposed
+
+To talk about how to solce this communication problem, I first need to formally introduce Docker Networks
 
 explain whats going on:
 
@@ -185,8 +187,7 @@ show that its working
 ASIDE: talk about cross network communication by attaching a container to multiple networks `docker network connect`
 
 
-remove the containers, 
-remove the networks `docker network rm`
+
 
 ---
 
@@ -198,7 +199,14 @@ get into the mongo container and run commands to see whats stored in the databas
 Drop the entries tabeland see the effect
 
 
-You might be wondering (if you had mongo installed on your machine) why connecting to MongoDB via the 'localhost' address didn't connect to the database installed on your machine. Remember, containers can't communicate with the host except through the use of volumes. This is a nice segway into the idea of using volumes to persist data inside  containerized databases. It's great to be able to containerize a database - but there are some drawbacks. Beacuse containers are stateless, if a database container were to crash unexpectedly, all the data inside would be lost. Not good. You want to be able to store it in a database on the host just in case and you do this via volumes
+You might be wondering (if you had mongo installed on your machine) why connecting to MongoDB via the 'localhost' address didn't connect to the database installed on your machine. Remember, containers can't communicate with the host except through the use of volumes. This is a nice segway into the idea of using volumes to persist data inside  containerized databases. It's great to be able to containerize a database - but there are some drawbacks. Beacuse containers are stateless, if a database container were to crash unexpectedly, all the data inside would be lost. Not good. You want to be able to store it in a database on the host just in case and you do this via volumes. 
+
+- [ ] **IF you would like to try this out** [you will need MongoDB installed](https://docs.mongodb.com/manual/installation/) on your machine. 
+
+- [ ] Next, delete your currently running mongo container and then spin it up again (I know I'm really giving your fingers a workout with all these repetitive tasks, but bear with me) but spin it up with one big diference: mount a volume ----- where the local mongo is running? with e command :
+
+- [ ] pull up the app, add some entries and inspec the database on your local machine
+
 talk about using volumes for persistent data storage on the host
 (explain the needed commands but dont require mongo to be instaled on the user's computer. offer a resource that lets them install it if they dont have it)
 
@@ -207,7 +215,8 @@ a container is spun up on the same network at the address 'whatever' with 'so an
 TEST THIS with the request module
 
 
-
+remove the containers, 
+remove the networks `docker network rm`
 
 Wouldnt it be great if all the work that we did to orchastate the coordination between our containers could be whittled down to one command???
 
