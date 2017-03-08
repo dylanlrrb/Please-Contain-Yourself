@@ -171,5 +171,3 @@ NEAT!
 - `pwd`
 - `$(pwd)`
 - `docker logs <container-name>`
-
-

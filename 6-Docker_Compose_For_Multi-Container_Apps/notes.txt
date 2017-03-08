@@ -4,3 +4,4 @@
 - 
 - I also want to cover composing a dev environment
 - 
+- NEED TO TALK ABOUT THAT TRICK WITH CONTAINERIZING DEPENDENCIES!!!

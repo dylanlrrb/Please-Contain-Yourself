@@ -1,0 +1,65 @@
+{
+  "name": "mpromise",
+  "version": "0.5.5",
+  "description": "Promises A+ conformant implementation",
+  "main": "lib/promise.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "promises-aplus-tests": "2.1.0",
+    "mocha": "1.21.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aheckmann/mpromise"
+  },
+  "keywords": [
+    "promise",
+    "mongoose",
+    "aplus",
+    "a+",
+    "plus"
+  ],
+  "author": {
+    "name": "Aaron Heckmann",
+    "email": "aaron.heckmann+github@gmail.com"
+  },
+  "contributors": [
+    {
+      "name": "Refael Ackermann",
+      "email": "refack@gmail",
+      "url": "http://node.org.il/"
+    }
+  ],
+  "license": "MIT",
+  "gitHead": "c8842ff1065e9fceef0eef7e97bdb291b7c2550e",
+  "bugs": {
+    "url": "https://github.com/aheckmann/mpromise/issues"
+  },
+  "homepage": "https://github.com/aheckmann/mpromise",
+  "_id": "mpromise@0.5.5",
+  "_shasum": "f5b24259d763acc2257b0a0c8c6d866fd51732e6",
+  "_from": "mpromise@0.5.5",
+  "_npmVersion": "2.0.0-beta.2",
+  "_npmUser": {
+    "name": "refack",
+    "email": "refael@empeeric.com"
+  },
+  "maintainers": [
+    {
+      "name": "aaron",
+      "email": "aaron.heckmann+github@gmail.com"
+    },
+    {
+      "name": "refack",
+      "email": "refael@empeeric.com"
+    }
+  ],
+  "dist": {
+    "shasum": "f5b24259d763acc2257b0a0c8c6d866fd51732e6",
+    "tarball": "https://registry.npmjs.org/mpromise/-/mpromise-0.5.5.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/mpromise/-/mpromise-0.5.5.tgz"
+}

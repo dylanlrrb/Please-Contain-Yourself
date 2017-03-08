@@ -2,6 +2,8 @@
 
 #### A note about the symantec formatting in this tutorial:
 
+- [ ] Check boxes are steps that need to be completed.
+
 Text that looks `like this --for --example` are commands that you should type into your terminal. Or else.
 
 ---
@@ -38,7 +40,7 @@ This type of softwate disign yeilds a 'monolithic' application. Think of the 'mo
 - First, it's more robust - in a microservices architecture, the monolith is “broken up” into a set of independent services that are
 developed, deployed and maintained separately. If there is one part that needs to be changed or tweaked for whatever reason, you don't have to take down your entire app to change it and relaunch the entire monolithic application.
 
-- Second, different services can be scaled differently. Say you need more servers or maybe more databases to handle a large influx of users, using the concept of 'horizontal scaling' you can just spin up more containers responsible for that function rather that duplicate or take down the entire monolith of an application.
+- Second, different services can be scaled differently. Say you need more servers or maybe more databases to handle a large influx of users, using the concept of ['horizontal scaling'](https://en.wikipedia.org/wiki/Scalability#Horizontal_and_vertical_scaling) you can just spin up more containers responsible for that function rather that duplicate or take down the entire monolith of an application.
 
 - Third, because each container is isolated, teams can work separately on discrete parts of an app without meddling in every other team's code. This makes the entire software building process more efficient and robust. A team can just declare, "Hey, this is what information our microservice is expecting and this is what it will send out, don't worry about how - that's our job. You just worry about your microservice"
 
@@ -60,7 +62,7 @@ Well let me lay some knowledge on your brain. As the frickin' adorable image at 
 
 Module 5 comes with yet another app, and in the spirit of using microservice archetecture, it is split into 3 services: a 'survey server', a 'results server', and a MongoDB database.
 
-The survey server has two jobs, rendering a form that lets a user create a database entry and saving that entry to the database via an API endpint.
+- The survey server has two jobs, rendering a form that lets a user create a database entry and saving that entry to the database via an API endpint.
 
 ---
 >Normally, microservices expose their interfaces with a standard protocol, such as a REST-ful API, and they can be consumed and re-used by other services and applications without direct coupling through language bindings or shared libraries.
@@ -70,19 +72,41 @@ The survey server has two jobs, rendering a form that lets a user create a datab
 
 ---
 
-The results server also has two jobs, retriving the saved entry data from the database and then rendering that data on a webpage via an API endpoint
+- The results server also has two jobs, retriving the saved entry data from the database and then rendering that data on a webpage via an API endpoint
 
-The MongoDB database is... a MongoDB database. It stores stuff you tell it to store.
+- The MongoDB database is... a MongoDB database. It stores stuff you tell it to store.
 
 Now, assuming that you've got MongoDB, node.js, and npm installed on your computer this app would work flawlessly. **HOWEVER!** The beauty of containers is that you can wrap your app up and run it anywhere, regardless of if the host has the needed dependencies installed. (So, for the sake of this Module, even if you do have all the right dependencies installed, let's pretend you don't).
 
 Docker is the only thing you need from now on! So let's get started spinning the different parts of our app into containerized microservices!
 
 
-**First:** Build your images
-//make sure you are cd'd intot he right directory when runnig commands that depend on your path
+**First:** Lets build those images:
 
-**Second:** Run the containers with volumes mounted
+- [ ] Build your survey server image and tag it with the name 'survey' by running `docker bulid -t survey .`
+
+**REMEMBER the dot is a reliteve file path to where your Dockerfile lives (one is included for each server), so MAKE SURE you are cd'd into the correct directory before running this command**
+
+- [ ] Build your results server image and tag it with the name 'results' by running `docker build -t results .` 
+
+- [ ] Pull down a MongoDB image by running `docker pull mongo:latest`
+
+This saves us alot of time - since we straight up just need a MongoDB database and don't need to configure it in any way we'll just pull the official image from Dockerhub. As with every other time you used the `docker pull` command it grabs the image from Dockerhub and caches it on your machine. This time is no different. However, the way you spin up the official MongoDB image is a little different than we are used to; let's check it out ->
+
+**Second:** Run the containers:
+
+- [ ] First, we'll spin up the MongoDB container. Run `docker run -d --name mongo mongo:latest`
+
+You might be wondering, **'Where's the -p port mapping option that we've used EVERY OTHER TIME?!?!?'**
+
+'Good catch.', I would respond. But go ahead and run `docker logs mongo`. You'll see something like this at the very end of the log:
+
+```sh
+I NETWORK  [thread1] waiting for connections on port 27017
+```
+Everything seems to have gone smoothly despite the lack of the `-p`. This is because the official MongoDB image is special and is automatically 
+
+
 //make sure you are cd'd intot he right directory when runnig commands that depend on your path
 
 visit the website, theres an error
@@ -169,6 +193,8 @@ docker network rm
 
 
 
+
+MAKE SURE THE SERVER CODE IS THE VERSION THAT IT SHOULD BE
 
 
 
