@@ -99,19 +99,49 @@ This saves us alot of time - since we straight up just need a MongoDB database a
 
 You might be wondering, **'Where's the -p port mapping option that we've used EVERY OTHER TIME?!?!?'**
 
-'Good catch.', I would respond. But go ahead and run `docker logs mongo`. You'll see something like this at the very end of the log:
+'Good catch.', I would respond. But I would ask you back, 'Why would we need it to be mapped to a port on the host?' **The container only needs to talk to other containers and therefore it's exposed port can remain 'virtual'**
+
+Go ahead and run `docker logs mongo`. You'll see something like this at the very end of the log:
 
 ```sh
 I NETWORK  [thread1] waiting for connections on port 27017
 ```
-Everything seems to have gone smoothly despite the lack of the `-p`. This is because the official MongoDB image is special and is automatically 
+"This image includes `EXPOSE 27017` (the mongo port), so standard container networking will make it automatically available to containers on the same network" -- [Official MongoDB image](https://hub.docker.com/_/mongo/)
 
+- [ ] Next let's spin up the other two server images we made, survey and results
 
-//make sure you are cd'd intot he right directory when runnig commands that depend on your path
+Be sure to also mount volumes in the respective directories just in case, i don't know, we want to make quick changes to the source code. *cough cough* (we will)
 
-visit the website, theres an error
+- [ ] cd into '/survey_server' and run:
 
-use docker logs to check whats up
+`docker -d -p 8080:8080 -v $(pwd):/src/app --name survey_container survey`
+
+- [ ] cd into '/results_server' and run:
+
+`docker -d -p 3000:3000 -v $(pwd):/src/app --name results_container results`
+
+- [ ] Now pull up the app by navigating to `localhost:8080` and `localhost:3000` in your browser! You should definatly have your hopes up because I totally didn't give you broken code on purpuse!
+
+**(Just kidding, I gave you broken code on purpouse)**
+
+- [ ] We are going to have to tweak one line of code in each server, but which one? Run the command `docker logs survey_container` to look for clues inside the container's logs...
+
+You should see that the app has crashed and, examining the error stack, you should notice that the distal cause for the crash is described with the log:
+
+```sh
+events.js:161
+      throw er; // Unhandled 'error' event
+      ^
+MongoError: failed to connect to server [localhost:27017] on first connect
+```
+
+Looks like the survey_container server crashed because it couldn't connect to the mongo database container. (Running `docker logs` on the results_container will yeild the same result) Here are some observations:
+
+- On line 8 in index.js of both the survey and results server are trying to connect to the 'mongodb://localhost:27017/docker_test'
+
+- Our mongo container is not mapped to any port on 'localhost', so that ain't gonna work.
+
+- 
 
 explain whats going on:
 
@@ -144,9 +174,6 @@ re-spin up the two other servers
 
 show that its working
 
-NEED TO KNOW IF ATTACHING A CONTAINER TO A USER DEFINED NETWORK AFTER BEING CONNECTED TO THE DEFUALT, IF IT WIIL STILL BE DISCOVERABLE?
-
-LASTLY, CAN YOU SEE IF YOU CAN ACCESS OTHER SERVERS IN THE SAME WAYS AS YOU HAVE FIGURED OUT WITH THE DBS?
 
 
 ---
@@ -165,11 +192,19 @@ remove the networks `docker network rm`
 
 extra stuff:
 
+can you also set what network the container will attach to when spun up by usiing --network on build?
+
 get into the mongo container and run commands to see whats stored in the database
 Drop the entries tabeland see the effect
 
+
+You might be wondering (if you had mongo installed on your machine) why connecting to MongoDB via the 'localhost' address didn't connect to the database installed on your machine. Remember, containers can't communicate with the host except through the use of volumes. This is a nice segway into the idea of using volumes to persist data inside  containerized databases. It's great to be able to containerize a database - but there are some drawbacks. Beacuse containers are stateless, if a database container were to crash unexpectedly, all the data inside would be lost. Not good. You want to be able to store it in a database on the host just in case and you do this via volumes
 talk about using volumes for persistent data storage on the host
 (explain the needed commands but dont require mongo to be instaled on the user's computer. offer a resource that lets them install it if they dont have it)
+
+you would noramlly communicate with another container's API through http. Give example: 
+a container is spun up on the same network at the address 'whatever' with 'so and so' port exposed. You would make a request to http://whatever:so-and-so 
+TEST THIS with the request module
 
 
 

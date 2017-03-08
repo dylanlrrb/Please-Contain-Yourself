@@ -2,11 +2,11 @@ var express = require('express');
 var mongoose = require('mongoose');
 var entry = require('./db_handlers/entry.js');
 
+
 var app = express();
 
-// mongoose.connect('mongodb://172.17.0.2/16:27017/docker_test');
 mongoose.connect('mongodb://localhost:27017/docker_test');
-
+// 172.17.0.2/16
 app.set('view engine', 'ejs');
 
 app.use(express.static(__dirname + '/views'));
