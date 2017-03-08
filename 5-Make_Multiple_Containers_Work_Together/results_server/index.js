@@ -7,11 +7,9 @@ var app = express();
 // mongoose.connect('mongodb://172.17.0.2/16:27017/docker_test');
 mongoose.connect('mongodb://localhost:27017/docker_test');
 
-
 app.set('view engine', 'ejs');
 
 app.use(express.static(__dirname + '/views'));
-
 
 app.get('/', (req, res) => {
   entry.find({}, function(err, entries) {
@@ -23,7 +21,6 @@ app.get('/', (req, res) => {
   });
   
 });
-
 
 console.log('listening on port 3000...\n');
 app.listen(3000);
