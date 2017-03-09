@@ -1,14 +1,11 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-var request = require('request');
 var entry = require('./db_handlers/entry.js');
 
 var app = express();
 
-// mongoose.connect('mongodb://172.17.0.2/16:27017/docker_test');
 mongoose.connect('mongodb://localhost:27017/docker_test');
-
 
 app.set('view engine', 'ejs');
 
@@ -29,14 +26,14 @@ app.post('/', (req, res) => {
 
   newEntry.save(function(err) {
     if (err) {
+      res.render('error');
       throw err;
     }
     console.log('SAVED!');
+
+    res.render('another');
   });
 
-  request
-
-  res.render('another');
 });
 
 console.log('listening on port 8080...\n');
