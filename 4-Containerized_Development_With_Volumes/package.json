@@ -4,7 +4,7 @@
   "description": "#### A note about the symantec formatting in this tutorial:",
   "main": "index.js",
   "scripts": {
-    "start": "./node_modules/.bin/nodemon index"
+    "start": "./node_modules/.bin/nodemon -L index"
   },
   "keywords": [],
   "author": "",
