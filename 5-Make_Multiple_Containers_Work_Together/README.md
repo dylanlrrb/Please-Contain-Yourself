@@ -261,7 +261,13 @@ Remember how I said that DOcker Networks are kind of like an 'internet' within D
 
 **This address may be different for you, so make sure you inspect the network on your own machine to find it!**
 
-Because you mounded volumes with the two server containers that you spun up, this change in the source code should be immediately  reflected in the containers (**once you save, of course**). 
+Because you mounded volumes with the two server containers that you spun up, this change in the source code should be immediately  reflected in the containers (once you save, of course). 
+
+- [ ] The app is still crashed inside the container (run `docker logs survey_container` to see), so we will have to manually restart the containers. Run:
+
+`docker restart survey_container results_container`
+
+(Wait a couple seconds for it to get going again)
 
 - [ ] Navigate to `localhost:8080` and `localhost:3000` in separate tabs to check out the app! 
 
@@ -357,8 +363,9 @@ Wouldnt it be great if all the work that we did to orchastate the coordination b
 - `docker network ls`
 - `docker network inspect <network-name>`
 - IPv4 Addressing
+- `docker exec [OPTIONS] <container-name> [COMMAND] [ARG...]`
 - User defined docker networks
-- `docker network create [OPTION] <network-name>`
+- `docker network create [OPTIONS] <network-name>`
 - ` --driver` option
 - `docker network rm`
 
