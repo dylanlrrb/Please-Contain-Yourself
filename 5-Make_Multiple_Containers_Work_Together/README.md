@@ -275,9 +275,15 @@ Congratulations!!! By splitting up the app into different containers and having 
 
 ### Running Commands Inside A Container
 
+
+
 ### User Defined Networks
 
+
+
 ### Persisting Data Outside A Container With Volumes
+
+
 
 
 	
@@ -342,33 +348,25 @@ remove the networks `docker network rm`
 Wouldnt it be great if all the work that we did to orchastate the coordination between our containers could be whittled down to one command???
 
 
-THINGS LEARNED	
-microservices archetecture
-docker networks
-docker network drivers
-default docker networks
-IPv4 Addressing
-user defined docker networks
-docker network ls
-docker network inspect <network-name>
-docker network create [OPTION]
---driver option
-docker network rm
+---
+#### Things we've learned:
+
+- Microservices archetecture
+- Docker networks
+- Default docker networks
+- `docker network ls`
+- `docker network inspect <network-name>`
+- IPv4 Addressing
+- User defined docker networks
+- `docker network create [OPTION] <network-name>`
+- ` --driver` option
+- `docker network rm`
 
 
-
-
-
-MAKE SURE THE SERVER CODE IS THE VERSION THAT IT SHOULD BE
-
-
-
-RESOURCES
-provide a good microservices resource
-
-provide doker network resources: 
-	https://docs.docker.com/engine/reference/commandline/network/#usage
-	https://docs.docker.com/engine/userguide/networking/#the-default-bridge-network-in-detail
+#### Resources
+- [MuleSoft: Best Practices for Microservices](https://github.com/dylanlrrb/P-C-Y-Assets/blob/master/5/best.pdf)
+- [Docker Container Networking](https://docs.docker.com/engine/userguide/networking)
+- [Docker Network Command](https://docs.docker.com/engine/reference/commandline/network/#usage)
 
 
 

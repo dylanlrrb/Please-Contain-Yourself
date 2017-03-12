@@ -208,7 +208,7 @@ docker run -d -p 4000:3000 --rm nodeserver
 - [ ] That's it! Great job powering through this module! To dive in even deeper, head on over to [Module 4](https://github.com/dylanlrrb/Please-Contain-Yourself/tree/master/4-Containerized_Development_With_Volumes) - Containerized Development with Volumes
 
 ---
-####Things we've learned:
+#### Things we've learned:
 
 - How to bundle an app into a pre-existing image
 - What a Dockerfile is
@@ -221,7 +221,7 @@ docker run -d -p 4000:3000 --rm nodeserver
 - `docker restart <container-name>`
 
 ---
-####Resources:
+#### Resources:
 
 - [Dockerfile reference](https://docs.docker.com/engine/reference/builder/)
 - [Dockerhub](https://hub.docker.com/)
