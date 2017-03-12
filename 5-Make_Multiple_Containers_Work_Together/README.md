@@ -261,9 +261,17 @@ Remember how I said that DOcker Networks are kind of like an 'internet' within D
 
 **This address may be different for you, so make sure you inspect the network on your own machine to find it!**
 
-Because you mounded volumes with the two server containers that you spun up, this change in the source code should be immediately  reflected in the containers. 
+Because you mounded volumes with the two server containers that you spun up, this change in the source code should be immediately  reflected in the containers (once you save, of course). 
 
-- [ ] Navigate to `localhost:8080` and `localhost:3000` in separate tabs to check out the app! Fill out the form provided on `localhost:8080` and hit submit to create an entry. Then at `localhost:3000` refresh the page to show all the entries listed!
+- [ ] The app is still crashed inside the container (run `docker logs survey_container` to see), so we will have to manually restart the containers. Run:
+
+`docker restart survey_container results_container`
+
+(Wait a couple seconds for it to get going again)
+
+- [ ] Navigate to `localhost:8080` and `localhost:3000` in separate tabs to check out the app! 
+
+- [ ] Fill out the form provided on `localhost:8080` and hit submit to create an entry. Then at `localhost:3000` refresh the page to show all the entries listed!
 
 Congratulations!!! By splitting up the app into different containers and having them communicate, you’ve successfully implemented a microservices architecture!
 
@@ -273,7 +281,105 @@ Congratulations!!! By splitting up the app into different containers and having 
 
 ### Running Commands Inside A Container
 
+
+
 ### User Defined Networks
 
+
+
 ### Persisting Data Outside A Container With Volumes
+
+
+
+
+	
+talk about user defined networks, and the different drivers (not to be confused with the default network named 'bridge', This is a little confusing.)
+
+make your own bridge network `docker network create --driver [OPTION] NETWORKNAME`
+
+because it supports automatic service discovery you can reference the containers' ip adderesses by the container name
+
+delete all containers, were going to spin them up agian on the network we just created that lets them communicate with each other. (sorry, to make you do it all over again. we'll see an easier way to do this in a bit but for the time being it's good practice)
+
+with the ` --network` command, re-spin up the database on the new network with a funky name
+
+change the address of the connection to the funky name
+
+re-spin up the two other servers
+
+show that its working
+
+
+
+---
+>**REMEMBER:** The image still has the broken code in it, so if you want to spin up a container without needing a volume mounted, you will need to build a new image with the working code
+
+---
+
+
+ASIDE: talk about cross network communication by attaching a container to multiple networks `docker network connect`
+
+
+
+
+---
+
+extra stuff:
+
+can you also set what network the container will attach to when spun up by usiing --network on build?
+
+get into the mongo container and run commands to see whats stored in the database
+Drop the entries tabeland see the effect
+
+
+You might be wondering (if you had mongo installed on your machine) why connecting to MongoDB via the 'localhost' address didn't connect to the database installed on your machine. Remember, containers can't communicate with the host except through the use of volumes. This is a nice segway into the idea of using volumes to persist data inside  containerized databases. It's great to be able to containerize a database - but there are some drawbacks. Beacuse containers are stateless, if a database container were to crash unexpectedly, all the data inside would be lost. Not good. You want to be able to store it in a database on the host just in case and you do this via volumes. 
+
+- [ ] **IF you would like to try this out** [you will need MongoDB installed](https://docs.mongodb.com/manual/installation/) on your machine. 
+
+- [ ] Next, delete your currently running mongo container and then spin it up again (I know I'm really giving your fingers a workout with all these repetitive tasks, but bear with me) but spin it up with one big diference: mount a volume ----- where the local mongo is running? with e command :
+
+- [ ] pull up the app, add some entries and inspec the database on your local machine
+
+talk about using volumes for persistent data storage on the host
+(explain the needed commands but dont require mongo to be instaled on the user's computer. offer a resource that lets them install it if they dont have it)
+
+you would noramlly communicate with another container's API through http. Give example: 
+a container is spun up on the same network at the address 'whatever' with 'so and so' port exposed. You would make a request to http://whatever:so-and-so 
+TEST THIS with the request module
+
+
+remove the containers, 
+remove the networks `docker network rm`
+
+Wouldnt it be great if all the work that we did to orchastate the coordination between our containers could be whittled down to one command???
+
+
+---
+#### Things we've learned:
+
+- Microservices archetecture
+- Docker networks
+- Default docker networks
+- `docker network ls`
+- `docker network inspect <network-name>`
+- IPv4 Addressing
+- `docker exec [OPTIONS] <container-name> [COMMAND] [ARG...]`
+- User defined docker networks
+- `docker network create [OPTIONS] <network-name>`
+- ` --driver` option
+- `docker network rm`
+
+
+#### Resources
+- [MuleSoft: Best Practices for Microservices](https://github.com/dylanlrrb/P-C-Y-Assets/blob/master/5/best.pdf)
+- [Docker Container Networking](https://docs.docker.com/engine/userguide/networking)
+- [Docker Network Command](https://docs.docker.com/engine/reference/commandline/network/#usage)
+
+
+
+
+
+
+
+
 
