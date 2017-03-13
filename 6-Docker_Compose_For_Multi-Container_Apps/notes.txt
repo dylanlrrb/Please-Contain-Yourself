@@ -8,6 +8,8 @@
 
 - go through all the parts of the .yml file
 
+- talk about how it creates its own network
+
 - look at the source code and talk about referencing the containers by name rather than ip
 
 - look at the things it made with docker images and docker ps -a
@@ -16,8 +18,14 @@
 
 - see that it reuses everything, does not rebuild the images
 
-- bring it down and see that it gets rid of the containers but not the images
+- bring it down and see that it gets rid of the containers but not the images, but you can use the --rmi option to remove the images (docker-compose stop to stop the composed app, you probably have to be in the directory of the .yml file?)
+
+-  talk about using the -v and --rmi opptions with compose down
 
 - the next time you bring it up it will not build the images again unless you use the build flag 
 
 - talk about persisting data with volumes
+
+- talk about removing volumes and volume ls, this should maybe go in another module, removing volumes with the container https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes OR CAN YOU JUST USE DOCKER VOLUME PRUNE
+
+

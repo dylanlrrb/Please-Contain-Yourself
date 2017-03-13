@@ -9,3 +9,7 @@
 - cluster, swarm, swarm-cluster?
 
 - use the voting app?
+
+scale the polling app with the compose scale command
+
+then use swarm to scale the voting app
