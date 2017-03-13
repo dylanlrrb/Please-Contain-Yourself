@@ -8,6 +8,8 @@ COPY . /src/app
 
 RUN npm install
 
+RUN npm install --global nodemon
+
 EXPOSE 8080
 
-CMD [ "npm", "start" ]
+CMD [ "npm", "run", "startdev" ]

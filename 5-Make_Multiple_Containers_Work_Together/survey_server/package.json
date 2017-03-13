@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "./node_modules/.bin/nodemon index"
+    "start": "node index.js",
+    "startdev": "nodemon -L index.js"
   },
   "keywords": [],
   "author": "",
@@ -13,7 +14,6 @@
     "body-parser": "^1.17.0",
     "ejs": "^2.5.6",
     "express": "^4.15.0",
-    "mongoose": "^4.8.5",
-    "nodemon": "^1.11.0"
+    "mongoose": "^4.8.5"
   }
 }
