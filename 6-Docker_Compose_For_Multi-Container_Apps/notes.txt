@@ -2,6 +2,8 @@
 - 
 - I frickin' love every logo for the Docker services. They're so cute and nautical themed I wanna flip.
 - 
-- I also want to cover composing a dev environment
-- 
-- NEED TO TALK ABOUT THAT TRICK WITH CONTAINERIZING DEPENDENCIES!!!
+- compose the polling app
+
+- can talk about service discovery
+
+- can talk about persisting data with volumes
