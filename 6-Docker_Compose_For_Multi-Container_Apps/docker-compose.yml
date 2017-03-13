@@ -1,1 +1,18 @@
-docker-compose.yml
+version: '3'
+
+services:
+  survey:
+    build: survey_server/
+    ports: 
+      - '8080:8080'
+
+  results:
+    build: results_server/
+    ports:
+      - '3000:3000'
+
+  database:
+    image: mongo:latest
+    ports:
+      - '27017:27017'
+      

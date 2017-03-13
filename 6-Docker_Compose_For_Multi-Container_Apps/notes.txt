@@ -1,9 +1,23 @@
 6-Docker Compose for multicontainer apps
-- 
+
 - I frickin' love every logo for the Docker services. They're so cute and nautical themed I wanna flip.
-- 
-- compose the polling app
 
-- can talk about service discovery
+- compose the polling app in an attahced state
 
-- can talk about persisting data with volumes
+- check out the app and ctrl c when done
+
+- go through all the parts of the .yml file
+
+- look at the source code and talk about referencing the containers by name rather than ip
+
+- look at the things it made with docker images and docker ps -a
+
+- bring it up again in a detached state
+
+- see that it reuses everything, does not rebuild the images
+
+- bring it down and see that it gets rid of the containers but not the images
+
+- the next time you bring it up it will not build the images again unless you use the build flag 
+
+- talk about persisting data with volumes
