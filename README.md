@@ -70,5 +70,6 @@ Start at the first module. Unless you've already completed it. In that case igno
 - [Awesome-Docker](https://github.com/veggiemonk/awesome-docker)
 - [Dockerhub](https://hub.docker.com/)
 - [Docker Pro-tips](https://nodesource.com/blog/8-protips-to-start-killing-it-when-dockerizing-node-js/)
+- [Lessons from Building a Node App in Docker](http://jdlm.info/articles/2016/03/06/lessons-building-node-app-docker.html)
 - [Dockerfile reference](https://docs.docker.com/engine/reference/builder/)
 - [Cleaning Ice Cream off your Keyboard](https://www.howtogeek.com/forum/topic/clean-laptop-keyboard)
