@@ -1,6 +1,8 @@
 # Module 6 - Docker-Compose For Multi-Container Apps
 
-#### A note about the symantec formanting in this tutorial:
+#### A note about the symantec formatting in this tutorial:
+
+- [ ] Check boxes are steps that need to be completed.
 
 Text that looks `like this --for --example` are commands that you should type into your terminal. Or else.
 
@@ -13,3 +15,4 @@ Text that looks `like this --for --example` are commands that you should type in
 
 ## With that out of the way, lets get started!
 
+![compose](https://github.com/dylanlrrb/P-C-Y-Assets/blob/master/6/compose.png?raw=true)

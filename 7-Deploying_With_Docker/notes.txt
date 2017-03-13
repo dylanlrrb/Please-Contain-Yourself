@@ -1,4 +1,8 @@
-FIRST: Show the neccisary steps to make a container accessable via local tunnel with the right networks.
+deploy the polling app 
+
+then deploy the voting app
+
+FIRST???: Show the neccisary steps to make a container accessable via local tunnel with the right networks.
 
 then thats a good segway into making it accessable on another persons computer
 

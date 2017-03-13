@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Entries</title>
+    <meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; width=device-width;">
+    <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+
+  <body>
+    <div class="table-title">
+      <h3>Entries</h3>
+    </div>
+    <table class="table-fill">
+      <thead>
+        <tr>
+          <th class="text-left">Name</th>
+          <th class="text-left">Fav Color</th>
+        </tr>
+      </thead>
+      <tbody class="table-hover">
+
+        <% for(var i=0; i<data.length; i++) {%>
+          <tr>
+            <td class="text-left"> <%= data[i].name %> </td>
+            <td class="text-left"> <%= data[i].color %> </td>
+          </tr>
+        <% } %>
+
+        <!-- <tr>
+          <td class="text-left">January</td>
+          <td class="text-left">$ 50,000.00</td>
+        </tr> -->
+      </tbody>
+    </table>
+    
+
+  </body>
+</html>

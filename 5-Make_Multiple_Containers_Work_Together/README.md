@@ -279,6 +279,10 @@ Congratulations!!! By splitting up the app into different containers and having 
 >**REMEMBER:** The image still has the broken code in it, so if you want to spin up a container without needing a volume mounted, you will need to build a new image with the working code.
 Also, there would be no need to watch for file changes in the final container, so you need change your dockerfile accordingly.
 
+Wouldn't it be amazing if there were some way to automatically coordinate all these containers so you didn't have to build all the images and run all the containers separately? What if I told you there's a way to start up a multi-container app with one command??
+
+If you would like to be enlightened by these ancient and powerful secrets, continue to [Module 6 - Docker Compose for Multi-Container Apps](https://github.com/dylanlrrb/Please-Contain-Yourself/tree/master/6-Docker_Compose_For_Multi-Container_Apps) 
+
 ---
 
 ## Extra Credit

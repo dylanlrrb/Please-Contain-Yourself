@@ -56,7 +56,7 @@ Start at the first module. Unless you've already completed it. In that case igno
 
 **Modules 6 and above contain more advanced content. Dive in with these Modules if you've been wanting to sink your teeth into the really juicy parts of Docker!**
 
-- ~~[Module 6](https://github.com/dylanlrrb/Please-Contain-Yourself/tree/master/6-Docker_Compose_For_Multi-Container_Apps) Docker-Compose For Multi-Container Apps~~
+- [Module 6](https://github.com/dylanlrrb/Please-Contain-Yourself/tree/master/6-Docker_Compose_For_Multi-Container_Apps) Docker-Compose For Multi-Container Apps
 - ~~[Module 7](https://github.com/dylanlrrb/Please-Contain-Yourself/tree/master/7-Deploying_With_Docker) Deploying With Docker~~
 - ~~[Module 8](https://github.com/dylanlrrb/Please-Contain-Yourself/tree/master/8-Docker_Swarm_For_Scaling) Docker Swarm For Scaling~~
 - ~~[Module 9](https://github.com/dylanlrrb/Please-Contain-Yourself/tree/master/9-Multi_Host_Clusters) Multi-Host Clusters~~
@@ -70,5 +70,6 @@ Start at the first module. Unless you've already completed it. In that case igno
 - [Awesome-Docker](https://github.com/veggiemonk/awesome-docker)
 - [Dockerhub](https://hub.docker.com/)
 - [Docker Pro-tips](https://nodesource.com/blog/8-protips-to-start-killing-it-when-dockerizing-node-js/)
+- [Lessons from Building a Node App in Docker](http://jdlm.info/articles/2016/03/06/lessons-building-node-app-docker.html)
 - [Dockerfile reference](https://docs.docker.com/engine/reference/builder/)
 - [Cleaning Ice Cream off your Keyboard](https://www.howtogeek.com/forum/topic/clean-laptop-keyboard)
