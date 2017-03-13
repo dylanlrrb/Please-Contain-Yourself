@@ -15,4 +15,4 @@ Text that looks `like this --for --example` are commands that you should type in
 
 ## With that out of the way, lets get started!
 
-![compose]((https://github.com/dylanlrrb/P-C-Y-Assets/blob/master/6/compose.png?raw=true))
+![compose](https://github.com/dylanlrrb/P-C-Y-Assets/blob/master/6/compose.png?raw=true)
