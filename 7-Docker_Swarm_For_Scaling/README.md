@@ -1,4 +1,4 @@
-# Module 8 - Docker Swarm For Scaling
+# Module 7 - Docker Swarm For Scaling
 
 #### A note about the symantec formanting in this tutorial:
 

@@ -5,7 +5,18 @@ var entry = require('./db_handlers/entry.js');
 
 var app = express();
 
-mongoose.connect('mongodb://database/docker_test');
+var mongoUrl = 'mongodb://database/docker_test';
+
+var connectWithRetry = function() {
+  return mongoose.connect(mongoUrl, function(err) {
+    if (err) {
+      console.error('Failed to connect to mongo on startup - retrying in 5 sec', err);
+      setTimeout(connectWithRetry, 5000);
+    }
+  });
+};
+
+connectWithRetry();
 
 app.set('view engine', 'ejs');
 
