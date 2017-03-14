@@ -7,16 +7,7 @@ var app = express();
 
 var mongoUrl = 'mongodb://database/docker_test';
 
-var connectWithRetry = function() {
-  return mongoose.connect(mongoUrl, function(err) {
-    if (err) {
-      console.error('Failed to connect to mongo on startup - retrying in 5 sec', err);
-      setTimeout(connectWithRetry, 5000);
-    }
-  });
-};
-
-connectWithRetry();
+mongoose.connect(mongoUrl, {server: {reconnectTries: Number.MAX_VALUE}});
 
 app.set('view engine', 'ejs');
 
