@@ -1,16 +1,20 @@
 6-Docker Compose for multicontainer apps
 
-- I frickin' love every logo for the Docker services. They're so cute and nautical themed I wanna flip.
+x I frickin' love every logo for the Docker services. They're so cute and nautical themed I wanna flip.
 
-- compose the polling app in an attahced state
+x compose the polling app in an attahced state
 
-- check out the app and ctrl c when done
+x check out the app 
 
-- go through all the parts of the .yml file
+- go through all the parts of the .yml file 
+
+- ASIDE: about the start up order and it is a good idea to make your archetecture robust enough to handle network hiccups without crashing
+
+- ctrl c when done
 
 - talk about how it creates its own network
 
-- look at the source code and talk about referencing the containers by name rather than ip
+- look at the source code and talk about referencing the containers by name rather than ip (can it be whatever name?? YES!) you dont know what the containers address is going to be so the connection urls support automatic service discovery
 
 - look at the things it made with docker images and docker ps -a
 
@@ -28,4 +32,6 @@
 
 - talk about removing volumes and volume ls, this should maybe go in another module, removing volumes with the container https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes OR CAN YOU JUST USE DOCKER VOLUME PRUNE
 
+Resources:
+link to compose commends
 

@@ -17,37 +17,37 @@ Text that looks `like this --for --example` are commands that you should type in
 
 ![compose](https://github.com/dylanlrrb/P-C-Y-Assets/blob/master/6/compose.png?raw=true)
 
-I love every logo for all the Docker services, they're just all so charmingly nautical themed. I mean look at this octopus. I can't take it.
+I love every logo for all the Docker services, they're all just so charmingly nautical themed. I mean look at this octopus. I can't take it.
 
-The octopus is the logo for Docker Compose and it is a tool that works with Docker that makes makes your life easier.
+The octopus is the logo for Docker Compose - a tool that works with Docker that makes makes your life a whole lot easier.
 
 In the previous Module we containerized an app that was split into several microservices, each requiring its own container. But before we could get each container up and running we had to create an image for each service as well that contained each chunk of source code. 
 
 Easier said than done right? When we get down to the nitty-gritty of actually getting our whole app running we had a lot of steps to complete and things to keep track of. Things like:
 
-- cd into the survey_server folder 
+- cd-ing into the survey_server directory 
 
-- build the image for the survey service
+- building the image for the survey service
 
-- spin up a survey container from that image 
+- spining up a survey container from that image 
 
-- 		remember what ports you want to map to where on the host
+- (remembering what ports you want to map to where on the host)
 
--			give your container a distinct name for identification purposes
+- (giving that container a distinct name for identification purposes)
 
-- cd into the results_server folder 
+- cd-ing into the results_server directory 
 
-- build the image for the results service
+- building the image for the results service
 
-- spin up a survey container from that image 
+- spining up a survey container from that image 
 
-- 		remember what ports you want to map to where on the host
+- (remembering what ports you want to map to where on the host)
 
--			give your container a distinct name for identification purposes
+- (giving that container a distinct name for identification purposes)
 
-- spin up a mongodb container 
+- spining up a mongodb container 
 
-- 		Remember what name the mongo container
+- (Remembering what name the mongo container)
 
 - **OH WAIT.** The survey service container is connecting to the database with the wrong address! 
 
@@ -55,7 +55,7 @@ Easier said than done right? When we get down to the nitty-gritty of actually ge
 
 - Don't forget to get rid of the old containers since they're still using the port you want!
 
-You might feel like a hacker while frantically typing all these commands in the terminal but be honest, **This whole process stinks like moldy gym socks.**
+You might feel like a super-cool hacker while frantically typing all these commands in the terminal, but be honest - **this whole process stinks like moldy gym socks.**
 
 
 **And these are just the steps to bring up a simple app with 3 services. Can you imagine the kind of insane hoops you would have to jump through to run a complex application with 20+ services working together?? My eye is twitching just thinking about it.**
@@ -68,8 +68,18 @@ Luckily for you, this problem had already been solved for you before you even kn
 
 - [ ] Rather than spending forever talking about what Docker Compose does and why it's great, let's just dive into a demonstration. `cd` into the directory '/6-Docker_Compose_For_Multi-Container_Apps'
 
-- [ ] Run the command `ls` and notice that we have directories that contain the source code for the services of our polling app from the previous Module (survey_server and results_server), and each of those directories contains it's own Dockerfile that defines the steps to build it's requisite image.
+- [ ] Run the command `ls` and notice that we have directories that contain the source code for the services of our polling app from the previous Module (the 'survey_server' and 'results_server'). Each of these directories contains it's own Dockerfile that defines the steps to build it's requisite image.
 
-- [ ] Also notice however that there is a file in Module 6 that you may not be familiar with, the one named 'docker-compose.yml'
+- [ ] Also notice that there is a file in Module 6 that you may not be familiar with, the one named 'docker-compose.yml'
 
+- [ ] Let's do this thing! Run `docker-compose up` ! 
 
+- [ ] After all the logging has stopped go ahead and use your browser to navigate to `localhost:8080` and `locakhost:3000` in separate tabs. Mess around with the app, create some entries, and see that everything works exactly as before!
+
+**How is this possible? We just ran a single command! This is WITCHCRAFT!**
+
+But, no. Not witchcraft. It's the magic of Docker Compose. Let's take a peek inside that 
+
+- [ ] We brought up our app in an attached state so the innards of the container are still waiting for commands in the terminal. Press `Ctrl + C` to stop the containers.
+
+- [ ] 

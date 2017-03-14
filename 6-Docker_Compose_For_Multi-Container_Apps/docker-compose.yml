@@ -13,3 +13,6 @@ services:
 
   database:
     image: mongo:latest
+    # mount a volume in the host's mongoDB, 
+    # can show that data notoly persists between stateless containers, 
+    # but you can access the information on the host 
