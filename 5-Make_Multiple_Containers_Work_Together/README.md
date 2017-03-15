@@ -290,8 +290,6 @@ If you would like to be enlightened by these ancient and powerful secrets, conti
 - [Clean up after Docker!](http://blog.yohanliyanage.com/2015/05/docker-clean-up-after-yourself/)
 - [Running commands inside a Docker container](https://docs.docker.com/engine/reference/commandline/exec/)
 - [User-defined Docker Networks](https://docs.docker.com/engine/userguide/networking/#user-defined-networks)
-- [Persisting containerized database data on the host via volumes](https://devops.profitbricks.com/tutorials/creating-a-mongodb-docker-container-with-an-attached-storage-volume/)
-
 
 ---
 #### Things we've learned:

@@ -25,6 +25,10 @@ In the previous Module we containerized an app that was split into several micro
 
 Easier said than done right? When we get down to the nitty-gritty of actually getting our whole app running we had a lot of steps to complete and things to keep track of. Things like:
 
+- spining up a mongodb container 
+
+- (Remembering to do this first or the other containers will crash when trying to connect to it)
+
 - cd-ing into the survey_server directory 
 
 - building the image for the survey service
@@ -45,15 +49,15 @@ Easier said than done right? When we get down to the nitty-gritty of actually ge
 
 - (giving that container a distinct name for identification purposes)
 
-- spining up a mongodb container 
-
-- (Remembering what name the mongo container)
-
 - **OH WAIT.** The survey service container is connecting to the database with the wrong address! 
 
-- Looks like you'll have to rebuild the image and spin it up again!
+- Inspecting the correct network to get the database container's address
 
-- Don't forget to get rid of the old containers since they're still using the port you want!
+- Rebuilding the image
+
+- Spinning it up again
+
+- Not forgetting to get rid of the old containers since they're still using the port you want!
 
 You might feel like a super-cool hacker while frantically typing all these commands in the terminal, but be honest - **this whole process stinks like moldy gym socks.**
 
@@ -68,9 +72,9 @@ Luckily for you, this problem had already been solved for you before you even kn
 
 - [ ] Rather than spending forever talking about what Docker Compose does and why it's great, let's just dive into a demonstration. `cd` into the directory '/6-Docker_Compose_For_Multi-Container_Apps'
 
-- [ ] Run the command `ls` and notice that we have directories that contain the source code for the services of our polling app from the previous Module (the 'survey_server' and 'results_server'). Each of these directories contains it's own Dockerfile that defines the steps to build it's requisite image.
+- [ ] Run the command `ls` and notice that we have directories that contain the source code for the services of our polling app from the previous Module (the 'survey_server' and 'results_server'). Each of these directories contains it's own Dockerfile that defines the steps to build it's requisite image. This should all be familiar to you.
 
-- [ ] Also notice that there is a file in Module 6 that you may not be familiar with, the one named 'docker-compose.yml'
+- [ ] Also notice that there is a file in Module 6 that you may not be familiar with, the one named 'docker-compose.yml'. We'll dive into this shortly.
 
 - [ ] Let's do this thing! Run `docker-compose up` ! 
 
@@ -87,7 +91,7 @@ But, no. Not witchcraft. It's the magic of Docker Compose. Let's take a peek ins
 
 
 
-WHAT STEP IS THE BEST PLAVE TO PUT THIS BLURB?
+WHAT STEP IS THE BEST PLACE TO PUT THIS BLURB?
 
 **This part is important, please read.** Remember how I mentioned that Docker uses up quite a bit of memory when you forget to clean up after yourself? Well the volumes that you have been using in these containers are a chief culprite. **After messing around with Docker for the first time, I accumulated like 3 gigabytes of volumes on my machine. Oops. **Don't be like me. Clean up your volumes**
 
@@ -112,4 +116,7 @@ WHAT STEP IS THE BEST PLAVE TO PUT THIS BLURB?
 
 - `docker volume ls`
 - `docker voulme prune`
+
+
+include references to compose up and down docs
 

@@ -6,7 +6,9 @@ WORKDIR /src/app
 
 COPY . /src/app
 
-RUN npm install
+RUN npm install -g yarn
+
+RUN yarn install
 
 EXPOSE 8080
 
