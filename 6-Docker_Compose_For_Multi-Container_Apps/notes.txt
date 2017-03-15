@@ -22,11 +22,11 @@ x look at the things it made with docker images and docker ps -a
 
 x talk about how it creates its own network (look at it with netwok ls)
 
-- look at the source code and talk about referencing the containers by name rather than ip (can it be whatever name?? YES!) you dont know what the containers address is going to be so the connection urls support automatic service discovery
+x look at the source code and talk about referencing the containers by name rather than ip (can it be whatever name?? YES!) you dont know what the containers address is going to be so the connection urls support automatic service discovery
 
-- bring it up again in a detached state
+x bring it up again in a detached state
 
-- see that it reuses everything, does not rebuild the images
+x see that it reuses everything, does not rebuild the images
 
 - bring it down and see that it gets rid of the containers but not the images, but you can use the --rmi option to remove the images (docker-compose stop to stop the composed app, you probably have to be in the directory of the .yml file?)
 
