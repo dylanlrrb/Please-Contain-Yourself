@@ -27,7 +27,7 @@ Text that looks `like this --for --example` are commands that you should type in
 >
 >First, the `EXPOSE 8080` command; containers built from this image will expose port 8080 rather than 3000 like last time
 >
->Second, we are building our image off of a different version of the official node image. Rather than `:latest`, we are using `:7.6-alpine`.
+>Second, we are building our image off of a different version of the official node image. Rather than `:latest`, we are using `:7.6-alpine`. 
 >
 >"This image is based on the popular Alpine Linux project, available in the alpine official image. Alpine Linux is much smaller than most distribution base images (~5MB), and thus leads to much slimmer images in general. This variant is highly recommended when final image size being as small as possible is desired." -- [Official node image on Dokerhub](https://hub.docker.com/_/node/)
 >
