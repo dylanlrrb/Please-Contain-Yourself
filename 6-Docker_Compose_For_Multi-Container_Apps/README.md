@@ -51,7 +51,7 @@ Easier said than done right? When we get down to the nitty-gritty of actually ge
 
 - **OH WAIT.** The survey service container is connecting to the database with the wrong address! 
 
-- Inspecting the correct network to get the database container's address
+- Inspecting the network to get the database container's address
 
 - Rebuilding the image
 
@@ -82,9 +82,9 @@ Luckily for you, this problem had already been solved for you before you even kn
 
 **How is this possible? We just ran a single command! This is WITCHCRAFT!**
 
-But, no. Not witchcraft. It's the magic of Docker Compose. Let's take a peek inside that 
+But, no. Not witchcraft. It's the magic of Docker Compose.
 
-- [ ] We brought up our app in an attached state so the innards of the container are still waiting for commands in the terminal. Press `Ctrl + C` to stop the containers.
+- [ ] We brought up our app in an attached state so the innards of our app are still waiting for commands in the terminal. Press `Ctrl + C` to stop the containers.
 
 - [ ] **Docker Compose uses the 'docker-compose.yml' file as instructions for how to bring up our app.** Let's take a peek at it and break down how the 'docker-compose.yml' file is interpreted! Go ahead and open it up and you'll see this:
 
@@ -123,14 +123,14 @@ So looking at the '.yml' file, 'survey', 'results', and 'database' are all servi
 
 - `build: survey_server/` - Subordinate to the survey service, this line tells Compose where to find the Dockerfile that it can use to build the survey container. It is a relative file path starting from the directory containing the '.yml' file, so it is saying 'within this directory, look inside the survey_server/ directory and you will find the Dockerfile you need.'
 
-- `depends_on: - 'database'` - I know this is actually two lines but I'm treating it as one since they go together. `depends_on` controls the startup order of the containers once Compose builds them. It's basically telling Compose, 'Don't start this container until my database container has been spun up'. 
+- `depends_on: - 'database'` - I know this is actually two lines but I'm treating it as one since they go together. `depends_on` controls the startup order of the containers once Compose builds them. It's basically telling Compose, 'Don't start this container until my "database" container has been spun up'. 
 
 ---
->Why do you think this might be important? I'll give you a hint: the order that the services are listed in the '.yml' file does not indicate the order that the containers will be spun up! **What happens if the survey or results container starts up and it tries to connect to a database container that does not yet exist?** 
+>Why do you think `depends_on` might be important? I'll give you a hint: the order that the services are listed in the '.yml' file does not indicate the order that the containers will be spun up! **What happens if the survey or results container starts up and it tries to connect to a database container that does not yet exist?** 
 >
 >THE CONTAINER WILL CRASH. And then you are left pondering your life choices as you search through all your containers' logs for the reason why your app isn't working.
 >
->Keep in mind that this only guarantees that the container is spun up (not necessarily that it is ready to accept requests) at the time the next container is spun up. Ideally, your app's code should be robust enough that it can handle network hiccups without crashing, but the existence of the thing you are trying to connect to should never be in question. Controlling the startup order is a way to bring up first the services that other services depend on so there are no surprises. Check out [this resource](https://docs.docker.com/compose/startup-order/) for more information.
+>Keep in mind that this only guarantees that the container is spun up (not necessarily that it will be ready to accept requests) at the time the next container is spun up. Ideally, your app's code should be robust enough that it can handle network hiccups without crashing, but the existence of the thing you are trying to connect to should never be in question. Controlling the startup order is a way to bring up first the services that other services depend on so there are no surprises. Check out [this resource](https://docs.docker.com/compose/startup-order/) for more information.
 
 ---
 
@@ -208,7 +208,9 @@ Removing network 6dockercomposeformulticontainerapps_default
 ---
 >Since these images are cached, the next time you bring the app it will come up much faster since it doesn't have to rebuilt the images, just make containers from them.
 >
->**But what if you made a change in the source code and you need one ore more images rebuilt? Just use the `--build` option with the `docker-compose up` command to force a rebuild of the images in your app!**
+>**But what if you made a change in the source code and you need one ore more images rebuilt? 
+>
+>Just use the `--build` option with the `docker-compose up` command to force a rebuild of the images in your app!**
 
 ---
 
@@ -234,7 +236,7 @@ The `--rmi all` option removes not only the containers and network that it creat
 
 - Use the -v option when using the `docker-compose down` command. This will delete any volumes associated with the containers you are deleting.
 
-- Use `docker volume prune` This will remove any dangling volumes that are not currently associated with a container. This command will ask you to confirm that you want to do this and then tell you how much memory it reclaimed. It's usually quite a bit!
+- Use `docker volume prune` - This will remove any dangling volumes that are not currently associated with a container. This command will ask you to confirm that you want to do this and then tell you how much memory it reclaimed. It's usually quite a lot!
 
 - Using the `--rm` option when spinning up containers with the `docker run` command will not only remove the container when it it stopped, but it will also remove its volume! The more you know.
 
@@ -242,7 +244,7 @@ The `--rmi all` option removes not only the containers and network that it creat
 
 - [ ] Revel in all the disk space you reclaimed.
 
-That's it! I hope you enjoyed learning about Docker Compose! After typing out every command to get your apps running in the previous Modules, it is easy to appreciate all that Compose does for you. It saves a ton of time and brainpower that you could otherwise be using so solve bigger challenges... like how to scale your app! Luckily for you, thats the topic of our next Module -> [Module 7 - Docker Swarm for Scaling](https://github.com/dylanlrrb/Please-Contain-Yourself/tree/master/7-Docker_Swarm_For_Scaling)
+That's it! I hope you enjoyed learning about Docker Compose! After typing out every command to get your apps running in the previous Modules, it's easy to appreciate all that Compose does for you. It saves a ton of time and brainpower that you could otherwise be using so solve bigger challenges... like how to scale your app! Luckily for you, that's the topic of our next Module -> [Module 7 - Docker Swarm for Scaling](https://github.com/dylanlrrb/Please-Contain-Yourself/tree/master/7-Docker_Swarm_For_Scaling)
 
 
 ---
