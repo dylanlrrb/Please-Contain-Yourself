@@ -19,9 +19,9 @@ Text that looks `like this --for --example` are commands that you should type in
 
 ## Preface: Intro to Microservices
 
-As you can see from the the previous modules, Docker makes it really easy to isolate different parts of your app into discrete units. 
+As you can see from the the previous modules, Docker makes it really easy to isolate different parts of your app into discrete units.
 
-Not only is it really easy, but because the official Dockerhub images you layer your app on top of have singular purposes (e.g. postgreSQL database image, nginx server image, etc.), it sort of forces us to think about building software in discrete 'chunks' of functionality. 
+Not only is it really easy, but because the official Dockerhub images you layer your app on top of have singular purposes (e.g. postgreSQL database image, nginx server image, etc.), it sort of forces us to think about building software in discrete 'chunks' of functionality.
 
 These discrete chunks of functionality are called 'microservices' and are the fundamental idea behind a type of software design pattern called 'microservices architecture'
 
@@ -53,7 +53,7 @@ Well let me lay some knowledge on your brain. As the frickin' adorable image at 
 **They're called Docker Networks - let's learn about em'!**
 
 ---
->Side note: If you were previously familiar with Docker before reading this guide, you may have been under the impression that containers were connected via the ` --link` option used during `docker run`. And you WOULD have been right, however, ` --link` has been depreciated since version 1.12 and may completely disappear at any moment... now it's hip to use Networks. Get with the times, gramps. 
+>Side note: If you were previously familiar with Docker before reading this guide, you may have been under the impression that containers were connected via the ` --link` option used during `docker run`. And you WOULD have been right, however, ` --link` has been depreciated since version 1.12 and may completely disappear at any moment... now it's hip to use Networks. Get with the times, gramps.
 
 ---
 
@@ -87,7 +87,7 @@ Docker is the only thing you need from now on! So let's get started spinning the
 
 **REMEMBER the dot is a relative file path to where your Dockerfile lives (one is included for each server), so MAKE SURE you are cd'd into the correct directory before running this command**
 
-- [ ] Build your results server image and tag it with the name 'results' by running `docker build -t results .` 
+- [ ] Build your results server image and tag it with the name 'results' by running `docker build -t results .`
 
 - [ ] Pull down a MongoDB image by running `docker pull mongo:latest`
 
@@ -114,11 +114,11 @@ Be sure to also mount volumes in the respective directories just in case, i don'
 
 - [ ] cd into '/survey_server' and run:
 
-`docker -d -p 8080:8080 -v $(pwd):/src/app --name survey_container survey`
+`docker run -d -p 8080:8080 -v $(pwd):/src/app --name survey_container survey`
 
 - [ ] cd into '/results_server' and run:
 
-`docker -d -p 3000:3000 -v $(pwd):/src/app --name results_container results`
+`docker run -d -p 3000:3000 -v $(pwd):/src/app --name results_container results`
 
 - [ ] Now pull up the app by navigating to `localhost:8080` and `localhost:3000` in your browser! You should definitely have your hopes up because I totally didn't give you broken code on purpose!
 
@@ -143,9 +143,9 @@ Looks like the survey_container server crashed because it couldn't connect to th
 
 - The mongo container has port 27017 exposed
 
-To talk about how to solve this communication problem, I first need to formally introduce Docker Networking. I like to think of Docker Networks as a kind of 'internet' that only docker containers can use. But there's a cool little catch - you can create many isolated networks so that containers connected to a network can all talk to each other but not containers on other networks! This is super useful for controlling the flow of possibly sensitive data between containers. 
+To talk about how to solve this communication problem, I first need to formally introduce Docker Networking. I like to think of Docker Networks as a kind of 'internet' that only docker containers can use. But there's a cool little catch - you can create many isolated networks so that containers connected to a network can all talk to each other but not containers on other networks! This is super useful for controlling the flow of possibly sensitive data between containers.
 
-- [ ] Docker comes installed with 3 ready-to-go networks, to check them out run the command `docker network ls` 
+- [ ] Docker comes installed with 3 ready-to-go networks, to check them out run the command `docker network ls`
 
 You should see something like this:
 
@@ -158,7 +158,7 @@ b4a8c47fad5c        none                null                local
 
 There are 3 networks listed here: bridge, host, and none. We're only going to go in-depth into the the bridge network but if you want more information about the others, [check out this resource](https://docs.docker.com/engine/userguide/networking/).
 
-You might be wondering, **Hey, when I spun up all the containers for this module I never specified what network to connect them to! Are they just floating in space not connected to anything?"**
+You might be wondering, **"Hey, when I spun up all the containers for this module I never specified what network to connect them to! Are they just floating in space not connected to anything?"**
 
 But that would be silly. When you spin up a container without specifying a network to connect it to (**Something we will learn how to do in little bit**) it is AUTOMATICALLY connected to the 'bridge' network that comes with Docker by default.
 
@@ -221,9 +221,9 @@ The `docker network inspect` command gives you an overview of the network whose 
         "Labels": {}
     }
 ]
-``` 
+```
 
-The one thing that I would like you to notice is the "Containers": property on this [JSON object](https://www.w3schools.com/js/js_json_objects.asp) that was logged. Here, you can see listed all the containers that are currently running and attached to the 'bridge' network that we're inspecting. 
+The one thing that I would like you to notice is the "Containers": property on this [JSON object](https://www.w3schools.com/js/js_json_objects.asp) that was logged. Here, you can see listed all the containers that are currently running and attached to the 'bridge' network that we're inspecting.
 
 **Let's take a step back and think about what we're trying to accomplish here. We need our survey and results server containers to be able to connect to the mongo container that we're using to persist data.**
 
@@ -249,7 +249,7 @@ The answer to all your questions is in that `docker network inspect` log. Since 
             }
 ```
 
-Remember how I said that DOcker Networks are kind of like an 'internet' within Docker? Well, turns out that containers have their own IP addresses that you need to use in any sort of network request between containers. And that little bit of critical information is listed right under the property "IPv4Address". The address you can find the mongo container with in this case is:
+Remember how I said that Docker Networks are kind of like an 'internet' within Docker? Well, turns out that containers have their own IP addresses that you need to use in any sort of network request between containers. And that little bit of critical information is listed right under the property "IPv4Address". The address you can find the mongo container with in this case is:
 
 ```sh
 172.17.0.2/16
@@ -261,9 +261,9 @@ Remember how I said that DOcker Networks are kind of like an 'internet' within D
 
 **This address may be different for you, so make sure you inspect the network on your own machine to find it!**
 
-Because you mounded volumes with the two server containers that you spun up, this change in the source code should be immediately  reflected in the containers (**once you save, of course**). 
+Because you mounded volumes with the two server containers that you spun up, this change in the source code should be immediately  reflected in the containers (**once you save, of course**).
 
-- [ ] Navigate to `localhost:8080` and `localhost:3000` in separate tabs to check out the app! 
+- [ ] Navigate to `localhost:8080` and `localhost:3000` in separate tabs to check out the app!
 
 - [ ] Fill out the form provided on `localhost:8080` and hit submit to create an entry. Then at `localhost:3000` refresh the page to show all the entries listed!
 
@@ -281,7 +281,7 @@ Also, there would be no need to watch for file changes in the final container, s
 
 Wouldn't it be amazing if there were some way to automatically coordinate all these containers so you didn't have to build all the images and run all the containers separately? What if I told you there's a way to start up a multi-container app with one command??
 
-If you would like to be enlightened by these ancient and powerful secrets, continue to [Module 6 - Docker Compose for Multi-Container Apps](https://github.com/dylanlrrb/Please-Contain-Yourself/tree/master/6-Docker_Compose_For_Multi-Container_Apps) 
+If you would like to be enlightened by these ancient and powerful secrets, continue to [Module 6 - Docker Compose for Multi-Container Apps](https://github.com/dylanlrrb/Please-Contain-Yourself/tree/master/6-Docker_Compose_For_Multi-Container_Apps)
 
 ---
 
