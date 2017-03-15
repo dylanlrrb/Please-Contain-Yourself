@@ -3,16 +3,17 @@ version: '3'
 services:
   survey:
     build: survey_server/
+    depends_on:
+      - 'database'
     ports: 
       - '8080:8080'
 
   results:
     build: results_server/
+    depends_on:
+      - 'database'
     ports:
       - '3000:3000'
 
   database:
     image: mongo:latest
-    # mount a volume in the host's mongoDB, 
-    # can show that data notoly persists between stateless containers, 
-    # but you can access the information on the host 

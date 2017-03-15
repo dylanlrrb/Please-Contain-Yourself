@@ -12,3 +12,5 @@ then thats a good segway into making it accessable on another persons computer
 should i go into env variables? probably.
 need to talk about persisting stateful data on the hos and how to do that
 deploy onto aws, google cloud service, and digital ocean. Maybe also just a bare VPS?
+
+[Getting docker engine on A digital ocean droplet](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04)

@@ -6,32 +6,36 @@ x compose the polling app in an attahced state
 
 x check out the app 
 
-- go through all the parts of the .yml file 
+x modify the yml file to reflect what depends on what
 
-- ASIDE: about the start up order and it is a good idea to make your archetecture robust enough to handle network hiccups without crashing
+x modify the source code to get the server to auto reconnect
 
-- ctrl c when done
+x modify the dockerfile and source code to use yarn, see if its a faster build
 
-- talk about how it creates its own network
+x go through all the parts of the .yml file 
 
-- look at the source code and talk about referencing the containers by name rather than ip (can it be whatever name?? YES!) you dont know what the containers address is going to be so the connection urls support automatic service discovery
+x  ASIDE: about the start up order https://docs.docker.com/compose/startup-order/ and it is a good idea to make your archetecture robust enough to handle network hiccups without crashing
 
-- look at the things it made with docker images and docker ps -a
+x ctrl c when done
 
-- bring it up again in a detached state
+x look at the things it made with docker images and docker ps -a
 
-- see that it reuses everything, does not rebuild the images
+x talk about how it creates its own network (look at it with netwok ls)
+
+x look at the source code and talk about referencing the containers by name rather than ip (can it be whatever name?? YES!) you dont know what the containers address is going to be so the connection urls support automatic service discovery
+
+x bring it up again in a detached state
+
+x see that it reuses everything, does not rebuild the images
 
 - bring it down and see that it gets rid of the containers but not the images, but you can use the --rmi option to remove the images (docker-compose stop to stop the composed app, you probably have to be in the directory of the .yml file?)
 
--  talk about using the -v and --rmi opptions with compose down
-
 - the next time you bring it up it will not build the images again unless you use the build flag 
 
-- talk about persisting data with volumes
+- Make a change in the source code and bring it up one last time with the build option
 
-- talk about removing volumes and volume ls, this should maybe go in another module, removing volumes with the container https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes OR CAN YOU JUST USE DOCKER VOLUME PRUNE
+- talk aboiut needing to rebuild the image if there is no volume mounted, but if there is, you would just need to restart the all the containers with docker compose restart
 
-Resources:
-link to compose commends
+- introduce the idea of volume garbage and modify existing blurb to account for the fact that volumes made by spinning up individual containers dont seem to show up.
 
+-  talk about using the -v and --rmi opptions with compose down (docker compose apperently makes volumes with its containers. talk about all the caching Docker does and why its important to clean up)
