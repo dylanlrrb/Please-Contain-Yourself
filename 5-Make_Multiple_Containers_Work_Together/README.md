@@ -287,6 +287,7 @@ If you would like to be enlightened by these ancient and powerful secrets, conti
 
 ## Extra Credit
 
+- [Clean up after Docker!](http://blog.yohanliyanage.com/2015/05/docker-clean-up-after-yourself/)
 - [Running commands inside a Docker container](https://docs.docker.com/engine/reference/commandline/exec/)
 - [User-defined Docker Networks](https://docs.docker.com/engine/userguide/networking/#user-defined-networks)
 - [Persisting containerized database data on the host via volumes](https://devops.profitbricks.com/tutorials/creating-a-mongodb-docker-container-with-an-attached-storage-volume/)
@@ -305,6 +306,7 @@ If you would like to be enlightened by these ancient and powerful secrets, conti
 
 #### Resources
 - [MuleSoft: Best Practices for Microservices](https://github.com/dylanlrrb/P-C-Y-Assets/blob/master/5/best.pdf)
+- [Microservices Cheatsheet](https://github.com/cehsu/Lightningtalk/blob/master/Microservices.md)
 - [Docker Container Networking](https://docs.docker.com/engine/userguide/networking)
 - [Docker Network Command](https://docs.docker.com/engine/reference/commandline/network/#usage)
 - [Persist data outside containers](https://docs.docker.com/engine/tutorials/dockervolumes/)

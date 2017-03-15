@@ -9,7 +9,7 @@ app.use(express.static(__dirname + '/views'));
 app.get('/', (req, res) => {
 
 // Change the 'color' variable to a different color!
-  var color = 'SteelBlue';
+  var color = 'red';
 
   res.render('index', {color: color});
 });

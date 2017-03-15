@@ -105,6 +105,10 @@ docker run -d -p 1000:8080 -v /Users/Dylan/Desktop/Please-Contain-Yourself/4-Con
 
 ---
 > This idea that containers change conflicts with a previously established idea - that our containers preserve their state as long as they are running. In the previous module, the random number that was assigned our app only changed when we restarted the container. We do not have to restart our container in this case because our application is configured to restart our server (rather than the container) when it detects changes in its source code. The tool used to do this is called 'nodemon' and is very useful in development whether or not you use containers. It saves developers the hassle of manually restarting their application to see the changes they just made. You can check out [the nodemon docs here](https://www.npmjs.com/package/nodemon) for nore information.
+>
+> **That being said, nodemon is not the best tool to use inside containers. To work inside a container, it has to use it's legacy polling setting which is rather CPU intensive. It is used in this Module and the next for demonstration purposes, but after that it is best to just restart the container to if your app needs to restart to reflect source code changes in the mounted volume.**
+>
+>**For this reason especially, make sure you stop these containers when done with them.**
 
 ---
 
@@ -151,14 +155,22 @@ listening on port 8080...
 
 NEAT!
 
+- [ ] MAKE SURE YOU STOP AND REMOVE THOSE CONTAINERS WHEN YOU ARE DONE WITH THEM! (`docker rm -f <container-name(s)>`)
+
+- [ ] Images are a big memory sink in Docker. Run `docker images`, then run `docker images -a`. The `-a` flag shows all the untagged images that come with building other images, and just look at how much memory they are using in the 'SIZE' column!
+
+- [ ] That's why its a good idea to clean up un-needed images too. The memory usage can really add up. Remove the 'colorserver' with docker `docker rmi colorserver` then check out `docker images -a`. 
+
+- [ ] Clean up any other un-used images the same way and bask in all the memory you just saved!
+
 ---
->Final notes before wrapping up: this process is only suitable for development, once you are happy with the container that is spun up with your application's modified source code, you will need to build a new image that bundles the final version of your source code into said image. For example, let's say you finally settled on the color purple for the background. You need to change it to 'purple' in your source code and run `docker build -t final_colorserver .` or something of the like. THAT image is now ready for production.
+>Final notes before wrapping up: this process is only suitable for development, once you are happy with the container that is spun up with your application's modified source code, you will need to build a new image that bundles the final version of your source code into said image. For example, let's say you finally settled on the color purple for the background. You need to change it to 'purple' in your source code and run `docker build -t final_colorserver .` or something of the like. THAT image is now ready for production. (Also, like I mentioned above, you would want to change the start script to NOT use nodemon. That was just for demonstration purposes)
 
 ---
 
 - [ ] An with that, Module 4 is complete. Don't forget to clean up your running containers, you crazy kids!
 
-- [ ] When you're ready, the next module awaitsssss... [Module 5](https://github.com/dylanlrrb/Please-Contain-Yourself/tree/master/5-Make_Multiple_Containers_Work_Together) - Make Multiple Containers Work Together
+- [ ] When you're ready, the next module awaits... [Module 5](https://github.com/dylanlrrb/Please-Contain-Yourself/tree/master/5-Make_Multiple_Containers_Work_Together) - Make Multiple Containers Work Together
 
 
 
@@ -167,7 +179,10 @@ NEAT!
 
 - What volumes are
 - How to mount a volume when running a container
+- How to list the volumes on your machine
 - ` -v` option
 - `pwd`
 - `$(pwd)`
 - `docker logs <container-name>`
+- `docker volume ls`
+- `docker voulme prune`

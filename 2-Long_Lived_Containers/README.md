@@ -146,6 +146,8 @@ Looks like you're going to have to get rid of your 'hello-world' containers! The
 >You could force this by using it ` -f` flag, but I don't think this is a great idea because the image will be gone but the containers will still be on your machine. This could cause problems if you try and restart a container which you forgot you deleted the requisite image to.
 >
 >Plus, you should really clean up after yourself, no one else is going to keep your computer clean.
+>
+>**If I have one gripe about Docker, it would be how much memory it can use if you don't clean up remnants of old containers. This includes un-tagged images, stopped containers, and abandoned data volumes (we'll get to those later). Docker is an 'aggressive cacher' and will cache all sorts of stuff in order to speed things up. Leaving this stuff laying around on your computer can add up to gigabytes and gigabytes of wasted space. We'll get into more advanced methods of cleaning up in later Modules, but for now, make sure you use the strategies already outlined in this module to clean up after yourself. **
 
 ---
 

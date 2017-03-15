@@ -83,3 +83,33 @@ But, no. Not witchcraft. It's the magic of Docker Compose. Let's take a peek ins
 - [ ] We brought up our app in an attached state so the innards of the container are still waiting for commands in the terminal. Press `Ctrl + C` to stop the containers.
 
 - [ ] 
+
+
+
+
+WHAT STEP IS THE BEST PLAVE TO PUT THIS BLURB?
+
+**This part is important, please read.** Remember how I mentioned that Docker uses up quite a bit of memory when you forget to clean up after yourself? Well the volumes that you have been using in these containers are a chief culprite. **After messing around with Docker for the first time, I accumulated like 3 gigabytes of volumes on my machine. Oops. **Don't be like me. Clean up your volumes**
+
+- [ ] Remove ALL your containers using `docker rm -f <container-names>`
+
+- [ ] Run the command `docker volume ls` to see all the volumes on your machine. Despite the fact that they there are no containers on your machine anymore, the volumes are left behind. There are some strategies you can use to clean these up:
+
+- Use the -v option when using the `docker rm <container-name>` command. This will delete any volumes associated with the container you are deleting.
+
+- Use `docker volume prune` This will remove any dangling volumes that are not currently associated with  a container. this command will ask you to confirm that you want to do this and then tell you how much memory it freed up. It's usually quite a bit!
+
+- Useing the `--rm` option when spinning up containers with the `docker run` command will not only remove the container when it it stopped, but it will also remove it's volume! The more you know.
+
+- [ ] TALK ABOUT USING THE -V OPTION WITH DOCKER COMPOSE DOWN.
+
+- [ ] Run the command `docker volume prune` to 
+
+
+
+#### Things we've learned:
+
+
+- `docker volume ls`
+- `docker voulme prune`
+
