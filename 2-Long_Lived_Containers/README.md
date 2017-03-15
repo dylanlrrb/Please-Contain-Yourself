@@ -156,7 +156,7 @@ Looks like you're going to have to get rid of your 'hello-world' containers! The
 ---
 >Pro-Tip: save time by running `docker rm` just once. Simply follow the command with all the container names you would like to remove, like so:
 >
->`docker rm <container-name> <container-name> <container-name> <container-name>`
+>`docker rm <container-name> <container-name> <container-name> <container-name>` 
 
 ---
 
