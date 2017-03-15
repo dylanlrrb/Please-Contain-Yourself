@@ -86,8 +86,78 @@ But, no. Not witchcraft. It's the magic of Docker Compose. Let's take a peek ins
 
 - [ ] We brought up our app in an attached state so the innards of the container are still waiting for commands in the terminal. Press `Ctrl + C` to stop the containers.
 
-- [ ] 
+- [ ] **Docker Compose uses the 'docker-compose.yml' file as instructions for how to bring up our app.** Let's take a peek at it and break down how the 'docker-compose.yml' file is interpreted! Go ahead and open it up and you'll see this:
 
+```
+version: '3'
+
+services:
+  survey:
+    build: survey_server/
+    depends_on:
+      - 'database'
+    ports: 
+      - '8080:8080'
+
+  results:
+    build: results_server/
+    depends_on:
+      - 'database'
+    ports:
+      - '3000:3000'
+
+  database:
+    image: mongo:latest
+
+```
+
+Notice that the '.yml' file is structured like a hierachy, where lines with an indent are suburdinate to the closest line with one less indent. For example, 'survey', 'results', and 'database' are all subordinate to 'services' (the closest line with one less indent). Let's break this down line by line:
+
+- `version: 3` - This tells Docker Compose what version to run. At the time of this writing there are 3 versions available, so version 3 is the latest one. All the versions are slightly different and you can read more about the differences [here](https://docs.docker.com/compose/compose-file/compose-versioning/).
+
+- `services:` - This tells docker that all the directly subordinate lines are going to be separate containers in our app (or 'services' if we're thinking in terms of microservice archetecture). 
+
+So looking at the '.yml' file, 'survey', 'results', and 'database' are all services and Compose will spin up a separate container for each. This happens to be exactly what we did manually in the last Module!
+
+- `survey:` - This defines the first service in our app that will be spun up into a container. The subordinate lines define how to do this. Let's keep going ->
+
+- `build: survey_server/` - Subordinate to the survey service, this line tells Compose where to find the Dockerfile that it can use to build the survey container. It is a relitive file path starting from the location of the '.yml' file, so it is saying 'within this directory, look inside the survey_server/ directory and you will find the Dockerfile you need.'
+
+- `depends_on: - 'database'` - I know this is actually two lines but I'm treating it as one since they go together. `depends_on` controls the start up orcer of the containers once Compose builds them. It's basically telling Compose, 'Don't start this container until my database container has been spun up'. 
+
+Why do you think this might be important? I'll give you a hint: the order that the services are listed in the '.yml' file does not indicate the order that the containers will be spun up! **What happens if the survey or results container starts up and it tries to connect to a database container that does not yet exist?** 
+
+THE CONTAINER WILL CRASH. And then you are left pondering your life choices as you search through all your containers' logs for the reason why your app isn't working.
+
+Keep in mind that this only gaurentees that the container is spun up (not neccisarilly that it is ready to accept requests) at the time the next container is spun up. Ideally, your app's code should be robust enough that it can handle network hiccups without crashing, but the existance of the thing you are trying to connect to should never be in question. Controlling the startup order is a way to bring up first the services that other services depend on so there are no suprises. Check out [this resource](https://docs.docker.com/compose/startup-order/) for more information.
+
+- `ports: - '8080:8080'` - This one is pretty self-explainitory. It maps port 8080 on the host to the exposed 8080 port on the container. Compose runs the `docker run` command for us and this is like telling it to use the `-p` option with these specific arguments.
+
+- `results:` - Moving on to the next service, the subordinate lines will define how to go about making a results container
+
+- `build: results/` - You get it, pretty mush the same as when we difined where to find the survey_server Dockerfile. Again, Compose uses this information to do the `docker build` step for us. Pretty neat!
+
+- `depends_on: - 'database'` - Same as with the survey service, the results service also connects to the database so this line makes sure the database service is spun up before spinning up the results container.
+
+- `ports: - '3000:3000'` - Here we go with the port mapping again.
+
+- `database:` - Let's define the database service.
+
+- `image: mongo:latest` - We want to create a MongoDB container and use it as our database service. So rather than tell Compost to build it from a Docker file like before, we tell it to spin up the container from the 'mongo:latest' image cached on our machine. And if there is no 'mongo:latest' image it will pull it from Dockerhub before running.
+
+Most of this should be old news to you, it's just formatted differently in the '.yml' file. 
+
+---
+
+#### I Made This for You!
+
+Let's talk briefly about all the things that Compose made for you in the process of running `docker-compose up`
+
+- [ ] Run `docker images` and check out the images now on your machine. You should see a couple with really long names, but look at the end of the name and you'll see that Compose made an image for each service you defined in the '.yml' file. (The image names are so lenghty since it concatinates the direcory name containing the '.yml' file onto the image name) If you already had the 'mongo:latest' image you will see that it didn't create a new image for the database service but opted to reuse the mongo image.
+
+- [ ] Run `docker ps -a` to see all running and stopped containers. You will see three containers with lengthy names similar to the image names you just saw, again, one for each service.
+
+- [ ] Lastly, run `docker network ls` to check out all the Docker Networks on your machine. You will see that it created a network exclusive to your app. All the containers that Compose created for you are attached to this network and are thus isolated from every other network on you machine. In other words, all the services in your app can talk to each other but cannot communicate with any other containers that may be running on your computer.
 
 
 
@@ -110,13 +180,24 @@ WHAT STEP IS THE BEST PLACE TO PUT THIS BLURB?
 - [ ] Run the command `docker volume prune` to 
 
 
-
+---
 #### Things we've learned:
 
-
+- How to interpret a 'docker-compose.yml' file
+- `docker-compose up`
+- the  ` -d` option to compose app in a detached state
+- `docker-compose down`
+- the `--rmi all` option to remove all images created with the `docker-compose up` command
+- the `-v` option to remove volumes created with the `docker-compose up` command
 - `docker volume ls`
 - `docker voulme prune`
 
 
-include references to compose up and down docs
+---
+#### Resources:
+
+['docker-compose up' reference](https://docs.docker.com/compose/reference/up/)
+['docker-compose down' reference](https://docs.docker.com/compose/reference/down/)
+[Compose file version 3 reference](https://docs.docker.com/compose/compose-file/)
+[Controlling Startup Order](https://docs.docker.com/compose/startup-order/)
 
