@@ -263,7 +263,10 @@ That's it! I hope you enjoyed learning about Docker Compose! After typing out ev
 #### Resources:
 
 [Compose file version 3 reference](https://docs.docker.com/compose/compose-file/)
+
 ['docker-compose up' reference](https://docs.docker.com/compose/reference/up/)
+
 ['docker-compose down' reference](https://docs.docker.com/compose/reference/down/)
+
 [Controlling Startup Order](https://docs.docker.com/compose/startup-order/)
 
