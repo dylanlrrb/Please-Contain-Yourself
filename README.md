@@ -64,7 +64,7 @@ Start at the first module. Unless you've already completed it. In that case igno
  **Modules with a ~~line through~~ are still in production and not ready yet; check back soon or hit the 'Watch' button on this repo to be notified when the modules become available!
 
  ---
-####Resources:
+#### Resources:
 
 - [Docker Cheatsheet](https://github.com/wsargent/docker-cheat-sheet)
 - [Awesome-Docker](https://github.com/veggiemonk/awesome-docker)
