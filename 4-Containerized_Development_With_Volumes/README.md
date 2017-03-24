@@ -62,9 +62,9 @@ Text that looks `like this --for --example` are commands that you should type in
 
 ---
 
-- [ ] We can take our already-built colorserver image and use the ` -v` option to mount a volume. The ` -v` option expects two arguments after it. First, the path to the directory you want the spun-up container to reference, and second, the path to the directory indide the container where you want those file changes to be reflected (separated by a colon)
+- [ ] We can take our already-built colorserver image and use the ` -v` option to mount a volume. The ` -v` option expects two arguments after it. First, the path to the directory you want the spun-up container to reference, and second, the path to the directory inside the container where you want those file changes to be reflected (separated by a colon)
 
-- [ ] Reading that, you might think that running the command `docker run -d -p 1000:8080 -v ./:/src/app colorserver` would work, right? A relitive filepath seemed to work okay for the `COPY` command inside the Dockerfile! And when using the `docker build` command! But you get the following message: 
+- [ ] Reading that, you might think that running the command `docker run -d -p 1000:8080 -v ./:/src/app colorserver` would work, right? A relative filepath seemed to work okay for the `COPY` command inside the Dockerfile! And when using the `docker build` command! But you get the following message: 
 
 ```sh
 $ docker run -d -p 1000:8080 -v ./:/src/app colorserver
