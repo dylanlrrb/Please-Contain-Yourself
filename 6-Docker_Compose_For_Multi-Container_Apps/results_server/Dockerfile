@@ -6,10 +6,8 @@ WORKDIR /src/app
 
 COPY . /src/app
 
-RUN npm install -g yarn
+RUN npm install
 
-RUN yarn install
-
-EXPOSE 8080
+EXPOSE 3000
 
 CMD [ "npm", "start" ]

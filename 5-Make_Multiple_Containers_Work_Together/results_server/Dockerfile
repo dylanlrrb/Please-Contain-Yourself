@@ -10,6 +10,6 @@ RUN npm install
 
 RUN npm install --global nodemon
 
-EXPOSE 8080
+EXPOSE 3000
 
 CMD [ "npm", "run", "startdev" ]
