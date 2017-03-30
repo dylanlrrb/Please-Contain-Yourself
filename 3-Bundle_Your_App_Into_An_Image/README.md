@@ -92,9 +92,9 @@ The base image our Dockerfile recipe will use to build our custom image is going
 >
 >`/src/app` is the second argument and in this case refers to the directory inside of the image that we just made a few commands ago - the working directory where we want the app's source code to live and where the source code is going to be copied to.
 
-- [ ] Under the comment '# Does your app have any dependencies that should be installed?' type `RUN npm install`.
+- [ ] Under the comment '# Does your app have any dependencies that should be installed?' type `RUN yarn install`.
 
->This installs all the dependencies necessary to run our node application using the npm package manager (which was included as part of the base image, conveniently enough). You might have noticed the .dockerignore file in this repo; I won't get in depth into what it does in this guide - you can research it if you're curious. But a quick explanation of it's purpose is that it prevents any previously installed node modules in the directory from being copied into the image. This guarantees all dependencies come from the `RUN npm install` command rather than inadvertently copied from elsewhere. 
+>This installs all the dependencies necessary to run our node application using the yarn package manager (which was included as part of the base image, conveniently enough). You might have noticed the .dockerignore file in this repo; I won't get in depth into what it does in this guide - you can research it if you're curious. But a quick explanation of it's purpose is that it prevents any previously installed node modules in the directory from being copied into the image. This guarantees all dependencies come from the `RUN yarn install` command rather than inadvertently copied from elsewhere. 
 
 - [ ] Under the comment '# What port will the container talk to the outside world with once created?' type `EXPOSE 3000`
 
@@ -120,7 +120,7 @@ WORKDIR /src/app
 COPY . /src/app
 
 # Does your app have any dependencies that should be installed?
-RUN npm install
+RUN yarn install
 
 # What port will the container talk to the outside world with once created?
 EXPOSE 3000
