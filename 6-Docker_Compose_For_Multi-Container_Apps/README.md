@@ -178,7 +178,7 @@ This is incredibly useful for large complicated apps since you don't have to kee
 docker-compose up -d
 ```
 
-Notice how much faster the app came up! This had nothing to do with the fact that we added the `-d` option (this just runs our app in the background), but rather, it came up so fast because it reused everything that it had created the first time `docker -compose up` was run.
+Notice how much faster the app came up! This had nothing to do with the fact that we added the `-d` option (this just runs our app in the background), but rather, it came up so fast because it reused everything that it had created the first time `docker-compose up` was run.
 
 - [ ] Let's try out another command! Run `docker-compose down`
 
