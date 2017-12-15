@@ -29,7 +29,7 @@ Text that looks `like this --for --example` are commands that you should type in
 >
 >Second, we are building our image off of a different version of the official node image. Rather than `:latest`, we are using `:7.6-alpine`. 
 >
->"This image is based on the popular Alpine Linux project, available in the alpine official image. Alpine Linux is much smaller than most distribution base images (~5MB), and thus leads to much slimmer images in general. This variant is highly recommended when final image size being as small as possible is desired." -- [Official node image on Dokerhub](https://hub.docker.com/_/node/)
+>"This image is based on the popular Alpine Linux project, available in the alpine official image. Alpine Linux is much smaller than most distribution base images (~5MB), and thus leads to much slimmer images in general. This variant is highly recommended when final image size being as small as possible is desired." -- [Official node image on Dockerhub](https://hub.docker.com/_/node/)
 >
 >I posed the question at the end of the last module, "Why might it be a bad idea to use the `:latest` version of an image?". The answer is that because a big part of what makes containers great is their consistency - they run the same everywhere. If we build two images at different points in time and the `:latest` base image version is different between builds, this has the potential to introduce variance in containers that we would otherwise expect to be identical. 
 >
