@@ -185,4 +185,4 @@ NEAT!
 - `$(pwd)`
 - `docker logs <container-name>`
 - `docker volume ls`
-- `docker voulme prune`
+- `docker volume prune`
