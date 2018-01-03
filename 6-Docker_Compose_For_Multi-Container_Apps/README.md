@@ -206,9 +206,9 @@ Removing network 6dockercomposeformulticontainerapps_default
 - [ ] There are some things that `docker-compose down` does not remove however. Run `docker images` and you will see that all the images are still on your machine.
 
 ---
->Since these images are cached, the next time you bring the app it will come up much faster since it doesn't have to rebuilt the images, just make containers from them.
+>Since these images are cached, the next time you bring the app it will come up much faster since it doesn't have to rebuild the images, just make containers from them.
 >
->**But what if you made a change in the source code and you need one ore more images rebuilt? 
+>**But what if you made a change in the source code and you need one or more images rebuilt? 
 >
 >Just use the `--build` option with the `docker-compose up` command to force a rebuild of the images in your app!**
 

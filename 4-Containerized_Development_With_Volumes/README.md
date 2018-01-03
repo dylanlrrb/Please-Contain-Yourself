@@ -29,7 +29,7 @@ Text that looks `like this --for --example` are commands that you should type in
 >
 >Second, we are building our image off of a different version of the official node image. Rather than `:latest`, we are using `:7.6-alpine`. 
 >
->"This image is based on the popular Alpine Linux project, available in the alpine official image. Alpine Linux is much smaller than most distribution base images (~5MB), and thus leads to much slimmer images in general. This variant is highly recommended when final image size being as small as possible is desired." -- [Official node image on Dokerhub](https://hub.docker.com/_/node/)
+>"This image is based on the popular Alpine Linux project, available in the alpine official image. Alpine Linux is much smaller than most distribution base images (~5MB), and thus leads to much slimmer images in general. This variant is highly recommended when final image size being as small as possible is desired." -- [Official node image on Dockerhub](https://hub.docker.com/_/node/)
 >
 >I posed the question at the end of the last module, "Why might it be a bad idea to use the `:latest` version of an image?". The answer is that because a big part of what makes containers great is their consistency - they run the same everywhere. If we build two images at different points in time and the `:latest` base image version is different between builds, this has the potential to introduce variance in containers that we would otherwise expect to be identical. 
 >
@@ -104,7 +104,7 @@ docker run -d -p 1000:8080 -v /Users/Dylan/Desktop/Please-Contain-Yourself/4-Con
 - [ ] Do this however many times you fancy. check out this [web color](https://www.w3schools.com/cssref/css_colors.asp) resource and go wild.
 
 ---
-> This idea that containers change conflicts with a previously established idea - that our containers preserve their state as long as they are running. In the previous module, the random number that was assigned our app only changed when we restarted the container. We do not have to restart our container in this case because our application is configured to restart our server (rather than the container) when it detects changes in its source code. The tool used to do this is called 'nodemon' and is very useful in development whether or not you use containers. It saves developers the hassle of manually restarting their application to see the changes they just made. You can check out [the nodemon docs here](https://www.npmjs.com/package/nodemon) for nore information.
+> This idea that containers change conflicts with a previously established idea - that our containers preserve their state as long as they are running. In the previous module, the random number that was assigned our app only changed when we restarted the container. We do not have to restart our container in this case because our application is configured to restart our server (rather than the container) when it detects changes in its source code. The tool used to do this is called 'nodemon' and is very useful in development whether or not you use containers. It saves developers the hassle of manually restarting their application to see the changes they just made. You can check out [the nodemon docs here](https://www.npmjs.com/package/nodemon) for more information.
 >
 > **That being said, nodemon is not the best tool to use inside containers. To work inside a container, it has to use it's legacy polling setting which is rather CPU intensive. It is used in this Module and the next for demonstration purposes, but after that it is best to just restart the container to if your app needs to restart to reflect source code changes in the mounted volume.**
 >
@@ -114,7 +114,7 @@ docker run -d -p 1000:8080 -v /Users/Dylan/Desktop/Please-Contain-Yourself/4-Con
 
 **Now, I have to admit, typing out that massive filepath when defining where to mount the volume was a PAIN.** Luckily, there is an easier way! You can use `$(pwd)` in the argument list to ` -v` when running a container and `$(pwd)` will evaluate to the current working directory! No more typing that monster `docker run` command!
 
-- [ ] Let's practice. I want you to use `$(pwd)` to spin up a detached container based on the 'colorserver' image, which is named 'psycic_container2', which is mapped to port 2000 on the host, which has a volume mounted in the directory with the application's source code.
+- [ ] Let's practice. I want you to use `$(pwd)` to spin up a detached container based on the 'colorserver' image, which is named 'psychic_container2', which is mapped to port 2000 on the host, which has a volume mounted in the directory with the application's source code.
 
 Such a command should look like:
 
