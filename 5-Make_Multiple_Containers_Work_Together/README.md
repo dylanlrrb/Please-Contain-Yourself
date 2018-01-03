@@ -261,7 +261,7 @@ Remember how I said that Docker Networks are kind of like an 'internet' within D
 
 **This address may be different for you, so make sure you inspect the network on your own machine to find it!**
 
-Because you mounded volumes with the two server containers that you spun up, this change in the source code should be immediately  reflected in the containers (**once you save, of course**).
+Because you mounted volumes with the two server containers that you spun up, this change in the source code should be immediately  reflected in the containers (**once you save, of course**).
 
 - [ ] Navigate to `localhost:8080` and `localhost:3000` in separate tabs to check out the app!
 
