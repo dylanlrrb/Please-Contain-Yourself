@@ -22,7 +22,7 @@ It is designed to take you from just knowing "Docker" as a buzzword to utilizing
 >
 >The time commitment for this tutorial from start to finish  is about 3 hours. Feel free to tackle it in chunks. I do not, however, suggest jumping around the tutorial, the modules build off each other and you're gonna have a bad time if you jump around. 
 >
->This tutorial is given from the perspective of a Mac user who also has never installed Docker on thier machine. We will be working in the terminal A LOT so there might be some quirky little differences in the terminal commands and installation between Mac and Windows. It might take a little more effort on a Window user's part to find functional equivalents to the steps laid out.
+>This tutorial is given from the perspective of a Mac user who also has never installed Docker on their machine. We will be working in the terminal A LOT so there might be some quirky little differences in the terminal commands and installation between Mac and Windows. It might take a little more effort on a Window user's part to find functional equivalents to the steps laid out.
 
 ---
 
@@ -39,7 +39,7 @@ Docker begs the question, why not just share the same kitchen? Containers includ
 
 [Here's a nice video](https://www.youtube.com/watch?v=RyxXe5mbzlU) that talks about this idea in a little more depth.
 
-Because containers share a lot of their resources, the end up being very 'lightweight' so-to-speak; you can spin up a bunch of containers and it's not taxing or resource intensive at all, either memory or processing wise.
+Because containers share a lot of their resources, they end up being very 'lightweight' so-to-speak; you can spin up a bunch of containers and it's not taxing or resource intensive at all, either memory or processing wise.
 
 Another great feature about containers is that they wrap up everything needed to run; none of its dependancies live outside of itself. For example, that version of node you have running on your machine that you haven't updated in awhile or maybe your operating system. The container doesn't care because it doesn't use those. So if it works on your computer, it will work on your friend's computer, it will work on the cloud, it will work everywhere. The days of saying "Well it worked on my computer, I don't know why it's breaking on yours" are over!
 
