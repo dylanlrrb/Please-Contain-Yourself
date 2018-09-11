@@ -2,7 +2,7 @@
 
 #### A note about the symantec formatting in this tutorial:
 
-- [ ] Check boxes are steps that need to be completed. 
+- [ ] Check boxes are steps that need to be completed.
 
 Text that looks `like this --for --example` are commands that you should type into your terminal. Or else.
 
@@ -252,7 +252,7 @@ The answer to all your questions is in that `docker network inspect` log. Since 
 Remember how I said that Docker Networks are kind of like an 'internet' within Docker? Well, turns out that containers have their own IP addresses that you need to use in any sort of network request between containers. And that little bit of critical information is listed right under the property "IPv4Address". The address you can find the mongo container with in this case is:
 
 ```sh
-172.17.0.2/16
+172.17.0.2
 ```
 
 - [ ] Open up the 'index.js' for both the survey_server and the results_server
