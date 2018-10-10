@@ -1,6 +1,6 @@
 # Module 5 - Make Multiple Containers Work Together
 
-#### A note about the symantec formatting in this tutorial:
+#### A note about the semantic formatting in this tutorial:
 
 - [ ] Check boxes are steps that need to be completed.
 

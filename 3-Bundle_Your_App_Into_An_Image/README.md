@@ -1,6 +1,6 @@
 # Module 3 - Bundle Your App into an Image
 
-#### A note about the symantec formatting in this tutorial:
+#### A note about the semantic formatting in this tutorial:
 
 - [ ] Check boxes are steps that need to be completed.
 

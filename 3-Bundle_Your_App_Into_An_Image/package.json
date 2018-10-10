@@ -1,7 +1,7 @@
 {
   "name": "3-Bundle_Your_App_Into_An_Image",
   "version": "1.0.0",
-  "description": "#### A note about the symantec formatting in this tutorial:",
+  "description": "#### A note about the semantic formatting in this tutorial:",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"

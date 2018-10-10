@@ -1,6 +1,6 @@
 # Module 2 - Long Lived Containers
 
-#### A note about the symantec formatting in this tutorial:
+#### A note about the semantic formatting in this tutorial:
 
 - [ ] Check boxes are steps that need to be completed.
 
