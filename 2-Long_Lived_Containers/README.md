@@ -32,7 +32,7 @@ docker run -d -p 80:80 --name webserver nginx
 
 ![dockernginx](https://github.com/dylanlrrb/P-C-Y-Assets/blob/master/2/dockernginx.png?raw=true)
 
-That message displayed in your browser is being served from the container you just spun up, and will continue to do so as long a it's running! Cool!
+That message displayed in your browser is being served from the container you just spun up, and will continue to do so as long as it's running! Cool!
 
 ---
 >You can use this nginx server without actually having nginx installed on your computer! That is what I mean when I say that containers do not rely on outside dependencies to run; everything is bundled into your image; running it will always create the same independent container, all while remaining very lightweight.
