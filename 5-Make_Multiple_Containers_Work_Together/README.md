@@ -40,7 +40,7 @@ This type of software design yields a 'monolithic' application. Think of the 'mo
 - First, it's more robust - in a microservices architecture, the monolith is “broken up” into a set of independent services that are
 developed, deployed and maintained separately. If there is one part that needs to be changed or tweaked for whatever reason, you don't have to take down your entire app to change it and relaunch the entire monolithic application.
 
-- Second, different services can be scaled differently. Say you need more servers or maybe more databases to handle a large influx of users, using the concept of ['horizontal scaling'](https://en.wikipedia.org/wiki/Scalability#Horizontal_and_vertical_scaling) you can just spin up more containers responsible for that function rather that duplicate or take down the entire monolith of an application.
+- Second, different services can be scaled differently. Say you need more servers or maybe more databases to handle a large influx of users, using the concept of ['horizontal scaling'](https://en.wikipedia.org/wiki/Scalability#Horizontal_and_vertical_scaling) you can just spin up more containers responsible for that function rather than duplicating or taking down the entire monolith of an application.
 
 - Third, because each container is isolated, teams can work separately on discrete parts of an app without meddling in every other team's code. This makes the entire software building process more efficient and robust. A team can just declare, "Hey, this is what information our microservice is expecting and this is what it will send out, don't worry about how - that's our job. You just worry about your microservice"
 
