@@ -83,7 +83,7 @@ Images: 1
 ---
 >Now, before we go any further, let's slow down and talk about 'images' and 'containers' for a bit. These are terms I'll be slinging around a lot so it's in your best interest to have a good mental model of what they are and how they relate to each other. 
 >
->I'm going to reference my wonderful sandwich analogy that I introduced in [this repo's root README](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/module1#what-is-docker) - so if you're wondering why I'm talking about Docker in terms of sandwiches... that's why I’m taking about Docker in terms of sandwiches. 
+>I'm going to reference my wonderful sandwich analogy that I introduced in [this repo's root README](https://github.com/dylanlrrb/Please-Contain-Yourself./tree/module1#what-is-docker) - so if you're wondering why I'm talking about Docker in terms of sandwiches... that's why I’m talking about Docker in terms of sandwiches. 
 >
 >Imagine you've made a sandwich. It is the most perfect sandwich you've ever made - and you know in the very pit of your soul that you'll never make a more flawless sandwich. Naturally, you do not dare eat it - so you quickly stash it in the refrigerator so you can keep your sandwich forever. 
 >

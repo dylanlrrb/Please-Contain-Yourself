@@ -160,7 +160,7 @@ Let's talk briefly about all the things that Compose made for you in the process
 
 - [ ] Run `docker ps -a` to see all running and stopped containers. You will see three containers with lengthy names similar to the image names you just saw, again, one for each service.
 
-- [ ] Lastly, run `docker network ls` to check out all the Docker Networks on your machine. You will see that it created a network exclusive to your app. All the containers that Compose created for you are attached to this network and are thus isolated from every other network on you machine. In other words, all the services in your app can talk to each other but cannot communicate with any other containers that may be running on your computer.
+- [ ] Lastly, run `docker network ls` to check out all the Docker Networks on your machine. You will see that it created a network exclusive to your app. All the containers that Compose created for you are attached to this network and are thus isolated from every other network on your machine. In other words, all the services in your app can talk to each other but cannot communicate with any other containers that may be running on your computer.
 
 Now I want to talk about a unique property of this network that you'll find really useful. Remember how, in the last Module, we had to find the IP address of the mongo container with `docker network inspect` in order to connect to it properly from our other containers? **It is WAY simpler with Docker Compose**
 
