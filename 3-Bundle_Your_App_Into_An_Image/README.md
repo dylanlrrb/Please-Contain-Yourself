@@ -167,7 +167,7 @@ docker build -t nodeserver .
 
 - [ ] Check that it is running with `docker ps` and then visit `localhost:1000` in your browser
 
-You'll see that our server is sending us a greeting along with a random number it was assigned when it was spun up. 
+You'll see that our server is sending us a greeting along with a random number it was assigned when it was spun up.
 
 - [ ] Containers are stateless; they retain information about themselves only as long as they are running. For example: try refreshing the page - it has no effect on the number. Now, back in the terminal, run `docker restart slytherin_rulez`
 
@@ -190,9 +190,9 @@ On port 4000:
 docker run -d -p 4000:3000 --rm nodeserver
 ```
 
-- [ ] Open them all up on different tabs in your browser! They're all unique and independent containers serving you information! NEAT! 
+- [ ] Open them all up on different tabs in your browser! They're all unique and independent containers serving you information! NEAT!
 
-**Not only can you spin up as many containers as you want from the single image we made with our app (which is crazy cool and great for horizontally scaling), but all the containers are unique and don't interact with each other; the containers are both identical, unique, and isolated at the same time!**
+**Not only can you spin up as many containers as you want from the single image we made with our app (which is crazy cool and great for horizontally scaling), but all the containers are unique and don't interact with each other; the containers are identical, unique, and isolated at the same time!**
 
 - [ ] Lastly, clean up after yourself. If you created all of the containers with the ` --rm` flag you just need to stop all the running containers with `docker stop <container-name>` and they will automatically delete themselves.
 
