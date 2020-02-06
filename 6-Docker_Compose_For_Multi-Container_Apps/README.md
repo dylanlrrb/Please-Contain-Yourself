@@ -19,7 +19,7 @@ Text that looks `like this --for --example` are commands that you should type in
 
 I love every logo for all the Docker services, they're all just so charmingly nautical themed. I mean look at this octopus. I can't take it.
 
-The octopus is the logo for Docker Compose - a tool that works with Docker that makes makes your life a whole lot easier.
+The octopus is the logo for Docker Compose - a tool that works with Docker that makes your life a whole lot easier.
 
 In the previous Module we containerized an app that was split into several microservices, each requiring its own container. But before we could get each container up and running we had to create an image for each service as well that contained each chunk of source code. 
 
@@ -43,7 +43,7 @@ Easier said than done right? When we get down to the nitty-gritty of actually ge
 
 - building the image for the results service
 
-- spinning up a survey container from that image 
+- spinning up a results container from that image 
 
 - (remembering what ports you want to map to where on the host)
 
