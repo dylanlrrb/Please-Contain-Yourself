@@ -27,19 +27,19 @@ Text that looks `like this --for --example` are commands that you should type in
 >
 >First, the `EXPOSE 8080` command; containers built from this image will expose port 8080 rather than 3000 like last time
 >
->Second, we are building our image off of a different version of the official node image. Rather than `:latest`, we are using `:7.6-alpine`. 
+>Second, we are building our image off of a different version of the official node image. Rather than `:latest`, we are using `:8.10-alpine`. 
 >
 >"This image is based on the popular Alpine Linux project, available in the alpine official image. Alpine Linux is much smaller than most distribution base images (~5MB), and thus leads to much slimmer images in general. This variant is highly recommended when final image size being as small as possible is desired." -- [Official node image on Dockerhub](https://hub.docker.com/_/node/)
 >
 >I posed the question at the end of the last module, "Why might it be a bad idea to use the `:latest` version of an image?". The answer is that because a big part of what makes containers great is their consistency - they run the same everywhere. If we build two images at different points in time and the `:latest` base image version is different between builds, this has the potential to introduce variance in containers that we would otherwise expect to be identical. 
 >
->The `:7.6-alpine` version will always refer to a node image that is built with node.js version 7.6 under the hood. Because knowing is better than not knowing.
+>The `:8.10-alpine` version will always refer to a node image that is built with node.js version 8.10 under the hood. Because knowing is better than not knowing.
 
 ---
 
 - [ ] Bundle our app into an image tagged with the name 'colorserver' by running `docker build -t colorserver .`
 
-**Docker will pull the 'node:7.6-alpine' image down from Dockerhub in order to complete the build. Notice how much faster the pull went compared to 'node:latest'. This is due to the 'alpine' version being so slim**
+**Docker will pull the 'node:8.10-alpine' image down from Dockerhub in order to complete the build. Notice how much faster the pull went compared to 'node:latest'. This is due to the 'alpine' version being so slim**
 
 - [ ] Spin up a new container based on the 'colorserver' image you just built, mapping it to port 8080 on the host. Run `docker run -d -p 8080:8080 colorserver`
 
