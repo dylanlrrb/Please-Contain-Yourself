@@ -116,7 +116,7 @@ RUN mkdir -p /src/app
 # Tell your container where your app's source code will live
 WORKDIR /src/app
 
-# What source code do you what to copy, and where to put it?
+# What source code do you want to copy, and where to put it?
 COPY . /src/app
 
 # Does your app have any dependencies that should be installed?
