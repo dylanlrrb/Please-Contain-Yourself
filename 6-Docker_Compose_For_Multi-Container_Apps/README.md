@@ -21,35 +21,35 @@ I love every logo for all the Docker services, they're all just so charmingly na
 
 The octopus is the logo for Docker Compose - a tool that works with Docker that makes makes your life a whole lot easier.
 
-In the previous Module we containerized an app that was split into several microservices, each requiring its own container. But before we could get each container up and running we had to create an image for each service as well that contained each chunk of source code. 
+In the previous Module we containerized an app that was split into several microservices, each requiring its own container. But before we could get each container up and running we had to create an image for each service as well that contained each chunk of source code.
 
 Easier said than done right? When we get down to the nitty-gritty of actually getting our whole app running we had a lot of steps to complete and things to keep track of. Things like:
 
-- spinning up a mongodb container 
+- spinning up a mongodb container
 
 - (Remembering to do this first or the other containers will crash when trying to connect to it)
 
-- cd-ing into the survey_server directory 
+- cd-ing into the survey_server directory
 
 - building the image for the survey service
 
-- spinning up a survey container from that image 
+- spinning up a survey container from that image
 
 - (remembering what ports you want to map to where on the host)
 
 - (giving that container a distinct name for identification purposes)
 
-- cd-ing into the results_server directory 
+- cd-ing into the results_server directory
 
 - building the image for the results service
 
-- spinning up a survey container from that image 
+- spinning up a survey container from that image
 
 - (remembering what ports you want to map to where on the host)
 
 - (giving that container a distinct name for identification purposes)
 
-- **OH WAIT.** The survey service container is connecting to the database with the wrong address! 
+- **OH WAIT.** The survey service container is connecting to the database with the wrong address!
 
 - Inspecting the network to get the database container's address
 
@@ -66,7 +66,7 @@ You might feel like a super-cool hacker while frantically typing all these comma
 
 Come on. We're developers. When we see a repetitive, time consuming task we always ask ourselves, "Is there a way to get the computer to do this for me?"
 
-Luckily for you, this problem had already been solved for you before you even knew it was a problem. 
+Luckily for you, this problem had already been solved for you before you even knew it was a problem.
 
 **Enter Docker Compose...**
 
@@ -76,7 +76,7 @@ Luckily for you, this problem had already been solved for you before you even kn
 
 - [ ] Also notice that there is a file in Module 6 that you may not be familiar with, the one named 'docker-compose.yml'. We'll dive into this shortly.
 
-- [ ] Let's do this thing! Run `docker-compose up` ! 
+- [ ] Let's do this thing! Run `docker-compose up` !
 
 - [ ] After all the logging has stopped go ahead and use your browser to navigate to `localhost:8080` and `localhost:3000` in separate tabs. Mess around with the app, create some entries, and see that everything works exactly as before!
 
@@ -96,7 +96,7 @@ services:
     build: survey_server/
     depends_on:
       - 'database'
-    ports: 
+    ports:
       - '8080:8080'
 
   results:
@@ -115,7 +115,7 @@ Notice that the '.yml' file is structured like a hierarchy, where lines with an 
 
 - `version: 3` - This tells Docker Compose what version to run. At the time of this writing there are 3 versions available, so version 3 is the latest one. All the versions are slightly different and you can read more about the differences [here](https://docs.docker.com/compose/compose-file/compose-versioning/).
 
-- `services:` - This tells docker that all the directly subordinate lines are going to be separate containers in our app (or 'services' if we're thinking in terms of microservice architecture). 
+- `services:` - This tells docker that all the directly subordinate lines are going to be separate containers in our app (or 'services' if we're thinking in terms of microservice architecture).
 
 So looking at the '.yml' file, 'survey', 'results', and 'database' are all services and Compose will spin up a separate container for each. This happens to be exactly what we did manually in the last Module!
 
@@ -123,10 +123,10 @@ So looking at the '.yml' file, 'survey', 'results', and 'database' are all servi
 
 - `build: survey_server/` - Subordinate to the survey service, this line tells Compose where to find the Dockerfile that it can use to build the survey container. It is a relative file path starting from the directory containing the '.yml' file, so it is saying 'within this directory, look inside the survey_server/ directory and you will find the Dockerfile you need.'
 
-- `depends_on: - 'database'` - I know this is actually two lines but I'm treating it as one since they go together. `depends_on` controls the startup order of the containers once Compose builds them. It's basically telling Compose, 'Don't start this container until my "database" container has been spun up'. 
+- `depends_on: - 'database'` - I know this is actually two lines but I'm treating it as one since they go together. `depends_on` controls the startup order of the containers once Compose builds them. It's basically telling Compose, 'Don't start this container until my "database" container has been spun up'.
 
 ---
->Why do you think `depends_on` might be important? I'll give you a hint: the order that the services are listed in the '.yml' file does not indicate the order that the containers will be spun up! **What happens if the survey or results container starts up and it tries to connect to a database container that does not yet exist?** 
+>Why do you think `depends_on` might be important? I'll give you a hint: the order that the services are listed in the '.yml' file does not indicate the order that the containers will be spun up! **What happens if the survey or results container starts up and it tries to connect to a database container that does not yet exist?**
 >
 >THE CONTAINER WILL CRASH. And then you are left pondering your life choices as you search through all your containers' logs for the reason why your app isn't working.
 >
@@ -138,7 +138,7 @@ So looking at the '.yml' file, 'survey', 'results', and 'database' are all servi
 
 - `results:` - Moving on to the next service, the subordinate lines will define how to go about making a results container
 
-- `build: results/` - You get it, pretty much the same as when we defined where to find the survey_server Dockerfile. Again, Compose uses this information to do the `docker build` step for us. Pretty neat!
+- `build: results_server/` - You get it, pretty much the same as when we defined where to find the survey_server Dockerfile. Again, Compose uses this information to do the `docker build` step for us. Pretty neat!
 
 - `depends_on: - 'database'` - Same as with the survey service, the results service also connects to the database so this line makes sure the database service is spun up before spinning up the results container.
 
@@ -148,7 +148,7 @@ So looking at the '.yml' file, 'survey', 'results', and 'database' are all servi
 
 - `image: mongo:latest` - We want to create a MongoDB container and use it as our database service. So rather than tell Compose to build it from a Dockerfile like before, we tell it to spin up the container from the 'mongo:latest' image cached on our machine. And if there is no 'mongo:latest' image it will pull it from Dockerhub before running.
 
-Most of this should be old news to you, it's just formatted differently in the '.yml' file. 
+Most of this should be old news to you, it's just formatted differently in the '.yml' file.
 
 ---
 
@@ -164,11 +164,11 @@ Let's talk briefly about all the things that Compose made for you in the process
 
 Now I want to talk about a unique property of this network that you'll find really useful. Remember how, in the last Module, we had to find the IP address of the mongo container with `docker network inspect` in order to connect to it properly from our other containers? **It is WAY simpler with Docker Compose**
 
-- [ ] Open up the 'index.js' file in either the 'survey_surver' or the 'results_server' directory. 
+- [ ] Open up the 'index.js' file in either the 'survey_surver' or the 'results_server' directory.
 
-- [ ] Check out the mongoUrl we are connecting to the database container with. Notice anything different??? 
+- [ ] Check out the mongoUrl we are connecting to the database container with. Notice anything different???
 
-Instead of an IP4Address, the address is just the word 'database'. And it works. How is this possible? Well it turns out that all non-default networks ([user-defined networks](https://docs.docker.com/engine/userguide/networking/#user-defined-networks)) support something called automatic service discovery. You can read more about this [here](https://docs.docker.com/docker-cloud/apps/service-links/) but basically, **if containers are attached to networks that you made, you can reference their service name or container name rather than the IP4Address!** 
+Instead of an IP4Address, the address is just the word 'database'. And it works. How is this possible? Well it turns out that all non-default networks ([user-defined networks](https://docs.docker.com/engine/userguide/networking/#user-defined-networks)) support something called automatic service discovery. You can read more about this [here](https://docs.docker.com/docker-cloud/apps/service-links/) but basically, **if containers are attached to networks that you made, you can reference their service name or container name rather than the IP4Address!**
 
 This is incredibly useful for large complicated apps since you don't have to keep track of all the addresses for all your services. Additionally, it is possible that a service will be spun up at a different IP4Address between builds. Referencing the services lets the computer figure out the addresses rather than making you keep track of them and keeping them up to date!
 
@@ -182,7 +182,7 @@ Notice how much faster the app came up! This had nothing to do with the fact tha
 
 - [ ] Let's try out another command! Run `docker-compose down`
 
-- [ ] Read the message that it logged, you should see something like: 
+- [ ] Read the message that it logged, you should see something like:
 
 ```sh
 Stopping 6dockercomposeformulticontainerapps_survey_1 ... done
@@ -208,7 +208,7 @@ Removing network 6dockercomposeformulticontainerapps_default
 ---
 >Since these images are cached, the next time you bring the app it will come up much faster since it doesn't have to rebuild the images, just make containers from them.
 >
->**But what if you made a change in the source code and you need one or more images rebuilt? 
+>**But what if you made a change in the source code and you need one or more images rebuilt?
 >
 >Just use the `--build` option with the `docker-compose up` command to force a rebuild of the images in your app!**
 
@@ -225,7 +225,7 @@ docker-compose down --rmi all
 The `--rmi all` option removes not only the containers and network that it created for your app, but also the images. This is a good thing to do since images take up a lot of space, if you're done with them you want to make sure to get rid of them.
 
 - [ ] Run `docker images` to confirm that they are indeed gone.
- 
+
 #### Another Note About Saving Memory
 
 **This part is important, please read.** Remember how I mentioned that Docker uses up quite a bit of memory when you forget to clean up after yourself? Well the volumes that you have been using in these containers are a chief culprit. **After messing around with Docker for the first time, I accumulated like 3 gigabytes of volumes on my machine. Oops. **Don't be like me. Clean up your volumes**
