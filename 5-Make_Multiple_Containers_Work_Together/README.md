@@ -124,7 +124,7 @@ Be sure to also mount volumes in the respective directories just in case, i don'
 
 **(Just kidding, I gave you broken code on purpose)**
 
-- [ ]  As you can see, the app is completly broken. Fortunatly, to get it working, we only have to tweak one line of code in each server. But which one? Run the command `docker logs survey_container` to look for clues inside the container's logs...
+- [ ]  As you can see, the app is completly broken. Fortunately, to get it working, we only have to tweak one line of code in each server. But which one? Run the command `docker logs survey_container` to look for clues inside the container's logs...
 
 You should see that the app has crashed and, examining the error stack, you should notice that the distal cause for the crash is described with the log:
 
