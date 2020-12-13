@@ -1,9 +1,9 @@
-var express = require('express');
-var mongoose = require('mongoose');
-var entry = require('./db_handlers/entry.js');
+const express = require('express');
+const mongoose = require('mongoose');
+const entry = require('./db_handlers/entry.js');
 
 
-var app = express();
+const app = express();
 
 mongoose.connect('mongodb://localhost:27017/docker_test');
 
@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
     console.log(entries);
     res.render('display', {data: entries});
   });
-  
+
 });
 
 console.log('listening on port 3000...\n');
