@@ -103,7 +103,7 @@ You can confirm that it is no longer running in several ways. For example, visit
 
 - [ ] Confirm 'webserver2' is up and running however you see fit
 
-- [ ] Next, we're going learn how to do some housekeeping. We are all done with these containers and images so lets clean them up and get rid of them. Run `docker rm webserver`; this will delete the stopped 'webserver' container from your machine
+- [ ] Next, we're going to learn how to do some housekeeping. We are all done with these containers and images so lets clean them up and get rid of them. Run `docker rm webserver`; this will delete the stopped 'webserver' container from your machine
 
 - [ ] Next run `docker ps -a` and notice that ‘webserver’ is nowhere to be found!
 
