@@ -42,7 +42,7 @@ You should see something like this:
 
 ![dockerinfo](https://github.com/dylanlrrb/P-C-Y-Assets/blob/master/1/dockerinfo.png?raw=true)
 
-"This command displays system wide information regarding the Docker installation. Information displayed includes the kernel version, number of containers and images, and memory allocated to running containers. The number of images shown is the number of unique images. The same image tagged under different names is counted only once." -- Docker Docs
+>"This command displays system wide information regarding the Docker installation. Information displayed includes the kernel version, number of containers and images, and memory allocated to running containers. The number of images shown is the number of unique images. The same image tagged under different names is counted only once." -- Docker Docs
 
 This should make a little more sense as we go along - we'll be revisiting this command to see how our actions affect this report.
 
@@ -150,7 +150,7 @@ Run `docker ps -a` again and you'll see a total of 5 containers, the most recent
 Nice work creating your first containers! When your're ready move onto [Module2](https://github.com/dylanlrrb/Please-Contain-Yourself/tree/master/2-Long_Lived_Containers) - Long Lived Containers
 
 ---
-####Things we've learned:
+#### Things we've learned:
 
 - What images are
 - What containers are
