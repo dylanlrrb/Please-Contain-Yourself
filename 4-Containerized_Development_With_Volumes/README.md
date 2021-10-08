@@ -58,7 +58,7 @@ Text that looks `like this --for --example` are commands that you should type in
 ---
 >"Docker volumes are free-floating filesystems. They don't have to be connected to a particular container. "  -- Docker Docs
 >
->A simple explanation of volumes is that it is a way for a containers to interact with the host's filesystem. This is useful in several situations; persisting data that you don't want lost if the container were to stop unexpectedly, as a communication method between otherwise isolated containers, and (as in our case) having our container reference rapidly changing source code on our host.
+>A simple explanation of volumes is that it is a way for a container to interact with the host's filesystem. This is useful in several situations; persisting data that you don't want lost if the container were to stop unexpectedly, as a communication method between otherwise isolated containers, and (as in our case) having our container reference rapidly changing source code on our host.
 
 ---
 
