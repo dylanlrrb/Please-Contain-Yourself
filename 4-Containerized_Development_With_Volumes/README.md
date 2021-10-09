@@ -27,19 +27,19 @@ Text that looks `like this --for --example` are commands that you should type in
 >
 >First, the `EXPOSE 8080` command; containers built from this image will expose port 8080 rather than 3000 like last time
 >
->Second, we are building our image off of a different version of the official node image. Rather than `:latest`, we are using `:8.10-alpine`. 
+>Second, we are building our image off of a different version of the official node image. Rather than `:latest`, we are using `:14-alpine`.
 >
 >"This image is based on the popular Alpine Linux project, available in the alpine official image. Alpine Linux is much smaller than most distribution base images (~5MB), and thus leads to much slimmer images in general. This variant is highly recommended when final image size being as small as possible is desired." -- [Official node image on Dockerhub](https://hub.docker.com/_/node/)
 >
->I posed the question at the end of the last module, "Why might it be a bad idea to use the `:latest` version of an image?". The answer is that because a big part of what makes containers great is their consistency - they run the same everywhere. If we build two images at different points in time and the `:latest` base image version is different between builds, this has the potential to introduce variance in containers that we would otherwise expect to be identical. 
+>I posed the question at the end of the last module, "Why might it be a bad idea to use the `:latest` version of an image?". The answer is that because a big part of what makes containers great is their consistency - they run the same everywhere. If we build two images at different points in time and the `:latest` base image version is different between builds, this has the potential to introduce variance in containers that we would otherwise expect to be identical.
 >
->The `:8.10-alpine` version will always refer to a node image that is built with node.js version 8.10 under the hood. Because knowing is better than not knowing.
+>The `:14-alpine` version will always refer to a node image that is built with node.js version 14 under the hood. Because knowing is better than not knowing.
 
 ---
 
 - [ ] Bundle our app into an image tagged with the name 'colorserver' by running `docker build -t colorserver .`
 
-**Docker will pull the 'node:8.10-alpine' image down from Dockerhub in order to complete the build. Notice how much faster the pull went compared to 'node:latest'. This is due to the 'alpine' version being so slim**
+**Docker will pull the 'node:14-alpine' image down from Dockerhub in order to complete the build. Notice how much faster the pull went compared to 'node:latest'. This is due to the 'alpine' version being so slim**
 
 - [ ] Spin up a new container based on the 'colorserver' image you just built, mapping it to port 8080 on the host. Run `docker run -d -p 8080:8080 colorserver`
 
@@ -58,13 +58,13 @@ Text that looks `like this --for --example` are commands that you should type in
 ---
 >"Docker volumes are free-floating filesystems. They don't have to be connected to a particular container. "  -- Docker Docs
 >
->A simple explanation of volumes is that it is a way for a containers to interact with the host's filesystem. This is useful in several situations; persisting data that you don't want lost if the container were to stop unexpectedly, as a communication method between otherwise isolated containers, and (as in our case) having our container reference rapidly changing source code on our host.
+>A simple explanation of volumes is that it is a way for a container to interact with the host's filesystem. This is useful in several situations; persisting data that you don't want lost if the container were to stop unexpectedly, as a communication method between otherwise isolated containers, and (as in our case) having our container reference rapidly changing source code on our host.
 
 ---
 
 - [ ] We can take our already-built colorserver image and use the ` -v` option to mount a volume. The ` -v` option expects two arguments after it. First, the path to the directory you want the spun-up container to reference, and second, the path to the directory inside the container where you want those file changes to be reflected (separated by a colon)
 
-- [ ] Reading that, you might think that running the command `docker run -d -p 1000:8080 -v ./:/src/app colorserver` would work, right? A relative filepath seemed to work okay for the `COPY` command inside the Dockerfile! And when using the `docker build` command! But you get the following message: 
+- [ ] Reading that, you might think that running the command `docker run -d -p 1000:8080 -v ./:/src/app colorserver` would work, right? A relative filepath seemed to work okay for the `COPY` command inside the Dockerfile! And when using the `docker build` command! But you get the following message:
 
 ```sh
 $ docker run -d -p 1000:8080 -v ./:/src/app colorserver
@@ -97,7 +97,7 @@ docker run -d -p 1000:8080 -v /Users/Dylan/Desktop/Please-Contain-Yourself/4-Con
 
 - [ ] Test to make sure that updating the application's source code updates the code running in the container by changing the color variable in 'index.js' to the string 'red'
 
-- [ ] Make sure you save the file and then Refresh the `localhost:1000` page. 
+- [ ] Make sure you save the file and then Refresh the `localhost:1000` page.
 
 - [ ] The page is now RED! GET PUMPED!!
 
@@ -123,18 +123,18 @@ docker run -d -p 2000:8080 -v $(pwd):/src/app --name psychic_container2 colorser
 ```
 I like the looks of that a lot better!
 
-- [ ] In a new tab in your browser, go to `localhost:2000`, miraculously the page will be red (or whatever your most recent change was), just like the server running on 'localhost:1000`. 
+- [ ] In a new tab in your browser, go to `localhost:2000`, miraculously the page will be red (or whatever your most recent change was), just like the server running on 'localhost:1000`.
 
-- [ ] This makes sense because they are both using application code from volumes mounted in the same directory. Change the color variable in 'index.js' one final time. 
+- [ ] This makes sense because they are both using application code from volumes mounted in the same directory. Change the color variable in 'index.js' one final time.
 
 - [ ] Save the file. Check out the page served by 'psychic_container' and 'psychic_container2'. They should both reflect the new color.
 
 - [ ] Take a final peek at the container run without a volume on `localhost:8080`. It should still be steel blue.
 
 ---
->**The ability to set up a development environment this easily is immensely useful and powerful.** Not only is it fast and easy, but you don't have to install or configure a single dependency on your machine to get started. This means you can immediately get started working on a codebase that might use python, or apache, or postgreSQL even if you are not familiar with these tools, and might take hours or days setting them up on your machine otherwise. 
+>**The ability to set up a development environment this easily is immensely useful and powerful.** Not only is it fast and easy, but you don't have to install or configure a single dependency on your machine to get started. This means you can immediately get started working on a codebase that might use python, or apache, or postgreSQL even if you are not familiar with these tools, and might take hours or days setting them up on your machine otherwise.
 >
->Imagine the time and hassle you could save the next person to work on your code base if you just include a Dockerfile with the project! All that person needs to do is build an image from that Dockerfile - then that image can be spun into a container with a development environment identical to the one you used, no surprises! 
+>Imagine the time and hassle you could save the next person to work on your code base if you just include a Dockerfile with the project! All that person needs to do is build an image from that Dockerfile - then that image can be spun into a container with a development environment identical to the one you used, no surprises!
 
 Just spin up a container with a volume mounted with the source code and get working on the code base immediately!
 
@@ -159,7 +159,7 @@ NEAT!
 
 - [ ] Images are a big memory sink in Docker. Run `docker images`, then run `docker images -a`. The `-a` flag shows all the untagged images that come with building other images, and just look at how much memory they are using in the 'SIZE' column!
 
-- [ ] That's why its a good idea to clean up un-needed images too. The memory usage can really add up. Remove the 'colorserver' with docker `docker rmi colorserver` then check out `docker images -a`. 
+- [ ] That's why its a good idea to clean up un-needed images too. The memory usage can really add up. Remove the 'colorserver' with docker `docker rmi colorserver` then check out `docker images -a`.
 
 - [ ] Clean up any other un-used images the same way and bask in all the memory you just saved!
 
