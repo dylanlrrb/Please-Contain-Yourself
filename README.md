@@ -18,7 +18,11 @@ It is designed to take you from just knowing "Docker" as a buzzword to utilizing
 ---
 >Disclaimer. Sort of.
 >
->To go through this tutorial you should be comfortable with topics that include, but are not limited to: working in the terminal, git/ version control, servers and ports, horizontal scaling.
+>To go through this tutorial you should be comfortable with topics that include, but are not limited to: 
+- working in the terminal 
+- git/ version control 
+- servers and ports 
+- horizontal scaling.
 >
 >The time commitment for this tutorial from start to finish  is about 3 hours. Feel free to tackle it in chunks. I do not, however, suggest jumping around the tutorial, the modules build off each other and you're gonna have a bad time if you jump around. 
 >
@@ -29,9 +33,9 @@ It is designed to take you from just knowing "Docker" as a buzzword to utilizing
 ### WHAT IS DOCKER?
 Sure the logo is adorable, but what's all this noise about containers?
 
-Let's get some context by comparing Docker to something that you might be familiar with- Virtual Machines. Virtual Machines are just an emulation of another computer on a computer. Say you have a Windows computer and you wanted to run a program that is only available on Mac; one way you could get around this is by virtually running a Mac on your Windows machine. This works because the Virtual machine wraps the piece of software you want to run in a complete filesystem that contains everything needed to run: code, runtime, system tools, system libraries, etc.
+Let's get some context by comparing Docker to something that you might be familiar with -- Virtual Machines. Virtual Machines are just an emulation of another computer on a computer. Say you have a Windows computer and you wanted to run a program that is only available on Mac; one way you could get around this is by virtually running a Mac on your Windows machine. This works because the Virtual machine wraps the piece of software you want to run in a complete filesystem that contains everything needed to run: code, runtime, system tools, system libraries, etc.
  
-This 'wrapping everything up into one convenient package' concept is called 'containerization' and  Docker containers do something similar with your software, albeit in a very different way. Let me try an analogy to explain. Say you and your sister both wanted to make a sandwich. You want a ham sandwich. She wants a peanut butter and jelly sandwich. Two drastically different sandwiches... but still sandwiches. Using a Virtual Machine to containerize your piece of software would be the equivalent of building an entirely new kitchen in order to accommodate the making of two different sandwiches. By this I mean Virtual Machines include the application, the necessary binaries and libraries, and an ENTIRE guest operating system -- all of which can amount to tens of GBs.
+This _'wrapping everything up into one convenient package'_ concept is called _'containerization'_ and  Docker containers do something similar with your software, albeit in a very different way. Let me try an analogy to explain. Say you and your sister both wanted to make a sandwich. You want a ham sandwich. She wants a peanut butter and jelly sandwich. Two drastically different sandwiches... but still sandwiches. Using a Virtual Machine to containerize your piece of software would be the equivalent of building an entirely new kitchen in order to accommodate the making of two different sandwiches. By this I mean Virtual Machines include the application, the necessary binaries and libraries, and an __ENTIRE__ guest operating system -- all of which can amount to tens of GBs.
 
 Docker begs the question, why not just share the same kitchen? Containers include the application and all of its dependencies --but share the kernel with other containers, running as isolated processes in user space on the host operating system. Docker containers are not tied to any specific infrastructure: they run on any computer, on any infrastructure, and in any cloud. Check out the neat little picture below that compares a VM (left) to what Docker does (right).
 
@@ -43,7 +47,7 @@ Because containers share a lot of their resources, they end up being very 'light
 
 Another great feature about containers is that they wrap up everything needed to run; none of its dependancies live outside of itself. For example, that version of node you have running on your machine that you haven't updated in awhile or maybe your operating system. The container doesn't care because it doesn't use those. So if it works on your computer, it will work on your friend's computer, it will work on the cloud, it will work everywhere. The days of saying "Well it worked on my computer, I don't know why it's breaking on yours" are over!
 
-Hopefully I've enticed you to spend some time learning this really cool tool... if so, the first steps on your journey to Docker mastery are outlined below ->
+Hopefully, I've enticed you to spend some time learning this really cool tool... if so, the first steps on your journey to Docker mastery are outlined below ->
 
 ### Tutorial Roadmap
 Start at the first module. Unless you've already completed it. In that case ignore me, whatever.

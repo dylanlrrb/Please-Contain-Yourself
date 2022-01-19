@@ -167,7 +167,7 @@ Looks like you're going to have to get rid of your 'hello-world' containers! The
 That's it! Great job getting through this module! Now that you've got a solid understanding of the basics, we can move on to the more interesting and useful features that Docker has to offer! When you're ready - [Module 3](https://github.com/dylanlrrb/Please-Contain-Yourself/tree/master/3-Bundle_Your_App_Into_An_Image) Bundle Your App Into An Image
 
 ---
-####Things we've learned:
+#### Things we've learned:
 
 - What a long lived container is
 - How to check if a container is running
