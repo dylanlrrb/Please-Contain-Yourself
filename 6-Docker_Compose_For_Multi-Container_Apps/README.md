@@ -72,7 +72,7 @@ Luckily for you, this problem had already been solved for you before you even kn
 
 - [ ] Rather than spending forever talking about what Docker Compose does and why it's great, let's just dive into a demonstration. `cd` into the directory '/6-Docker_Compose_For_Multi-Container_Apps'
 
-- [ ] Run the command `ls` and notice that we have directories that contain the source code for the services of our polling app from the previous Module (the 'survey_server' and 'results_server'). Each of these directories contains it's own Dockerfile that defines the steps to build it's requisite image. This should all be familiar to you.
+- [ ] Run the command `ls` and notice that we have directories that contain the source code for the services of our polling app from the previous Module (the 'survey_server' and 'results_server'). Each of these directories contains its own Dockerfile that defines the steps to build its requisite image. This should all be familiar to you.
 
 - [ ] Also notice that there is a file in Module 6 that you may not be familiar with, the one named 'docker-compose.yml'. We'll dive into this shortly.
 
