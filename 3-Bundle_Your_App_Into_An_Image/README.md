@@ -54,7 +54,7 @@ You will see that, in the process of pulling the node image down from Dockerhub,
 
 ![dockerpull](https://github.com/dylanlrrb/P-C-Y-Assets/blob/master/3/dockerpull.png?raw=true)
 
-- [ ] When the image is successfully cached on your machine, run the command `docker history node:latest` This command is used in conjunction with an image name and shows the build history of the image; you can look at the 'CREATED BY' column to see the the actual ingredient in each layer of the sandwich (stated more technically - you can see the command that added each layer to the image)
+- [ ] When the image is successfully cached on your machine, run the command `docker history node:latest` This command is used in conjunction with an image name and shows the build history of the image; you can look at the 'CREATED BY' column to see the actual ingredient in each layer of the sandwich (stated more technically - you can see the command that added each layer to the image)
 
 ![dockerhist](https://github.com/dylanlrrb/P-C-Y-Assets/blob/master/3/dockerhist.png?raw=true)
 
